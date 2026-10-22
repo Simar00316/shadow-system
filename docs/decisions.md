@@ -23,3 +23,4 @@ One line per decision: what, and why.
 - `--shadow-purple` (#7B2FF7, 3.4:1) limited to borders/fills/large text; `--shadow-purple-text` (#A77BFF) for text. Why: WCAG AA.
 - Shadow art is procedural SVG per archetype with seeded variants instead of hand-painted art. Why: original, tiny, infinitely many unique shadows.
 - Visual snapshots taken with reduced motion and a fixed clock. Why: deterministic screenshots.
+- CI runs Playwright with `--ignore-snapshots`; visual regression is checked locally on the owner's Windows machine where snapshots were approved. Why: font rasterisation differs on Linux runners.
