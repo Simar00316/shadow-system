@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+export MSYS_NO_PATHCONV=1  # Git Bash on Windows would rewrite "/dev/..." titles into paths
 # Creates labels, milestones and issues from docs/backlog.md. Idempotent-ish: skips existing milestones/issues by title.
 set -euo pipefail
 REPO=${REPO:-Simar00316/shadow-system}
