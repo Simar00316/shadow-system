@@ -1,0 +1,15 @@
+node_modules/
+dist/
+dev-dist/
+coverage/
+playwright-report/
+test-results/
+.wrangler/
+.dev.vars
+.env*
+!.env.example
+research/_repos/
+data/.cache/
+*.log
+.DS_Store
+.claude/settings.local.json
