@@ -19,3 +19,7 @@ One line per decision: what, and why.
 - Audio: original sounds synthesised in Node at build time to WAV, played with Howler. Why: PRD names Howler; synthesis keeps all sound assets original.
 - Exercise media committed as converted animated WebP under public/assets/third-party/, runtime-cached (not precached). Why: deterministic offline-capable build without network at deploy time; precaching ~50 MB on install is hostile on iOS.
 - Red Gate minimum rank C (canon B). Why: B rank arrives ~day 195; the challenge should be reachable earlier.
+- Fonts self-hosted via Fontsource (Orbitron display, Rajdhani UI, Inter body, JetBrains Mono numbers). Why: works offline; matches fan consensus (R1 §12.2).
+- `--shadow-purple` (#7B2FF7, 3.4:1) limited to borders/fills/large text; `--shadow-purple-text` (#A77BFF) for text. Why: WCAG AA.
+- Shadow art is procedural SVG per archetype with seeded variants instead of hand-painted art. Why: original, tiny, infinitely many unique shadows.
+- Visual snapshots taken with reduced motion and a fixed clock. Why: deterministic screenshots.

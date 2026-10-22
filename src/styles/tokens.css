@@ -1,0 +1,67 @@
+/* Design tokens — source of truth is design/DESIGN.md. Contrast checked by contrast.test.ts. */
+:root {
+  /* colour */
+  --bg: #05070f;
+  --bg-deep: #020309;
+  --panel: rgb(11 20 38 / 0.75);
+  --panel-solid: #0b1426;
+  --panel-raised: #101c35;
+  --line: rgb(47 168 255 / 0.35);
+  --system-blue: #2fa8ff;
+  --glow: #5cc8ff;
+  --shadow-purple: #7b2ff7;
+  --shadow-purple-text: #a77bff;
+  --warning: #ff3b5c;
+  --gold: #ffc94a;
+  --success: #3ddc84;
+  --amber: #ffb547;
+  --text: #e6f1ff;
+  --text-dim: #7c8db5;
+  --text-on-accent: #05070f;
+
+  --rank-e: #9aa3b5;
+  --rank-d: #3ddc84;
+  --rank-c: #2fa8ff;
+  --rank-b: #a77bff;
+  --rank-a: #ff9f43;
+  --rank-s: #ffc94a;
+  --rank-national: #ff5a3c;
+  --rank-national-gradient: linear-gradient(135deg, #ff5a3c, #ffc94a);
+
+  --rarity-common: #c9d3e6;
+  --rarity-rare: #3d8bff;
+  --rarity-epic: #b06cff;
+  --rarity-legendary: #ff9f2e;
+
+  /* type */
+  --font-display: 'Orbitron', 'Rajdhani', system-ui, sans-serif;
+  --font-ui: 'Rajdhani', system-ui, sans-serif;
+  --font-body: 'Inter Variable', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono Variable', ui-monospace, monospace;
+
+  /* space / radius */
+  --s-1: 4px; --s-2: 8px; --s-3: 12px; --s-4: 16px; --s-5: 20px;
+  --s-6: 24px; --s-8: 32px; --s-10: 40px; --s-12: 48px;
+  --r-1: 2px; --r-2: 6px; --r-pill: 999px;
+  --tap: 48px;
+  --nav-h: 64px;
+
+  /* elevation (glow) */
+  --glow-1: 0 0 8px rgb(47 168 255 / 0.25);
+  --glow-2: 0 0 18px rgb(47 168 255 / 0.35), inset 0 0 24px rgb(10 23 51 / 0.9);
+  --glow-3: 0 0 32px rgb(92 200 255 / 0.5), inset 0 0 32px rgb(10 23 51 / 0.9);
+  --glow-alert: 0 0 18px rgb(255 59 92 / 0.45), inset 0 0 24px rgb(51 10 20 / 0.8);
+  --glow-shadow: 0 0 22px rgb(123 47 247 / 0.5), inset 0 0 28px rgb(26 11 51 / 0.9);
+  --glow-reward: 0 0 22px rgb(255 201 74 / 0.45), inset 0 0 24px rgb(40 30 5 / 0.8);
+
+  /* motion */
+  --ease-out: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --ease-in: cubic-bezier(0.4, 0, 1, 1);
+  --dur-open: 260ms;
+  --dur-close: 140ms;
+  --dur-toast: 200ms;
+
+  /* effects */
+  --scanlines: repeating-linear-gradient(0deg, transparent 0 3px, rgb(0 0 0 / 0.05) 3px 4px);
+  --grid: linear-gradient(rgb(47 168 255 / 0.04) 1px, transparent 1px), linear-gradient(90deg, rgb(47 168 255 / 0.04) 1px, transparent 1px);
+}

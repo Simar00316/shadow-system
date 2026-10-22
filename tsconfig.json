@@ -16,5 +16,6 @@
     "types": ["vite/client", "vite-plugin-pwa/client", "node", "vitest/globals"],
     "paths": { "@/*": ["./src/*"] }
   },
-  "include": ["src", "tests", "data", "worker", "scripts", "*.ts"]
+  "include": ["src", "tests", "data", "worker", "scripts", "*.ts"],
+  "exclude": ["data/.cache", "research", "node_modules", "dist"]
 }
