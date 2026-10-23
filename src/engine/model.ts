@@ -77,7 +77,8 @@ export type MealLog = { id: string; day: Day; meal: 'breakfast' | 'lunch' | 'din
 export type WaterLog = { id: string; day: Day; ml: number; at: number }
 
 export type Measurement = { id: string; day: Day; type: 'weight' | 'waist' | 'chest' | 'hips' | 'arm' | 'thigh' | 'neck' | 'bodyfat'; value: number }
-export type Photo = { id: string; day: Day; pose: 'front' | 'side' | 'back'; blob: Blob; note?: string }
+/** Photo bytes are stored as an ArrayBuffer (WebKit cannot always store Blob/File in IndexedDB, issue #106). */
+export type Photo = { id: string; day: Day; pose: 'front' | 'side' | 'back'; data: ArrayBuffer; type: string; note?: string }
 
 export type XpEventType =
   | 'set' | 'workout' | 'daily_quest' | 'pr' | 'readiness' | 'meal' | 'calorie_target' | 'protein_target' | 'water_target'

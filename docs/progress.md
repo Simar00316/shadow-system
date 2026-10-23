@@ -10,7 +10,7 @@
 | M5 Game engines | done | XP ledger, ranks, quests, dungeons, shadows, loot, 68 titles, 60 message events; game simulation |
 | M6 App shell and Awakening | done | Awakening, Status Window, readiness, System log, SW offline shell; first-launch E2E |
 | M7 Training screens | done | body map, library, detail, plan editor, workout player, summary, cardio; offline workout E2E |
-| M8 Progress and game screens | | |
+| M8 Progress and game screens | done | progress, measurements and photos, quests and trials, dungeons and Demon Castle, Shadow Army, inventory, titles, store, themes |
 | M9 Diet | | |
 | M10 Form check | | |
 | M11 Notifications | | |

@@ -65,3 +65,11 @@
   --scanlines: repeating-linear-gradient(0deg, transparent 0 3px, rgb(0 0 0 / 0.05) 3px 4px);
   --grid: linear-gradient(rgb(47 168 255 / 0.04) 1px, transparent 1px), linear-gradient(90deg, rgb(47 168 255 / 0.04) 1px, transparent 1px);
 }
+
+/* UI themes from the Store (cosmetic). Each accent keeps ≥ 4.5:1 on --bg (contrast.test.ts). */
+:root[data-theme='ember'] { --system-blue: #ff8a3d; --glow: #ffb37a; --line: rgb(255 138 61 / 0.35); }
+:root[data-theme='frost'] { --system-blue: #9fd3ff; --glow: #d6ecff; --line: rgb(159 211 255 / 0.35); }
+:root[data-theme='jade'] { --system-blue: #34d399; --glow: #7ef0c2; --line: rgb(52 211 153 / 0.35); }
+:root[data-theme='crimson'] { --system-blue: #ff4d6d; --glow: #ff8fa3; --line: rgb(255 77 109 / 0.35); }
+:root[data-theme='void'] { --system-blue: #a77bff; --glow: #c9a6ff; --line: rgb(167 123 255 / 0.35); }
+:root[data-theme='sovereign'] { --system-blue: #ffc94a; --glow: #ffe08a; --line: rgb(255 201 74 / 0.35); }
