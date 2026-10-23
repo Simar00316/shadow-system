@@ -1,4 +1,4 @@
-import { test, expect } from '@playwright/test'
+import { test, expect } from './fixtures'
 
 const SECTIONS = ['colours', 'type', 'system-window', 'button', 'quest-card', 'stat-bar', 'rank-badge', 'emblems', 'shadows', 'body-map', 'exercise-card', 'set-row', 'rest-timer', 'number-stepper', 'toast', 'tabs', 'sheet', 'charts', 'ring', 'empty-state', 'icons', 'bottom-nav']
 
@@ -8,6 +8,7 @@ test.describe('component gallery visual snapshots', () => {
   test.beforeEach(async ({ page }) => {
     await page.clock.setFixedTime(new Date('2026-10-23T09:00:00'))
     await page.goto('/dev/gallery')
+    await expect(page.getByRole('heading', { name: 'Component gallery' })).toBeVisible({ timeout: 15_000 })
     await page.evaluate(() => document.fonts.ready)
   })
   for (const id of SECTIONS) {

@@ -6,7 +6,7 @@
 | M1 Research | done | 7 notes, game-design.md, architecture.md (PR #86) |
 | M2 Design system and assets | done | PR #90 |
 | M3 Data pipeline and database | done | 1,915 exercises, 305 ingredients, 755 dishes; Dexie v1 |
-| M4 Training and nutrition engines | | |
+| M4 Training and nutrition engines | done | 9 engines, 99.8% line coverage, 6 simulated users × 12 weeks |
 | M5 Game engines | | |
 | M6 App shell and Awakening | | |
 | M7 Training screens | | |
