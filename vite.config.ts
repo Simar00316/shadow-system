@@ -10,7 +10,11 @@ export default defineConfig({
     react(),
     tailwindcss(),
     VitePWA({
-      registerType: 'autoUpdate',
+      registerType: 'prompt',
+      strategies: 'injectManifest',
+      srcDir: 'src',
+      filename: 'sw.ts',
+      injectRegister: false,
       includeAssets: ['icons/*.png', 'icons/*.svg'],
       manifest: {
         name: 'Shadow System',
@@ -23,11 +27,18 @@ export default defineConfig({
         start_url: '/',
         icons: [
           { src: '/icons/icon-192.png', sizes: '192x192', type: 'image/png' },
+          { src: '/icons/icon.svg', sizes: 'any', type: 'image/svg+xml' },
           { src: '/icons/icon-512.png', sizes: '512x512', type: 'image/png' },
           { src: '/icons/maskable-512.png', sizes: '512x512', type: 'image/png', purpose: 'maskable' },
         ],
       },
-      workbox: { globPatterns: ['**/*.{js,css,html,svg,png,webp,json,woff2}'], maximumFileSizeToCacheInBytes: 8 * 1024 * 1024 },
+      injectManifest: {
+        // App shell + sounds. Exercise media (58 MB) and the ambient loop are runtime-cached instead (R6 §1.6).
+        globPatterns: ['**/*.{js,css,html,svg,png,woff2}', 'sfx/*.wav', 'icons/*'],
+        globIgnores: ['assets/third-party/**', 'sfx/ambient.wav'],
+        maximumFileSizeToCacheInBytes: 8 * 1024 * 1024,
+      },
+      devOptions: { enabled: false },
     }),
   ],
   test: {
