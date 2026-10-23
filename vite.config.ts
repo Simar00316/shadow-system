@@ -24,7 +24,7 @@ export default defineConfig({
         icons: [
           { src: '/icons/icon-192.png', sizes: '192x192', type: 'image/png' },
           { src: '/icons/icon-512.png', sizes: '512x512', type: 'image/png' },
-          { src: '/icons/icon-512.png', sizes: '512x512', type: 'image/png', purpose: 'maskable' },
+          { src: '/icons/maskable-512.png', sizes: '512x512', type: 'image/png', purpose: 'maskable' },
         ],
       },
       workbox: { globPatterns: ['**/*.{js,css,html,svg,png,webp,json,woff2}'], maximumFileSizeToCacheInBytes: 8 * 1024 * 1024 },
@@ -35,6 +35,7 @@ export default defineConfig({
     globals: true,
     setupFiles: ['tests/setup.ts'],
     include: ['src/**/*.test.{ts,tsx}', 'tests/unit/**/*.test.{ts,tsx}', 'data/**/*.test.ts', 'worker/**/*.test.ts'],
+    exclude: ['**/node_modules/**', 'data/.cache/**', 'research/**'],
     coverage: { include: ['src/engine/**'], thresholds: { lines: 90 } },
   },
 })
