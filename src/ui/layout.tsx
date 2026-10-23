@@ -3,7 +3,7 @@ import { useEffect, useRef, type ReactNode } from 'react'
 import { Icon, type IconName } from './icons'
 import { sfx } from '@/audio/sfx'
 
-/** Bottom sheet with scrim, drag-to-close handle and focus trap. */
+/** Bottom sheet with scrim, close button, Escape and focus trap. (Drag-to-close removed: it never settled on Linux WebKit, #94.) */
 export function Sheet({ open, onClose, title, children }: { open: boolean; onClose: () => void; title: string; children: ReactNode }) {
   const ref = useRef<HTMLDivElement>(null)
   useEffect(() => {
@@ -40,10 +40,6 @@ export function Sheet({ open, onClose, title, children }: { open: boolean; onClo
             animate={{ y: 0 }}
             exit={{ y: '100%' }}
             transition={{ duration: 0.25, ease: [0.2, 0.8, 0.2, 1] }}
-            drag="y"
-            dragConstraints={{ top: 0, bottom: 0 }}
-            dragElastic={{ top: 0, bottom: 0.6 }}
-            onDragEnd={(_, info) => { if (info.offset.y > 120) onClose() }}
           >
             <div className="mx-auto mb-3 h-1 w-10 rounded-full bg-[color:var(--line)]" />
             <div className="mb-3 flex items-center justify-between">
