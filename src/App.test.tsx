@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react'
 import { App } from './App'
 
-test('renders the System greeting', () => {
+test('a new device is sent to the Awakening', async () => {
   render(<App />)
-  expect(screen.getByText(/chosen as a Player/)).toBeInTheDocument()
+  expect(await screen.findByLabelText(/qualifications to be a Player/)).toBeInTheDocument()
 })
