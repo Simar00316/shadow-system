@@ -59,6 +59,8 @@ npm run deploy
 
 Without the push Worker the app still works fully; reminders run in "offline mode" and nothing is sent.
 
+Live: **https://shadow-system.pages.dev** (project created once; updates are just `npm run deploy`).
+
 ## Backups
 
 All records live in IndexedDB on the phone. iOS keeps installed-app data while you use it, but deleting the Home Screen icon deletes the data.
