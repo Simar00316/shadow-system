@@ -41,9 +41,10 @@ export async function awaken(a: AwakeningAnswers) {
   const day = dayOf(now)
   await awardMany([{ type: 'awakening', refId: 'test', base: BASE_XP.awakeningTest, day, category: 'vit' }], { quiet: true })
   await refreshPlayer()
-  if (!existing) await say('player_accepted')
-  else await say('class_changed', { cls: profile.cls.replace('_', ' ') })
-  await ensureToday()
+  // Quiet: the reveal screen already says this; toasts would cover it. They still go to the System log.
+  if (!existing) await say('player_accepted', {}, { quiet: true })
+  else await say('class_changed', { cls: profile.cls.replace('_', ' ') }, { quiet: true })
+  await ensureToday(undefined, { quiet: true })
   return { profile, power, rank }
 }
 

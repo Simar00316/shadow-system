@@ -20,6 +20,8 @@ type Props = {
   /** Stagger position on the screen (0 = first). */
   index?: number
   className?: string
+  /** Anchor for the first-visit tutorial (src/ui/Tour.tsx). */
+  tour?: string
   children?: ReactNode
   'aria-label'?: string
 }
@@ -28,7 +30,7 @@ type Props = {
  * A System window. Default grade is a quiet card (rounded, hairline edge); `hero` is the full System frame
  * (DESIGN.md §4, research/design-v2.md §4.4). No filters or backdrop blur: depth comes from rims and gradients.
  */
-export function SystemWindow({ tag, title, variant = 'system', state = 'default', error, hero, animate = true, index = 0, className = '', children, ...rest }: Props) {
+export function SystemWindow({ tag, title, variant = 'system', state = 'default', error, hero, animate = true, index = 0, className = '', tour, children, ...rest }: Props) {
   // Decide once per mount so re-renders never replay the entrance.
   const [enter] = useState(() => animate && isWarm())
   const grade = hero || variant !== 'system' ? 'hero' : 'card'
@@ -38,6 +40,7 @@ export function SystemWindow({ tag, title, variant = 'system', state = 'default'
       style={enter ? ({ '--i': Math.min(index, 5) } as CSSProperties) : undefined}
       data-variant={variant}
       data-grade={grade}
+      data-tour={tour}
       data-state={state}
       aria-busy={state === 'loading' || undefined}
       aria-disabled={state === 'disabled' || undefined}

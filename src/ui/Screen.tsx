@@ -22,7 +22,7 @@ export function Screen({ tag, title, back, actions, children, wide, plain }: { t
           </button>
         ) : null}
         <div className="min-w-0 flex-1">
-          {title || plain ? <div className="t-micro text-dim">{tag}</div> : null}
+          {(title && title.toLowerCase() !== tag.toLowerCase()) || plain ? <div className="t-micro text-dim">{tag}</div> : null}
           {plain ? <h1 className="sr-only">{heading}</h1> : <h1 ref={ref} className="glitch-title t-screen truncate text-text">{heading}<span className="gt-a" aria-hidden="true">{heading}</span><span className="gt-b" aria-hidden="true">{heading}</span></h1>}
         </div>
         {actions}

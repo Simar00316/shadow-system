@@ -7,6 +7,8 @@ import { SystemWindow } from '@/ui/SystemWindow'
 import { Button, IconButton } from '@/ui/controls'
 import { Sheet } from '@/ui/layout'
 import { EmptyState } from '@/ui/feedback'
+import { Icon } from '@/ui/icons'
+import { CUISINE_LABEL, DIET_LABEL } from '@/data/labels'
 import { useProfile, useToday } from '@/app/hooks'
 import { expandPlan, generateMealPlan, getMealPlan, groceries, logPlanned, swapOptions, swapPlanned, todayIndex } from '@/app/diet'
 import { addDays, weekStart } from '@/engine/dates'
@@ -29,7 +31,8 @@ export function MealPlan() {
   return (
     <Screen tag="MEAL PLAN" title="This week" back="/diet">
       <SystemWindow tag="SETTINGS" animate={false}>
-        <p className="t-small text-dim">{profile.dietType} · {profile.cuisine} cuisine{profile.budget ? ' · budget mode' : ''}</p>
+        <p className="t-small text-dim">{DIET_LABEL[profile.dietType] ?? profile.dietType} · {CUISINE_LABEL[profile.cuisine] ?? profile.cuisine} cuisine{profile.budget ? ' · budget mode' : ''}</p>
+        <p className="t-small mt-1 text-faint">On today's tab, tap “I ate this” to add a planned meal to your food log in one step.</p>
         <label className="mt-2 flex min-h-12 items-center gap-2"><input type="checkbox" checked={profile.budget} onChange={async (e) => { await db.profile.update('me', { budget: e.target.checked }); await generateMealPlan({ ...profile, budget: e.target.checked }, week) }} /> Budget mode</label>
         <Button className="mt-2 w-full" variant="secondary" icon="swap" onClick={() => void generateMealPlan(profile, week)}>{plan ? 'Generate a new plan' : 'Generate this week'}</Button>
       </SystemWindow>
@@ -47,7 +50,9 @@ export function MealPlan() {
                       <div className="t-num text-[12px] text-dim">{Math.round(m.kcal)} kcal · {Math.round(m.p)}p · {Math.round(m.c)}c · {Math.round(m.f)}f</div>
                     </div>
                     <IconButton icon="swap" label={`Swap ${m.dish.name}`} onClick={async () => setSwap({ meal: m, options: await swapOptions(profile, m) })} />
-                    {isToday ? <Button variant={logged.has(m.slot) ? 'ghost' : 'secondary'} className="px-3" aria-label={`Log ${m.dish.name}`} onClick={() => void logPlanned(m)}>{logged.has(m.slot) ? 'Again' : 'Log'}</Button> : null}
+                    {isToday ? (logged.has(m.slot)
+                      ? <span className="flex flex-col items-end gap-1"><span className="chip" data-tone="green"><Icon name="check" size={12} />Eaten</span><button type="button" className="t-small text-glow underline-offset-2 hover:underline" aria-label={`Log ${m.dish.name}`} onClick={() => void logPlanned(m)}>Log another serving</button></span>
+                      : <Button variant="secondary" className="px-3" aria-label={`Log ${m.dish.name}`} onClick={() => void logPlanned(m)}>I ate this</Button>) : null}
                   </li>
                 ))}
               </ul>

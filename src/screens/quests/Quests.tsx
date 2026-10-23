@@ -11,6 +11,7 @@ import { RankBadge } from '@/ui/RankBadge'
 import { EmptyState } from '@/ui/feedback'
 import { Emblem } from '@/ui/Emblem'
 import { Icon } from '@/ui/icons'
+import { Tour, type TourStep } from '@/ui/Tour'
 import { useToday } from '@/app/hooks'
 import { awardMany } from '@/app/game'
 import { say } from '@/app/notify'
@@ -21,6 +22,14 @@ import { ADVANCED_OPTIONS } from '@/engine/ranks'
 import { endOf } from '@/engine/dates'
 import type { Quest } from '@/engine/model'
 import type { AdvancedClass } from '@/engine/types'
+
+const QUEST_TOUR: TourStep[] = [
+  { target: 'daily', title: 'The Daily Quest', body: 'A new one arrives every day: train (or do recovery on rest days), drink water, eat protein and check in. Goals tick off automatically as you log. The timer shows how long until midnight.' },
+  { target: 'daily', title: 'Rewards and the Penalty Zone', body: 'Gold chips are the reward. If the core goal is missed, the next day starts with a short Penalty Quest; clear it to keep your streak. A low-readiness day or an injury cancels the penalty.' },
+  { target: 'trial', title: 'Rank-up Trial', body: 'When your level and Power are high enough, the System opens a trial: a set of fitness tests. Pass it to rise from E to D rank and beyond; higher ranks unlock harder Gates.' },
+  { target: 'job', title: 'Job Change', body: 'At level 30 you can take the Job Change quest and choose an advanced class with its own training style.' },
+  { target: 'hidden', title: 'Hidden Quests', body: 'Secret achievements. The hints tell you what the System is watching for. Clear them for big XP and titles.' },
+]
 
 /** Quests (PRD F3.3): Daily Quest, Penalty Zone, Emergency, Hidden, Job Change and Rank-Up Trial, quest log. */
 export function Quests() {
@@ -52,7 +61,7 @@ export function Quests() {
   return (
     <Screen tag="QUESTS" title="Quest log">
       {penalty ? <QuestCard tag="PENALTY QUEST" variant="alert" title={penalty.title} until={penalty.expiresAt} goals={penalty.goals} reward={['Streak restored']} penalty={penalty.penalty} status={statusOf(penalty)} onOpen={() => nav('/cardio')} /> : null}
-      {daily ? <QuestCard tag="DAILY QUEST" hero title={daily.title} until={endOf(today)} goals={daily.goals} reward={[`${daily.reward.xp} XP`, `${daily.reward.gold} Gold`]} penalty={daily.penalty} status={statusOf(daily)} onOpen={() => nav('/train')} /> : <SystemWindow tag="DAILY QUEST"><EmptyState message="[The Daily Quest has not been issued.]" /></SystemWindow>}
+      {daily ? <QuestCard tour="daily" tag="DAILY QUEST" hero title={daily.title} until={endOf(today)} goals={daily.goals} reward={[`${daily.reward.xp} XP`, `${daily.reward.gold} Gold`]} penalty={daily.penalty} status={statusOf(daily)} onOpen={() => nav('/train')} /> : <SystemWindow tag="DAILY QUEST"><EmptyState message="[The Daily Quest has not been issued.]" /></SystemWindow>}
       {emergency ? (
         <>
           <QuestCard tag="EMERGENCY QUEST" variant="alert" title={emergency.title} until={emergency.expiresAt} goals={emergency.goals} reward={[`${emergency.reward.xp} XP`, `${emergency.reward.gold} Gold`, 'Optional']} status={statusOf(emergency)} />
@@ -65,7 +74,7 @@ export function Quests() {
         </>
       ) : null}
 
-      <SystemWindow tag="RANK-UP TRIAL" animate={false}>
+      <SystemWindow tag="RANK-UP TRIAL" animate={false} tour="trial">
         {trial ? (
           <div className="flex items-center gap-4">
             <RankBadge rank={trial.rank} />
@@ -79,7 +88,7 @@ export function Quests() {
         ) : null}
       </SystemWindow>
 
-      <SystemWindow tag="JOB CHANGE" animate={false}>
+      <SystemWindow tag="JOB CHANGE" animate={false} tour="job">
         {job?.quest && job.quest.status === 'issued' ? (
           <>
             <p className="t-system mb-2">[{job.quest.goals[0].label}]</p>
@@ -90,7 +99,7 @@ export function Quests() {
           : <p className="t-small text-dim">[Unlocks at level 30. Current class: {job?.cls.replace('_', ' ')}.]</p>}
       </SystemWindow>
 
-      <section aria-label="HIDDEN QUESTS">
+      <section aria-label="HIDDEN QUESTS" data-tour="hidden">
         <div className="section-head"><span className="t-label text-purple-text">Hidden quests</span><span className="t-micro text-faint">{hiddenDone.size}/{HIDDEN.length} found</span></div>
         <ul className="group">
           {HIDDEN.map((h) => (
@@ -131,6 +140,7 @@ export function Quests() {
           </div>
         ) : null}
       </Sheet>
+      <Tour id="quests" steps={QUEST_TOUR} />
     </Screen>
   )
 }

@@ -7,6 +7,7 @@ import { Backdrop } from '@/ui/Backdrop'
 import { Icon } from '@/ui/icons'
 import { Boot } from '@/ui/Boot'
 import { sfx } from '@/audio/sfx'
+import { Prologue, prologueSeen } from './Prologue'
 
 export const isIosSafari = () => typeof navigator !== 'undefined' && /iP(hone|ad|od)/.test(navigator.userAgent) && !/CriOS|FxiOS/.test(navigator.userAgent)
 export const isStandalone = () => typeof window !== 'undefined' && ((navigator as Navigator & { standalone?: boolean }).standalone === true || window.matchMedia?.('(display-mode: standalone)').matches)
@@ -20,7 +21,7 @@ const Flow = lazy(() => loadFlow().then((m) => ({ default: m.Awakening })))
  */
 export function AwakeningGate() {
   const nav = useNavigate()
-  const [phase, setPhase] = useState<'install' | 'intro' | 'declined' | 'flow'>(isIosSafari() && !isStandalone() ? 'install' : 'intro')
+  const [phase, setPhase] = useState<'install' | 'prologue' | 'intro' | 'declined' | 'flow'>(isIosSafari() && !isStandalone() ? 'install' : prologueSeen() ? 'intro' : 'prologue')
   // A Player who already exists (e.g. installed before the awakened hint) goes back to their Status screen.
   const hasProfile = () => import('@/db/schema').then(({ db }) => db.profile.get('me')).then((p) => !!p).catch(() => false)
   useEffect(() => {
@@ -37,6 +38,7 @@ export function AwakeningGate() {
   }
 
   if (phase === 'flow') return <Suspense fallback={<Boot />}><Flow start="form" /></Suspense>
+  if (phase === 'prologue') return <Prologue onDone={() => setPhase('intro')} />
   if (phase === 'install') {
     return (
       <main className="mx-auto flex min-h-[100dvh] max-w-[480px] flex-col justify-center gap-4 px-4">
@@ -51,7 +53,7 @@ export function AwakeningGate() {
             ))}
           </ol>
           <p className="t-small mt-2 text-faint">[Notifications, full offline play and storage protection require the installed app.]</p>
-          <Button className="mt-4 w-full" variant="ghost" onClick={() => setPhase('intro')}>Continue in the browser</Button>
+          <Button className="mt-4 w-full" variant="ghost" onClick={() => setPhase(prologueSeen() ? 'intro' : 'prologue')}>Continue in the browser</Button>
         </SystemWindow>
       </main>
     )

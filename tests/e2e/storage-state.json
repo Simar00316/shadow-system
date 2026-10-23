@@ -1,0 +1,12 @@
+{
+  "cookies": [],
+  "origins": [
+    {
+      "origin": "http://localhost:4173",
+      "localStorage": [
+        { "name": "shadow-tours", "value": "off" },
+        { "name": "shadow-prologue-seen", "value": "1" }
+      ]
+    }
+  ]
+}

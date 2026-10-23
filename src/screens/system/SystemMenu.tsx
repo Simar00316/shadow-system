@@ -5,6 +5,7 @@ import { Screen } from '@/ui/Screen'
 import { Icon, type IconName } from '@/ui/icons'
 import { RankBadge } from '@/ui/RankBadge'
 import { usePlayer, useProfile } from '@/app/hooks'
+import { Tour, type TourStep } from '@/ui/Tour'
 
 const TILES: { to: string; label: string; icon: IconName; group: string }[] = [
   { to: '/progress', label: 'Progress', icon: 'chart', group: 'Hunter' },
@@ -21,6 +22,13 @@ const TILES: { to: string; label: string; icon: IconName; group: string }[] = [
   { to: '/form', label: 'Form check', icon: 'pose', group: 'Training' },
   { to: '/log', label: 'System log', icon: 'log', group: 'System' },
   { to: '/settings', label: 'Settings', icon: 'settings', group: 'System' },
+]
+
+const SYSTEM_TOUR: TourStep[] = [
+  { target: 'group-Hunter', title: 'Hunter', body: 'Your progress charts and records, body measurements and photos, the muscle map, and titles you have earned (equip one for a small XP bonus).' },
+  { target: 'group-World', title: 'World', body: 'Dungeons are multi-week programs with a boss test at the end. Shadows are allies you extract from bosses. Inventory and Store hold items you win or buy with gold.' },
+  { target: 'group-Training', title: 'Training', body: 'Browse 1,900+ exercises, edit your weekly plan, log cardio, or check your form with the camera.' },
+  { target: 'group-System', title: 'System', body: 'Every message the System has sent you, and Settings: units, reminders, backups, Hevy/Strong import, the AI progress report, and replaying tutorials.' },
 ]
 
 /** System menu (design-v2 §5.5): a profile strip, then inset groups of rows with one live value each. */
@@ -44,7 +52,7 @@ export function SystemMenu() {
   return (
     <Screen tag="SYSTEM" title="System">
       {profile && player ? (
-        <Link to="/" data-glitch="" className="press flex items-center gap-3 rounded-[var(--r-card)] border border-[color:var(--edge-hi)] bg-[image:var(--surface-hero)] p-3 shadow-[var(--elev-card)]">
+        <Link to="/" data-glitch="" data-tour="profile" className="press flex items-center gap-3 rounded-[var(--r-card)] border border-[color:var(--edge-hi)] bg-[image:var(--surface-hero)] p-3 shadow-[var(--elev-card)]">
           <RankBadge rank={player.rank} size="sm" />
           <div className="min-w-0 flex-1">
             <div className="t-h2 truncate text-text">{profile.name}</div>
@@ -54,7 +62,7 @@ export function SystemMenu() {
         </Link>
       ) : null}
       {groups.map((g) => (
-        <section key={g} aria-label={g}>
+        <section key={g} aria-label={g} data-tour={`group-${g}`}>
           <h2 className="section-head t-label text-dim">{g}</h2>
           <ul className="group">
             {TILES.filter((t) => t.group === g).map((t) => (
@@ -70,6 +78,7 @@ export function SystemMenu() {
           </ul>
         </section>
       ))}
+      <Tour id="system" steps={SYSTEM_TOUR} />
     </Screen>
   )
 }

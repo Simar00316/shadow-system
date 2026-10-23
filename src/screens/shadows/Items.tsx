@@ -94,7 +94,10 @@ export function Store() {
                 <div className="t-heading" style={{ color: RC[i.rarity] }}>{i.name}</div>
                 <p className="t-small text-dim">{i.description}{i.hold ? ` Hold up to ${i.hold}.` : ''}</p>
               </div>
-              <Button variant="gold" aria-label={`Buy ${i.name} for ${i.price} gold`} disabled={cosmeticOwned || full || player.gold < i.price!} onClick={() => void buy(i.id)}>{cosmeticOwned ? 'Owned' : full ? 'Full' : `${i.price}`}</Button>
+              <span className="flex shrink-0 flex-col items-end gap-1">
+                <Button variant="gold" aria-label={`Buy ${i.name} for ${i.price} gold`} disabled={cosmeticOwned || full || player.gold < i.price!} onClick={() => void buy(i.id)}>{cosmeticOwned ? 'Owned' : full ? 'Full' : <><Icon name="gold" size={14} />{i.price!.toLocaleString()}</>}</Button>
+                {!cosmeticOwned && !full && player.gold < i.price! ? <span className="t-micro text-faint">Need {(i.price! - player.gold).toLocaleString()} more</span> : null}
+              </span>
             </div>
           </SystemWindow>
         )
