@@ -39,7 +39,7 @@ export function Sheet({ open, onClose, title, children }: { open: boolean; onClo
             initial={{ y: '100%' }}
             animate={{ y: 0 }}
             exit={{ y: '100%' }}
-            transition={{ type: 'spring', stiffness: 420, damping: 38 }}
+            transition={{ duration: 0.25, ease: [0.2, 0.8, 0.2, 1] }}
             drag="y"
             dragConstraints={{ top: 0, bottom: 0 }}
             dragElastic={{ top: 0, bottom: 0.6 }}
