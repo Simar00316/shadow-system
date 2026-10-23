@@ -1,0 +1,1832 @@
+[
+ {
+  "id": "it-pasta-pomodoro",
+  "name": "Pasta al Pomodoro",
+  "meal": [
+   "lunch",
+   "dinner"
+  ],
+  "servings": 4,
+  "ingredients": [
+   [
+    "pasta",
+    320
+   ],
+   [
+    "tomato_canned",
+    400
+   ],
+   [
+    "garlic",
+    10
+   ],
+   [
+    "oil_olive",
+    30
+   ],
+   [
+    "basil",
+    10
+   ],
+   [
+    "parmesan",
+    30
+   ],
+   [
+    "salt",
+    3
+   ]
+  ]
+ },
+ {
+  "id": "it-pasta-e-fagioli",
+  "name": "Pasta e Fagioli",
+  "meal": [
+   "lunch",
+   "dinner"
+  ],
+  "servings": 4,
+  "ingredients": [
+   [
+    "pasta",
+    150
+   ],
+   [
+    "white_beans",
+    480
+   ],
+   [
+    "carrot",
+    100
+   ],
+   [
+    "celery",
+    60
+   ],
+   [
+    "onion",
+    100
+   ],
+   [
+    "tomato_canned",
+    200
+   ],
+   [
+    "oil_olive",
+    30
+   ],
+   [
+    "garlic",
+    10
+   ],
+   [
+    "rosemary",
+    2
+   ],
+   [
+    "stock",
+    600
+   ]
+  ],
+  "tags": [
+   "meal-prep",
+   "budget"
+  ]
+ },
+ {
+  "id": "it-minestrone",
+  "name": "Minestrone",
+  "meal": [
+   "lunch",
+   "dinner"
+  ],
+  "servings": 4,
+  "ingredients": [
+   [
+    "potato",
+    200
+   ],
+   [
+    "carrot",
+    150
+   ],
+   [
+    "zucchini",
+    200
+   ],
+   [
+    "celery",
+    80
+   ],
+   [
+    "onion",
+    100
+   ],
+   [
+    "white_beans",
+    250
+   ],
+   [
+    "pasta",
+    80
+   ],
+   [
+    "tomato_canned",
+    300
+   ],
+   [
+    "oil_olive",
+    30
+   ],
+   [
+    "cabbage",
+    150
+   ],
+   [
+    "stock",
+    800
+   ]
+  ],
+  "tags": [
+   "meal-prep",
+   "budget"
+  ]
+ },
+ {
+  "id": "it-spaghetti-bolognese",
+  "name": "Spaghetti Bolognese",
+  "meal": [
+   "lunch",
+   "dinner"
+  ],
+  "servings": 4,
+  "ingredients": [
+   [
+    "pasta",
+    320
+   ],
+   [
+    "beef_mince",
+    400
+   ],
+   [
+    "onion",
+    100
+   ],
+   [
+    "carrot",
+    80
+   ],
+   [
+    "celery",
+    50
+   ],
+   [
+    "tomato_canned",
+    400
+   ],
+   [
+    "tomato_paste",
+    30
+   ],
+   [
+    "oil_olive",
+    30
+   ],
+   [
+    "wine_red",
+    100
+   ],
+   [
+    "parmesan",
+    30
+   ]
+  ],
+  "tags": [
+   "meal-prep",
+   "high-protein"
+  ]
+ },
+ {
+  "id": "it-pesto-pasta",
+  "name": "Pesto Pasta with Green Beans",
+  "meal": [
+   "lunch",
+   "dinner"
+  ],
+  "servings": 2,
+  "ingredients": [
+   [
+    "pasta",
+    160
+   ],
+   [
+    "pesto",
+    60
+   ],
+   [
+    "parmesan",
+    20
+   ],
+   [
+    "green_beans",
+    100
+   ]
+  ],
+  "tags": [
+   "quick"
+  ]
+ },
+ {
+  "id": "it-tuna-pasta",
+  "name": "Tuna Pasta",
+  "meal": [
+   "lunch",
+   "dinner"
+  ],
+  "servings": 2,
+  "ingredients": [
+   [
+    "pasta",
+    160
+   ],
+   [
+    "tuna_canned",
+    160
+   ],
+   [
+    "tomato",
+    200
+   ],
+   [
+    "olives",
+    30
+   ],
+   [
+    "oil_olive",
+    15
+   ],
+   [
+    "garlic",
+    5
+   ],
+   [
+    "parsley",
+    5
+   ]
+  ],
+  "tags": [
+   "quick",
+   "high-protein"
+  ]
+ },
+ {
+  "id": "it-risotto-funghi",
+  "name": "Mushroom Risotto",
+  "meal": [
+   "dinner"
+  ],
+  "servings": 3,
+  "ingredients": [
+   [
+    "rice_white",
+    240
+   ],
+   [
+    "mushroom",
+    300
+   ],
+   [
+    "onion",
+    80
+   ],
+   [
+    "butter",
+    20
+   ],
+   [
+    "parmesan",
+    40
+   ],
+   [
+    "stock",
+    900
+   ],
+   [
+    "oil_olive",
+    15
+   ]
+  ]
+ },
+ {
+  "id": "it-risotto-milanese",
+  "name": "Risotto alla Milanese",
+  "meal": [
+   "dinner"
+  ],
+  "servings": 3,
+  "ingredients": [
+   [
+    "rice_white",
+    240
+   ],
+   [
+    "saffron",
+    0.5
+   ],
+   [
+    "onion",
+    80
+   ],
+   [
+    "butter",
+    25
+   ],
+   [
+    "parmesan",
+    40
+   ],
+   [
+    "stock",
+    900
+   ]
+  ]
+ },
+ {
+  "id": "it-chicken-cacciatore",
+  "name": "Chicken Cacciatore",
+  "meal": [
+   "lunch",
+   "dinner"
+  ],
+  "servings": 4,
+  "ingredients": [
+   [
+    "chicken_thigh",
+    700
+   ],
+   [
+    "bell_pepper",
+    200
+   ],
+   [
+    "onion",
+    120
+   ],
+   [
+    "tomato_canned",
+    400
+   ],
+   [
+    "mushroom",
+    150
+   ],
+   [
+    "olives",
+    40
+   ],
+   [
+    "oil_olive",
+    30
+   ],
+   [
+    "garlic",
+    10
+   ],
+   [
+    "wine_red",
+    100
+   ],
+   [
+    "oregano",
+    2
+   ]
+  ],
+  "tags": [
+   "meal-prep",
+   "high-protein"
+  ]
+ },
+ {
+  "id": "it-caprese-salad",
+  "name": "Caprese Salad",
+  "meal": [
+   "lunch",
+   "snack"
+  ],
+  "servings": 2,
+  "ingredients": [
+   [
+    "tomato",
+    400
+   ],
+   [
+    "mozzarella",
+    200
+   ],
+   [
+    "basil",
+    15
+   ],
+   [
+    "oil_olive",
+    20
+   ],
+   [
+    "balsamic",
+    10
+   ]
+  ],
+  "tags": [
+   "quick"
+  ]
+ },
+ {
+  "id": "it-frittata-verdure",
+  "name": "Vegetable Frittata",
+  "meal": [
+   "breakfast",
+   "lunch",
+   "dinner"
+  ],
+  "servings": 3,
+  "ingredients": [
+   [
+    "egg",
+    360
+   ],
+   [
+    "zucchini",
+    200
+   ],
+   [
+    "onion",
+    80
+   ],
+   [
+    "potato",
+    200
+   ],
+   [
+    "parmesan",
+    30
+   ],
+   [
+    "oil_olive",
+    20
+   ]
+  ]
+ },
+ {
+  "id": "it-frittata-spinaci",
+  "name": "Spinach Frittata",
+  "meal": [
+   "breakfast",
+   "lunch"
+  ],
+  "servings": 2,
+  "ingredients": [
+   [
+    "egg",
+    240
+   ],
+   [
+    "spinach",
+    150
+   ],
+   [
+    "parmesan",
+    20
+   ],
+   [
+    "oil_olive",
+    10
+   ]
+  ],
+  "tags": [
+   "quick"
+  ]
+ },
+ {
+  "id": "it-polenta-funghi",
+  "name": "Polenta with Mushrooms",
+  "meal": [
+   "lunch",
+   "dinner"
+  ],
+  "servings": 3,
+  "ingredients": [
+   [
+    "cornmeal",
+    240
+   ],
+   [
+    "mushroom",
+    300
+   ],
+   [
+    "parmesan",
+    40
+   ],
+   [
+    "oil_olive",
+    20
+   ],
+   [
+    "garlic",
+    10
+   ],
+   [
+    "stock",
+    800
+   ],
+   [
+    "butter",
+    15
+   ]
+  ]
+ },
+ {
+  "id": "it-polenta-ragu",
+  "name": "Polenta with Sausage Ragu",
+  "meal": [
+   "dinner"
+  ],
+  "servings": 3,
+  "ingredients": [
+   [
+    "cornmeal",
+    240
+   ],
+   [
+    "sausage",
+    200
+   ],
+   [
+    "tomato_canned",
+    300
+   ],
+   [
+    "onion",
+    80
+   ],
+   [
+    "oil_olive",
+    10
+   ],
+   [
+    "stock",
+    800
+   ]
+  ],
+  "tags": [
+   "budget"
+  ]
+ },
+ {
+  "id": "it-pasta-aglio-olio",
+  "name": "Spaghetti Aglio e Olio",
+  "meal": [
+   "lunch",
+   "dinner"
+  ],
+  "servings": 2,
+  "ingredients": [
+   [
+    "pasta",
+    160
+   ],
+   [
+    "garlic",
+    15
+   ],
+   [
+    "oil_olive",
+    30
+   ],
+   [
+    "chili_powder",
+    1
+   ],
+   [
+    "parsley",
+    10
+   ]
+  ],
+  "tags": [
+   "quick",
+   "budget"
+  ]
+ },
+ {
+  "id": "it-pasta-carbonara",
+  "name": "Spaghetti Carbonara",
+  "meal": [
+   "dinner"
+  ],
+  "servings": 3,
+  "ingredients": [
+   [
+    "pasta",
+    240
+   ],
+   [
+    "egg",
+    150
+   ],
+   [
+    "bacon",
+    100
+   ],
+   [
+    "parmesan",
+    40
+   ],
+   [
+    "black_pepper",
+    2
+   ]
+  ],
+  "tags": [
+   "high-protein"
+  ]
+ },
+ {
+  "id": "it-pasta-arrabbiata",
+  "name": "Penne Arrabbiata",
+  "meal": [
+   "lunch",
+   "dinner"
+  ],
+  "servings": 3,
+  "ingredients": [
+   [
+    "pasta",
+    240
+   ],
+   [
+    "tomato_canned",
+    400
+   ],
+   [
+    "garlic",
+    10
+   ],
+   [
+    "green_chili",
+    10
+   ],
+   [
+    "oil_olive",
+    25
+   ],
+   [
+    "parsley",
+    5
+   ]
+  ],
+  "tags": [
+   "quick",
+   "budget"
+  ]
+ },
+ {
+  "id": "it-lasagna",
+  "name": "Lasagna",
+  "meal": [
+   "dinner"
+  ],
+  "servings": 6,
+  "ingredients": [
+   [
+    "pasta",
+    300
+   ],
+   [
+    "beef_mince",
+    400
+   ],
+   [
+    "tomato_canned",
+    600
+   ],
+   [
+    "onion",
+    100
+   ],
+   [
+    "ricotta",
+    250
+   ],
+   [
+    "mozzarella",
+    150
+   ],
+   [
+    "parmesan",
+    30
+   ],
+   [
+    "oil_olive",
+    20
+   ]
+  ],
+  "tags": [
+   "meal-prep",
+   "high-protein"
+  ]
+ },
+ {
+  "id": "it-bruschetta",
+  "name": "Tomato Bruschetta",
+  "meal": [
+   "snack"
+  ],
+  "servings": 2,
+  "ingredients": [
+   [
+    "baguette",
+    100
+   ],
+   [
+    "tomato",
+    200
+   ],
+   [
+    "basil",
+    8
+   ],
+   [
+    "garlic",
+    5
+   ],
+   [
+    "oil_olive",
+    15
+   ]
+  ],
+  "tags": [
+   "quick"
+  ]
+ },
+ {
+  "id": "it-panzanella",
+  "name": "Panzanella",
+  "meal": [
+   "lunch"
+  ],
+  "servings": 2,
+  "ingredients": [
+   [
+    "bread_white",
+    150
+   ],
+   [
+    "tomato",
+    400
+   ],
+   [
+    "cucumber",
+    150
+   ],
+   [
+    "red_onion",
+    50
+   ],
+   [
+    "basil",
+    10
+   ],
+   [
+    "oil_olive",
+    20
+   ],
+   [
+    "vinegar",
+    15
+   ]
+  ],
+  "tags": [
+   "budget"
+  ]
+ },
+ {
+  "id": "it-ribollita",
+  "name": "Ribollita",
+  "meal": [
+   "lunch",
+   "dinner"
+  ],
+  "servings": 4,
+  "ingredients": [
+   [
+    "white_beans",
+    400
+   ],
+   [
+    "bread_white",
+    150
+   ],
+   [
+    "kale",
+    200
+   ],
+   [
+    "carrot",
+    100
+   ],
+   [
+    "celery",
+    60
+   ],
+   [
+    "onion",
+    100
+   ],
+   [
+    "tomato_canned",
+    200
+   ],
+   [
+    "oil_olive",
+    30
+   ],
+   [
+    "stock",
+    800
+   ]
+  ],
+  "tags": [
+   "meal-prep",
+   "budget"
+  ]
+ },
+ {
+  "id": "it-eggplant-parmigiana",
+  "name": "Melanzane alla Parmigiana",
+  "meal": [
+   "dinner"
+  ],
+  "servings": 4,
+  "ingredients": [
+   [
+    "eggplant",
+    800
+   ],
+   [
+    "tomato_canned",
+    500
+   ],
+   [
+    "mozzarella",
+    250
+   ],
+   [
+    "parmesan",
+    40
+   ],
+   [
+    "basil",
+    10
+   ],
+   [
+    "oil_olive",
+    40
+   ],
+   [
+    "onion",
+    80
+   ]
+  ]
+ },
+ {
+  "id": "it-chicken-milanese",
+  "name": "Chicken Milanese",
+  "meal": [
+   "dinner"
+  ],
+  "servings": 2,
+  "ingredients": [
+   [
+    "chicken_breast",
+    400
+   ],
+   [
+    "breadcrumbs",
+    40
+   ],
+   [
+    "parmesan",
+    20
+   ],
+   [
+    "egg",
+    50
+   ],
+   [
+    "oil_olive",
+    20
+   ],
+   [
+    "lemon",
+    60
+   ],
+   [
+    "lettuce",
+    100
+   ]
+  ],
+  "tags": [
+   "high-protein"
+  ]
+ },
+ {
+  "id": "it-gnocchi-pomodoro",
+  "name": "Gnocchi al Pomodoro",
+  "meal": [
+   "lunch",
+   "dinner"
+  ],
+  "servings": 3,
+  "ingredients": [
+   [
+    "potato",
+    600
+   ],
+   [
+    "maida",
+    200
+   ],
+   [
+    "tomato_canned",
+    400
+   ],
+   [
+    "basil",
+    10
+   ],
+   [
+    "parmesan",
+    30
+   ],
+   [
+    "oil_olive",
+    20
+   ]
+  ]
+ },
+ {
+  "id": "it-spaghetti-cozze",
+  "name": "Spaghetti with Mussels",
+  "meal": [
+   "dinner"
+  ],
+  "servings": 2,
+  "ingredients": [
+   [
+    "pasta",
+    160
+   ],
+   [
+    "mussels",
+    400
+   ],
+   [
+    "garlic",
+    10
+   ],
+   [
+    "tomato",
+    200
+   ],
+   [
+    "oil_olive",
+    20
+   ],
+   [
+    "parsley",
+    10
+   ]
+  ],
+  "tags": [
+   "high-protein"
+  ]
+ },
+ {
+  "id": "it-pasta-primavera",
+  "name": "Pasta Primavera",
+  "meal": [
+   "lunch",
+   "dinner"
+  ],
+  "servings": 3,
+  "ingredients": [
+   [
+    "pasta",
+    240
+   ],
+   [
+    "zucchini",
+    200
+   ],
+   [
+    "bell_pepper",
+    150
+   ],
+   [
+    "broccoli",
+    150
+   ],
+   [
+    "tomato",
+    150
+   ],
+   [
+    "oil_olive",
+    25
+   ],
+   [
+    "parmesan",
+    30
+   ],
+   [
+    "garlic",
+    10
+   ]
+  ]
+ },
+ {
+  "id": "it-caponata",
+  "name": "Caponata",
+  "meal": [
+   "lunch",
+   "dinner"
+  ],
+  "servings": 4,
+  "ingredients": [
+   [
+    "eggplant",
+    600
+   ],
+   [
+    "celery",
+    100
+   ],
+   [
+    "onion",
+    100
+   ],
+   [
+    "tomato_canned",
+    300
+   ],
+   [
+    "olives",
+    50
+   ],
+   [
+    "oil_olive",
+    40
+   ],
+   [
+    "vinegar",
+    30
+   ],
+   [
+    "sugar",
+    10
+   ]
+  ],
+  "tags": [
+   "meal-prep",
+   "budget"
+  ]
+ },
+ {
+  "id": "it-tuna-bean-salad",
+  "name": "Tuna and White Bean Salad",
+  "meal": [
+   "lunch"
+  ],
+  "servings": 2,
+  "ingredients": [
+   [
+    "white_beans",
+    400
+   ],
+   [
+    "tuna_canned",
+    160
+   ],
+   [
+    "red_onion",
+    50
+   ],
+   [
+    "oil_olive",
+    20
+   ],
+   [
+    "lemon",
+    30
+   ],
+   [
+    "parsley",
+    10
+   ]
+  ],
+  "tags": [
+   "quick",
+   "high-protein",
+   "budget"
+  ]
+ },
+ {
+  "id": "it-ricotta-honey-toast",
+  "name": "Ricotta and Honey Toast",
+  "meal": [
+   "breakfast"
+  ],
+  "servings": 1,
+  "ingredients": [
+   [
+    "bread_ww",
+    80
+   ],
+   [
+    "ricotta",
+    100
+   ],
+   [
+    "honey",
+    15
+   ]
+  ],
+  "tags": [
+   "quick",
+   "sweet"
+  ]
+ },
+ {
+  "id": "it-ricotta-pear-honey",
+  "name": "Ricotta with Pear and Honey",
+  "meal": [
+   "breakfast",
+   "snack"
+  ],
+  "servings": 1,
+  "ingredients": [
+   [
+    "ricotta",
+    120
+   ],
+   [
+    "pear",
+    120
+   ],
+   [
+    "honey",
+    10
+   ],
+   [
+    "walnuts",
+    15
+   ]
+  ],
+  "tags": [
+   "quick",
+   "sweet"
+  ]
+ },
+ {
+  "id": "it-latte-biscotti",
+  "name": "Caffe Latte with Biscotti",
+  "meal": [
+   "breakfast",
+   "snack"
+  ],
+  "servings": 1,
+  "ingredients": [
+   [
+    "milk_whole",
+    250
+   ],
+   [
+    "coffee",
+    5
+   ],
+   [
+    "maida",
+    30
+   ],
+   [
+    "sugar",
+    15
+   ],
+   [
+    "almonds",
+    15
+   ],
+   [
+    "egg",
+    10
+   ]
+  ],
+  "tags": [
+   "sweet"
+  ]
+ },
+ {
+  "id": "it-fette-pomodoro-uovo",
+  "name": "Egg and Tomato on Toast",
+  "meal": [
+   "breakfast",
+   "lunch"
+  ],
+  "servings": 1,
+  "ingredients": [
+   [
+    "bread_ww",
+    100
+   ],
+   [
+    "egg",
+    100
+   ],
+   [
+    "tomato",
+    100
+   ],
+   [
+    "oil_olive",
+    8
+   ],
+   [
+    "basil",
+    3
+   ]
+  ],
+  "tags": [
+   "quick",
+   "high-protein",
+   "budget"
+  ]
+ },
+ {
+  "id": "it-yogurt-honey-almond",
+  "name": "Yogurt with Honey and Almonds",
+  "meal": [
+   "breakfast",
+   "snack"
+  ],
+  "servings": 1,
+  "ingredients": [
+   [
+    "greek_yogurt",
+    200
+   ],
+   [
+    "honey",
+    12
+   ],
+   [
+    "almonds",
+    15
+   ],
+   [
+    "banana",
+    60
+   ]
+  ],
+  "tags": [
+   "quick",
+   "sweet"
+  ]
+ },
+ {
+  "id": "it-oats-pear",
+  "name": "Cinnamon Pear Porridge",
+  "meal": [
+   "breakfast"
+  ],
+  "servings": 1,
+  "ingredients": [
+   [
+    "oats",
+    60
+   ],
+   [
+    "milk_whole",
+    200
+   ],
+   [
+    "pear",
+    100
+   ],
+   [
+    "honey",
+    10
+   ],
+   [
+    "cinnamon",
+    1
+   ]
+  ],
+  "tags": [
+   "quick",
+   "budget"
+  ]
+ },
+ {
+  "id": "it-crostini-ricotta",
+  "name": "Ricotta Crostini",
+  "meal": [
+   "snack"
+  ],
+  "servings": 1,
+  "ingredients": [
+   [
+    "baguette",
+    50
+   ],
+   [
+    "ricotta",
+    60
+   ],
+   [
+    "honey",
+    8
+   ]
+  ],
+  "tags": [
+   "quick"
+  ]
+ },
+ {
+  "id": "it-caprese-skewers",
+  "name": "Caprese Skewers",
+  "meal": [
+   "snack"
+  ],
+  "servings": 1,
+  "ingredients": [
+   [
+    "tomato",
+    100
+   ],
+   [
+    "mozzarella",
+    50
+   ],
+   [
+    "basil",
+    3
+   ],
+   [
+    "oil_olive",
+    5
+   ]
+  ],
+  "tags": [
+   "quick"
+  ]
+ },
+ {
+  "id": "it-olive-parmigiano",
+  "name": "Olives and Parmesan",
+  "meal": [
+   "snack"
+  ],
+  "servings": 1,
+  "ingredients": [
+   [
+    "olives",
+    60
+   ],
+   [
+    "parmesan",
+    25
+   ]
+  ],
+  "tags": [
+   "quick"
+  ]
+ },
+ {
+  "id": "it-prosciutto-pear",
+  "name": "Ham and Pear Plate",
+  "meal": [
+   "snack"
+  ],
+  "servings": 1,
+  "ingredients": [
+   [
+    "ham",
+    50
+   ],
+   [
+    "pear",
+    150
+   ],
+   [
+    "parmesan",
+    10
+   ]
+  ],
+  "tags": [
+   "quick"
+  ]
+ },
+ {
+  "id": "it-white-bean-bruschetta",
+  "name": "White Bean Bruschetta",
+  "meal": [
+   "snack"
+  ],
+  "servings": 2,
+  "ingredients": [
+   [
+    "white_beans",
+    200
+   ],
+   [
+    "bread_white",
+    100
+   ],
+   [
+    "garlic",
+    5
+   ],
+   [
+    "oil_olive",
+    15
+   ],
+   [
+    "rosemary",
+    1
+   ]
+  ],
+  "tags": [
+   "budget"
+  ]
+ },
+ {
+  "id": "it-lenticchie",
+  "name": "Italian Stewed Lentils",
+  "meal": [
+   "lunch",
+   "dinner"
+  ],
+  "servings": 3,
+  "ingredients": [
+   [
+    "lentils_brown",
+    240
+   ],
+   [
+    "carrot",
+    100
+   ],
+   [
+    "celery",
+    60
+   ],
+   [
+    "onion",
+    100
+   ],
+   [
+    "tomato_canned",
+    200
+   ],
+   [
+    "oil_olive",
+    30
+   ],
+   [
+    "stock",
+    600
+   ],
+   [
+    "bay_leaf",
+    1
+   ]
+  ],
+  "tags": [
+   "meal-prep",
+   "budget"
+  ]
+ },
+ {
+  "id": "it-zuppa-ceci",
+  "name": "Chickpea and Pasta Soup",
+  "meal": [
+   "lunch",
+   "dinner"
+  ],
+  "servings": 3,
+  "ingredients": [
+   [
+    "chickpeas_canned",
+    600
+   ],
+   [
+    "tomato_canned",
+    200
+   ],
+   [
+    "pasta",
+    90
+   ],
+   [
+    "oil_olive",
+    30
+   ],
+   [
+    "garlic",
+    10
+   ],
+   [
+    "rosemary",
+    2
+   ],
+   [
+    "stock",
+    600
+   ]
+  ],
+  "tags": [
+   "meal-prep",
+   "budget"
+  ]
+ },
+ {
+  "id": "it-saltimbocca",
+  "name": "Chicken Saltimbocca",
+  "meal": [
+   "dinner"
+  ],
+  "servings": 2,
+  "ingredients": [
+   [
+    "chicken_breast",
+    360
+   ],
+   [
+    "ham",
+    80
+   ],
+   [
+    "oil_olive",
+    15
+   ],
+   [
+    "butter",
+    15
+   ],
+   [
+    "wine_red",
+    60
+   ]
+  ],
+  "tags": [
+   "high-protein"
+  ]
+ },
+ {
+  "id": "it-meatballs-marinara",
+  "name": "Meatballs in Marinara",
+  "meal": [
+   "lunch",
+   "dinner"
+  ],
+  "servings": 4,
+  "ingredients": [
+   [
+    "beef_mince",
+    400
+   ],
+   [
+    "breadcrumbs",
+    60
+   ],
+   [
+    "egg",
+    50
+   ],
+   [
+    "parmesan",
+    30
+   ],
+   [
+    "tomato_canned",
+    500
+   ],
+   [
+    "garlic",
+    10
+   ],
+   [
+    "onion",
+    80
+   ],
+   [
+    "oil_olive",
+    20
+   ]
+  ],
+  "tags": [
+   "meal-prep",
+   "high-protein"
+  ]
+ },
+ {
+  "id": "it-baked-cod-tomato",
+  "name": "Baked Cod with Tomato and Potato",
+  "meal": [
+   "dinner"
+  ],
+  "servings": 2,
+  "ingredients": [
+   [
+    "cod",
+    400
+   ],
+   [
+    "tomato_canned",
+    300
+   ],
+   [
+    "olives",
+    40
+   ],
+   [
+    "garlic",
+    10
+   ],
+   [
+    "oil_olive",
+    20
+   ],
+   [
+    "potato",
+    300
+   ]
+  ],
+  "tags": [
+   "high-protein"
+  ]
+ },
+ {
+  "id": "it-spinach-ricotta-pasta",
+  "name": "Spinach Ricotta Pasta",
+  "meal": [
+   "lunch",
+   "dinner"
+  ],
+  "servings": 3,
+  "ingredients": [
+   [
+    "pasta",
+    240
+   ],
+   [
+    "spinach",
+    300
+   ],
+   [
+    "ricotta",
+    250
+   ],
+   [
+    "parmesan",
+    30
+   ],
+   [
+    "garlic",
+    10
+   ],
+   [
+    "oil_olive",
+    15
+   ]
+  ],
+  "tags": [
+   "high-protein"
+  ]
+ },
+ {
+  "id": "it-sardine-pasta",
+  "name": "Pasta con le Sarde",
+  "meal": [
+   "dinner"
+  ],
+  "servings": 2,
+  "ingredients": [
+   [
+    "pasta",
+    160
+   ],
+   [
+    "sardine",
+    200
+   ],
+   [
+    "tomato",
+    200
+   ],
+   [
+    "raisins",
+    20
+   ],
+   [
+    "pine_nuts",
+    15
+   ],
+   [
+    "oil_olive",
+    15
+   ]
+  ],
+  "tags": [
+   "high-protein"
+  ]
+ },
+ {
+  "id": "it-pizza-margherita",
+  "name": "Pizza Margherita",
+  "meal": [
+   "lunch",
+   "dinner"
+  ],
+  "servings": 3,
+  "ingredients": [
+   [
+    "maida",
+    250
+   ],
+   [
+    "yeast",
+    4
+   ],
+   [
+    "tomato_puree",
+    150
+   ],
+   [
+    "mozzarella",
+    150
+   ],
+   [
+    "basil",
+    5
+   ],
+   [
+    "oil_olive",
+    15
+   ]
+  ],
+  "tags": [
+   "budget"
+  ]
+ },
+ {
+  "id": "it-uova-purgatorio",
+  "name": "Eggs in Purgatory",
+  "meal": [
+   "breakfast",
+   "lunch",
+   "dinner"
+  ],
+  "servings": 2,
+  "ingredients": [
+   [
+    "egg",
+    250
+   ],
+   [
+    "tomato_canned",
+    400
+   ],
+   [
+    "onion",
+    80
+   ],
+   [
+    "garlic",
+    5
+   ],
+   [
+    "oil_olive",
+    15
+   ],
+   [
+    "bread_ww",
+    80
+   ]
+  ],
+  "tags": [
+   "budget"
+  ]
+ }
+]

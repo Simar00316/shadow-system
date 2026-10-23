@@ -1,0 +1,1643 @@
+[
+ {
+  "id": "gr-chicken-souvlaki-pita",
+  "name": "Chicken Souvlaki Pita",
+  "meal": [
+   "lunch",
+   "dinner"
+  ],
+  "servings": 2,
+  "ingredients": [
+   [
+    "chicken_breast",
+    360
+   ],
+   [
+    "pita",
+    120
+   ],
+   [
+    "tomato",
+    100
+   ],
+   [
+    "red_onion",
+    40
+   ],
+   [
+    "curd",
+    100
+   ],
+   [
+    "cucumber",
+    60
+   ],
+   [
+    "garlic",
+    5
+   ],
+   [
+    "oil_olive",
+    15
+   ],
+   [
+    "oregano",
+    2
+   ]
+  ],
+  "tags": [
+   "high-protein"
+  ]
+ },
+ {
+  "id": "gr-greek-salad",
+  "name": "Greek Salad",
+  "meal": [
+   "lunch",
+   "dinner"
+  ],
+  "servings": 2,
+  "ingredients": [
+   [
+    "tomato",
+    400
+   ],
+   [
+    "cucumber",
+    200
+   ],
+   [
+    "red_onion",
+    60
+   ],
+   [
+    "feta",
+    120
+   ],
+   [
+    "olives",
+    50
+   ],
+   [
+    "oil_olive",
+    20
+   ],
+   [
+    "oregano",
+    2
+   ]
+  ],
+  "tags": [
+   "budget"
+  ]
+ },
+ {
+  "id": "gr-gigantes-plaki",
+  "name": "Gigantes Plaki",
+  "meal": [
+   "lunch",
+   "dinner"
+  ],
+  "servings": 4,
+  "ingredients": [
+   [
+    "white_beans",
+    800
+   ],
+   [
+    "tomato_canned",
+    400
+   ],
+   [
+    "onion",
+    150
+   ],
+   [
+    "carrot",
+    100
+   ],
+   [
+    "celery",
+    50
+   ],
+   [
+    "oil_olive",
+    40
+   ],
+   [
+    "parsley",
+    10
+   ],
+   [
+    "garlic",
+    10
+   ]
+  ],
+  "tags": [
+   "meal-prep",
+   "budget"
+  ]
+ },
+ {
+  "id": "gr-fasolada",
+  "name": "Fasolada",
+  "meal": [
+   "lunch",
+   "dinner"
+  ],
+  "servings": 4,
+  "ingredients": [
+   [
+    "white_beans",
+    800
+   ],
+   [
+    "carrot",
+    150
+   ],
+   [
+    "celery",
+    100
+   ],
+   [
+    "onion",
+    150
+   ],
+   [
+    "tomato_canned",
+    200
+   ],
+   [
+    "oil_olive",
+    40
+   ],
+   [
+    "stock",
+    500
+   ]
+  ],
+  "tags": [
+   "meal-prep",
+   "budget"
+  ]
+ },
+ {
+  "id": "gr-moussaka-light",
+  "name": "Moussaka (lighter)",
+  "meal": [
+   "dinner"
+  ],
+  "servings": 6,
+  "ingredients": [
+   [
+    "eggplant",
+    900
+   ],
+   [
+    "potato",
+    400
+   ],
+   [
+    "turkey_mince",
+    500
+   ],
+   [
+    "tomato_canned",
+    500
+   ],
+   [
+    "onion",
+    150
+   ],
+   [
+    "milk_skim",
+    400
+   ],
+   [
+    "maida",
+    40
+   ],
+   [
+    "parmesan",
+    40
+   ],
+   [
+    "egg",
+    100
+   ],
+   [
+    "oil_olive",
+    40
+   ]
+  ],
+  "tags": [
+   "meal-prep",
+   "high-protein"
+  ]
+ },
+ {
+  "id": "gr-spanakopita-pie",
+  "name": "Spanakopita-style Pie",
+  "meal": [
+   "lunch",
+   "dinner"
+  ],
+  "servings": 6,
+  "ingredients": [
+   [
+    "spinach",
+    800
+   ],
+   [
+    "feta",
+    250
+   ],
+   [
+    "egg",
+    150
+   ],
+   [
+    "onion",
+    150
+   ],
+   [
+    "maida",
+    250
+   ],
+   [
+    "oil_olive",
+    60
+   ],
+   [
+    "parsley",
+    20
+   ]
+  ],
+  "tags": [
+   "meal-prep",
+   "budget"
+  ]
+ },
+ {
+  "id": "gr-yogurt-honey-walnuts",
+  "name": "Greek Yogurt with Honey and Walnuts",
+  "meal": [
+   "breakfast",
+   "snack"
+  ],
+  "servings": 1,
+  "ingredients": [
+   [
+    "greek_yogurt",
+    200
+   ],
+   [
+    "honey",
+    15
+   ],
+   [
+    "walnuts",
+    15
+   ]
+  ],
+  "tags": [
+   "quick",
+   "sweet"
+  ]
+ },
+ {
+  "id": "gr-chicken-gyros-bowl",
+  "name": "Chicken Gyros Bowl",
+  "meal": [
+   "lunch",
+   "dinner"
+  ],
+  "servings": 2,
+  "ingredients": [
+   [
+    "chicken_thigh",
+    360
+   ],
+   [
+    "rice_white",
+    140
+   ],
+   [
+    "curd",
+    120
+   ],
+   [
+    "tomato",
+    150
+   ],
+   [
+    "cucumber",
+    100
+   ],
+   [
+    "red_onion",
+    40
+   ],
+   [
+    "oil_olive",
+    15
+   ],
+   [
+    "oregano",
+    2
+   ],
+   [
+    "paprika",
+    2
+   ]
+  ],
+  "tags": [
+   "high-protein"
+  ]
+ },
+ {
+  "id": "gr-fakes",
+  "name": "Fakes (Lentil Soup)",
+  "meal": [
+   "lunch",
+   "dinner"
+  ],
+  "servings": 4,
+  "ingredients": [
+   [
+    "lentils_brown",
+    320
+   ],
+   [
+    "carrot",
+    100
+   ],
+   [
+    "onion",
+    150
+   ],
+   [
+    "tomato_puree",
+    100
+   ],
+   [
+    "garlic",
+    15
+   ],
+   [
+    "oil_olive",
+    40
+   ],
+   [
+    "bay_leaf",
+    1
+   ],
+   [
+    "vinegar",
+    30
+   ]
+  ],
+  "tags": [
+   "meal-prep",
+   "budget"
+  ]
+ },
+ {
+  "id": "gr-briam",
+  "name": "Briam",
+  "meal": [
+   "dinner"
+  ],
+  "servings": 4,
+  "ingredients": [
+   [
+    "potato",
+    500
+   ],
+   [
+    "zucchini",
+    400
+   ],
+   [
+    "eggplant",
+    300
+   ],
+   [
+    "tomato_canned",
+    400
+   ],
+   [
+    "onion",
+    150
+   ],
+   [
+    "oil_olive",
+    50
+   ],
+   [
+    "parsley",
+    10
+   ]
+  ],
+  "tags": [
+   "budget"
+  ]
+ },
+ {
+  "id": "gr-gemista",
+  "name": "Gemista (Stuffed Peppers)",
+  "meal": [
+   "dinner"
+  ],
+  "servings": 4,
+  "ingredients": [
+   [
+    "bell_pepper",
+    600
+   ],
+   [
+    "rice_white",
+    160
+   ],
+   [
+    "onion",
+    100
+   ],
+   [
+    "tomato",
+    300
+   ],
+   [
+    "parsley",
+    20
+   ],
+   [
+    "mint",
+    10
+   ],
+   [
+    "oil_olive",
+    40
+   ]
+  ],
+  "tags": [
+   "budget"
+  ]
+ },
+ {
+  "id": "gr-lemon-chicken-potatoes",
+  "name": "Lemon Chicken and Potatoes",
+  "meal": [
+   "dinner"
+  ],
+  "servings": 4,
+  "ingredients": [
+   [
+    "chicken_thigh",
+    800
+   ],
+   [
+    "potato",
+    800
+   ],
+   [
+    "lemon",
+    80
+   ],
+   [
+    "oil_olive",
+    40
+   ],
+   [
+    "oregano",
+    2
+   ],
+   [
+    "garlic",
+    15
+   ]
+  ],
+  "tags": [
+   "high-protein"
+  ]
+ },
+ {
+  "id": "gr-fish-plaki",
+  "name": "Fish Plaki",
+  "meal": [
+   "dinner"
+  ],
+  "servings": 2,
+  "ingredients": [
+   [
+    "cod",
+    400
+   ],
+   [
+    "tomato_canned",
+    300
+   ],
+   [
+    "onion",
+    100
+   ],
+   [
+    "potato",
+    300
+   ],
+   [
+    "olives",
+    30
+   ],
+   [
+    "oil_olive",
+    25
+   ],
+   [
+    "garlic",
+    10
+   ]
+  ],
+  "tags": [
+   "high-protein"
+  ]
+ },
+ {
+  "id": "gr-sardines-lemon",
+  "name": "Grilled Sardines with Potatoes",
+  "meal": [
+   "dinner"
+  ],
+  "servings": 2,
+  "ingredients": [
+   [
+    "sardine",
+    400
+   ],
+   [
+    "lemon",
+    60
+   ],
+   [
+    "oil_olive",
+    15
+   ],
+   [
+    "potato",
+    300
+   ],
+   [
+    "tomato",
+    200
+   ]
+  ],
+  "tags": [
+   "high-protein"
+  ]
+ },
+ {
+  "id": "gr-pastitsio",
+  "name": "Pastitsio",
+  "meal": [
+   "dinner"
+  ],
+  "servings": 6,
+  "ingredients": [
+   [
+    "pasta",
+    400
+   ],
+   [
+    "turkey_mince",
+    400
+   ],
+   [
+    "tomato_canned",
+    400
+   ],
+   [
+    "onion",
+    100
+   ],
+   [
+    "milk_skim",
+    500
+   ],
+   [
+    "maida",
+    50
+   ],
+   [
+    "egg",
+    100
+   ],
+   [
+    "parmesan",
+    50
+   ],
+   [
+    "cinnamon",
+    1
+   ]
+  ],
+  "tags": [
+   "meal-prep",
+   "high-protein"
+  ]
+ },
+ {
+  "id": "gr-tzatziki-pita",
+  "name": "Tzatziki with Pita",
+  "meal": [
+   "snack"
+  ],
+  "servings": 2,
+  "ingredients": [
+   [
+    "curd",
+    200
+   ],
+   [
+    "cucumber",
+    150
+   ],
+   [
+    "garlic",
+    5
+   ],
+   [
+    "oil_olive",
+    10
+   ],
+   [
+    "pita",
+    110
+   ]
+  ],
+  "tags": [
+   "quick",
+   "budget"
+  ]
+ },
+ {
+  "id": "gr-fava-santorini",
+  "name": "Fava Santorini",
+  "meal": [
+   "lunch",
+   "dinner"
+  ],
+  "servings": 3,
+  "ingredients": [
+   [
+    "peas_split",
+    250
+   ],
+   [
+    "onion",
+    100
+   ],
+   [
+    "oil_olive",
+    40
+   ],
+   [
+    "lemon",
+    30
+   ]
+  ],
+  "tags": [
+   "budget"
+  ]
+ },
+ {
+  "id": "gr-revithia",
+  "name": "Revithia (Chickpea Stew)",
+  "meal": [
+   "lunch",
+   "dinner"
+  ],
+  "servings": 4,
+  "ingredients": [
+   [
+    "chickpeas",
+    250
+   ],
+   [
+    "onion",
+    150
+   ],
+   [
+    "oil_olive",
+    40
+   ],
+   [
+    "lemon",
+    40
+   ],
+   [
+    "rosemary",
+    2
+   ]
+  ],
+  "tags": [
+   "meal-prep",
+   "budget"
+  ]
+ },
+ {
+  "id": "gr-spanakorizo",
+  "name": "Spanakorizo",
+  "meal": [
+   "lunch",
+   "dinner"
+  ],
+  "servings": 4,
+  "ingredients": [
+   [
+    "rice_white",
+    280
+   ],
+   [
+    "spinach",
+    600
+   ],
+   [
+    "onion",
+    120
+   ],
+   [
+    "tomato_paste",
+    20
+   ],
+   [
+    "oil_olive",
+    40
+   ],
+   [
+    "lemon",
+    40
+   ]
+  ],
+  "tags": [
+   "budget"
+  ]
+ },
+ {
+  "id": "gr-strapatsada",
+  "name": "Strapatsada",
+  "meal": [
+   "breakfast",
+   "lunch"
+  ],
+  "servings": 2,
+  "ingredients": [
+   [
+    "egg",
+    200
+   ],
+   [
+    "tomato",
+    300
+   ],
+   [
+    "feta",
+    60
+   ],
+   [
+    "oil_olive",
+    15
+   ],
+   [
+    "bread_ww",
+    100
+   ]
+  ],
+  "tags": [
+   "budget"
+  ]
+ },
+ {
+  "id": "gr-omelette-feta",
+  "name": "Feta and Spinach Omelette",
+  "meal": [
+   "breakfast",
+   "lunch"
+  ],
+  "servings": 1,
+  "ingredients": [
+   [
+    "egg",
+    150
+   ],
+   [
+    "feta",
+    40
+   ],
+   [
+    "spinach",
+    40
+   ],
+   [
+    "oil_olive",
+    8
+   ]
+  ],
+  "tags": [
+   "quick",
+   "high-protein",
+   "budget"
+  ]
+ },
+ {
+  "id": "gr-oats-yogurt",
+  "name": "Honey Yogurt Oats",
+  "meal": [
+   "breakfast"
+  ],
+  "servings": 1,
+  "ingredients": [
+   [
+    "greek_yogurt",
+    150
+   ],
+   [
+    "oats",
+    40
+   ],
+   [
+    "honey",
+    10
+   ],
+   [
+    "banana",
+    80
+   ]
+  ],
+  "tags": [
+   "quick",
+   "sweet"
+  ]
+ },
+ {
+  "id": "gr-koulouri-feta",
+  "name": "Koulouri with Feta",
+  "meal": [
+   "breakfast",
+   "snack"
+  ],
+  "servings": 1,
+  "ingredients": [
+   [
+    "bread_white",
+    90
+   ],
+   [
+    "sesame",
+    8
+   ],
+   [
+    "feta",
+    40
+   ],
+   [
+    "cucumber",
+    50
+   ]
+  ],
+  "tags": [
+   "quick",
+   "budget"
+  ]
+ },
+ {
+  "id": "gr-feta-tomato-pita",
+  "name": "Feta Tomato Pita",
+  "meal": [
+   "breakfast",
+   "lunch"
+  ],
+  "servings": 1,
+  "ingredients": [
+   [
+    "pita",
+    110
+   ],
+   [
+    "feta",
+    50
+   ],
+   [
+    "tomato",
+    100
+   ],
+   [
+    "oil_olive",
+    8
+   ]
+  ],
+  "tags": [
+   "quick",
+   "budget"
+  ]
+ },
+ {
+  "id": "gr-fruit-yogurt-bowl",
+  "name": "Fruit and Yogurt Bowl",
+  "meal": [
+   "breakfast",
+   "snack"
+  ],
+  "servings": 1,
+  "ingredients": [
+   [
+    "greek_yogurt",
+    200
+   ],
+   [
+    "orange",
+    100
+   ],
+   [
+    "pomegranate",
+    50
+   ],
+   [
+    "honey",
+    8
+   ],
+   [
+    "walnuts",
+    10
+   ]
+  ],
+  "tags": [
+   "quick",
+   "sweet"
+  ]
+ },
+ {
+  "id": "gr-egg-feta-wrap",
+  "name": "Egg and Feta Pita Wrap",
+  "meal": [
+   "breakfast",
+   "lunch"
+  ],
+  "servings": 1,
+  "ingredients": [
+   [
+    "egg",
+    100
+   ],
+   [
+    "feta",
+    30
+   ],
+   [
+    "pita",
+    70
+   ],
+   [
+    "tomato",
+    60
+   ],
+   [
+    "oil_olive",
+    5
+   ]
+  ],
+  "tags": [
+   "quick",
+   "budget"
+  ]
+ },
+ {
+  "id": "gr-watermelon-feta",
+  "name": "Watermelon and Feta",
+  "meal": [
+   "snack"
+  ],
+  "servings": 2,
+  "ingredients": [
+   [
+    "watermelon",
+    400
+   ],
+   [
+    "feta",
+    80
+   ],
+   [
+    "mint",
+    5
+   ]
+  ],
+  "tags": [
+   "quick",
+   "budget"
+  ]
+ },
+ {
+  "id": "gr-olives-feta-snack",
+  "name": "Olives, Feta and Bread",
+  "meal": [
+   "snack"
+  ],
+  "servings": 1,
+  "ingredients": [
+   [
+    "olives",
+    50
+   ],
+   [
+    "feta",
+    40
+   ],
+   [
+    "bread_ww",
+    40
+   ]
+  ],
+  "tags": [
+   "quick"
+  ]
+ },
+ {
+  "id": "gr-dried-fruit-nuts",
+  "name": "Dried Fruit and Nuts",
+  "meal": [
+   "snack"
+  ],
+  "servings": 1,
+  "ingredients": [
+   [
+    "almonds",
+    25
+   ],
+   [
+    "apricot_dried",
+    30
+   ],
+   [
+    "walnuts",
+    10
+   ]
+  ],
+  "tags": [
+   "quick"
+  ]
+ },
+ {
+  "id": "gr-halloumi-tomato",
+  "name": "Grilled Halloumi and Tomato",
+  "meal": [
+   "lunch",
+   "snack"
+  ],
+  "servings": 1,
+  "ingredients": [
+   [
+    "halloumi",
+    80
+   ],
+   [
+    "tomato",
+    150
+   ],
+   [
+    "oil_olive",
+    5
+   ]
+  ],
+  "tags": [
+   "quick"
+  ]
+ },
+ {
+  "id": "gr-lamb-kleftiko",
+  "name": "Lamb Kleftiko",
+  "meal": [
+   "dinner"
+  ],
+  "servings": 4,
+  "ingredients": [
+   [
+    "lamb",
+    700
+   ],
+   [
+    "potato",
+    600
+   ],
+   [
+    "onion",
+    100
+   ],
+   [
+    "lemon",
+    40
+   ],
+   [
+    "oil_olive",
+    20
+   ],
+   [
+    "oregano",
+    2
+   ],
+   [
+    "garlic",
+    15
+   ],
+   [
+    "feta",
+    80
+   ]
+  ],
+  "tags": [
+   "high-protein"
+  ]
+ },
+ {
+  "id": "gr-keftedes",
+  "name": "Keftedes with Potatoes",
+  "meal": [
+   "dinner"
+  ],
+  "servings": 4,
+  "ingredients": [
+   [
+    "beef_mince",
+    450
+   ],
+   [
+    "breadcrumbs",
+    50
+   ],
+   [
+    "egg",
+    50
+   ],
+   [
+    "onion",
+    80
+   ],
+   [
+    "mint",
+    10
+   ],
+   [
+    "oil_olive",
+    20
+   ],
+   [
+    "potato",
+    500
+   ]
+  ],
+  "tags": [
+   "high-protein"
+  ]
+ },
+ {
+  "id": "gr-chicken-souvlaki-salad",
+  "name": "Souvlaki Salad",
+  "meal": [
+   "lunch",
+   "dinner"
+  ],
+  "servings": 2,
+  "ingredients": [
+   [
+    "chicken_breast",
+    360
+   ],
+   [
+    "lettuce",
+    150
+   ],
+   [
+    "tomato",
+    150
+   ],
+   [
+    "cucumber",
+    100
+   ],
+   [
+    "feta",
+    60
+   ],
+   [
+    "olives",
+    30
+   ],
+   [
+    "oil_olive",
+    15
+   ],
+   [
+    "lemon",
+    30
+   ]
+  ],
+  "tags": [
+   "high-protein"
+  ]
+ },
+ {
+  "id": "gr-shrimp-saganaki",
+  "name": "Shrimp Saganaki",
+  "meal": [
+   "dinner"
+  ],
+  "servings": 2,
+  "ingredients": [
+   [
+    "prawns",
+    360
+   ],
+   [
+    "tomato_canned",
+    400
+   ],
+   [
+    "feta",
+    100
+   ],
+   [
+    "onion",
+    80
+   ],
+   [
+    "oil_olive",
+    20
+   ],
+   [
+    "garlic",
+    10
+   ]
+  ],
+  "tags": [
+   "high-protein"
+  ]
+ },
+ {
+  "id": "gr-kalamari-tomato",
+  "name": "Squid with Tomato and Rice",
+  "meal": [
+   "dinner"
+  ],
+  "servings": 2,
+  "ingredients": [
+   [
+    "squid",
+    360
+   ],
+   [
+    "tomato_canned",
+    300
+   ],
+   [
+    "onion",
+    100
+   ],
+   [
+    "rice_white",
+    140
+   ],
+   [
+    "oil_olive",
+    25
+   ],
+   [
+    "wine_red",
+    60
+   ]
+  ],
+  "tags": [
+   "high-protein"
+  ]
+ },
+ {
+  "id": "gr-chickpea-salad",
+  "name": "Greek Chickpea Salad",
+  "meal": [
+   "lunch"
+  ],
+  "servings": 2,
+  "ingredients": [
+   [
+    "chickpeas_canned",
+    500
+   ],
+   [
+    "tomato",
+    200
+   ],
+   [
+    "cucumber",
+    150
+   ],
+   [
+    "red_onion",
+    50
+   ],
+   [
+    "feta",
+    60
+   ],
+   [
+    "olives",
+    30
+   ],
+   [
+    "oil_olive",
+    20
+   ],
+   [
+    "lemon",
+    30
+   ]
+  ],
+  "tags": [
+   "budget"
+  ]
+ },
+ {
+  "id": "gr-giouvetsi",
+  "name": "Beef Giouvetsi",
+  "meal": [
+   "dinner"
+  ],
+  "servings": 4,
+  "ingredients": [
+   [
+    "beef_stew",
+    500
+   ],
+   [
+    "pasta",
+    280
+   ],
+   [
+    "tomato_canned",
+    400
+   ],
+   [
+    "onion",
+    100
+   ],
+   [
+    "oil_olive",
+    25
+   ],
+   [
+    "cinnamon",
+    1
+   ]
+  ],
+  "tags": [
+   "high-protein"
+  ]
+ },
+ {
+  "id": "gr-fasolakia",
+  "name": "Fasolakia Lathera",
+  "meal": [
+   "dinner"
+  ],
+  "servings": 4,
+  "ingredients": [
+   [
+    "green_beans",
+    800
+   ],
+   [
+    "potato",
+    400
+   ],
+   [
+    "tomato_canned",
+    400
+   ],
+   [
+    "onion",
+    150
+   ],
+   [
+    "oil_olive",
+    50
+   ]
+  ],
+  "tags": [
+   "budget"
+  ]
+ },
+ {
+  "id": "gr-bamies",
+  "name": "Bamies Lathera",
+  "meal": [
+   "dinner"
+  ],
+  "servings": 4,
+  "ingredients": [
+   [
+    "okra",
+    700
+   ],
+   [
+    "tomato_canned",
+    400
+   ],
+   [
+    "onion",
+    150
+   ],
+   [
+    "potato",
+    300
+   ],
+   [
+    "oil_olive",
+    40
+   ]
+  ],
+  "tags": [
+   "budget"
+  ]
+ },
+ {
+  "id": "gr-orzo-tomato",
+  "name": "Orzo with Tomato and Feta",
+  "meal": [
+   "lunch",
+   "dinner"
+  ],
+  "servings": 3,
+  "ingredients": [
+   [
+    "pasta",
+    240
+   ],
+   [
+    "tomato_canned",
+    400
+   ],
+   [
+    "feta",
+    60
+   ],
+   [
+    "oil_olive",
+    25
+   ],
+   [
+    "onion",
+    80
+   ]
+  ],
+  "tags": [
+   "budget"
+  ]
+ },
+ {
+  "id": "gr-rice-pudding",
+  "name": "Rizogalo",
+  "meal": [
+   "breakfast",
+   "snack"
+  ],
+  "servings": 4,
+  "ingredients": [
+   [
+    "rice_white",
+    120
+   ],
+   [
+    "milk_whole",
+    800
+   ],
+   [
+    "sugar",
+    60
+   ],
+   [
+    "cinnamon",
+    2
+   ]
+  ],
+  "tags": [
+   "sweet",
+   "budget"
+  ]
+ },
+ {
+  "id": "gr-melitzanosalata",
+  "name": "Melitzanosalata with Pita",
+  "meal": [
+   "snack"
+  ],
+  "servings": 3,
+  "ingredients": [
+   [
+    "eggplant",
+    600
+   ],
+   [
+    "oil_olive",
+    30
+   ],
+   [
+    "garlic",
+    10
+   ],
+   [
+    "lemon",
+    30
+   ],
+   [
+    "pita",
+    150
+   ]
+  ],
+  "tags": [
+   "budget"
+  ]
+ },
+ {
+  "id": "gr-pork-souvlaki",
+  "name": "Pork Souvlaki Plate",
+  "meal": [
+   "dinner"
+  ],
+  "servings": 2,
+  "ingredients": [
+   [
+    "pork_loin",
+    360
+   ],
+   [
+    "pita",
+    120
+   ],
+   [
+    "tomato",
+    150
+   ],
+   [
+    "red_onion",
+    40
+   ],
+   [
+    "oil_olive",
+    15
+   ],
+   [
+    "oregano",
+    2
+   ],
+   [
+    "lemon",
+    30
+   ]
+  ],
+  "tags": [
+   "high-protein"
+  ]
+ },
+ {
+  "id": "gr-avgolemono",
+  "name": "Avgolemono Soup",
+  "meal": [
+   "lunch",
+   "dinner"
+  ],
+  "servings": 4,
+  "ingredients": [
+   [
+    "chicken_breast",
+    300
+   ],
+   [
+    "rice_white",
+    100
+   ],
+   [
+    "egg",
+    150
+   ],
+   [
+    "lemon",
+    80
+   ],
+   [
+    "stock",
+    1200
+   ],
+   [
+    "carrot",
+    80
+   ]
+  ]
+ }
+]

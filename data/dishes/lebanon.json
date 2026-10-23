@@ -1,0 +1,1679 @@
+[
+ {
+  "id": "lb-hummus-pita",
+  "name": "Hummus with Pita",
+  "meal": [
+   "snack",
+   "lunch"
+  ],
+  "servings": 6,
+  "ingredients": [
+   [
+    "chickpeas_canned",
+    500
+   ],
+   [
+    "tahini",
+    80
+   ],
+   [
+    "lemon",
+    50
+   ],
+   [
+    "garlic",
+    10
+   ],
+   [
+    "oil_olive",
+    30
+   ],
+   [
+    "cumin",
+    2
+   ],
+   [
+    "pita",
+    200
+   ]
+  ],
+  "tags": [
+   "budget"
+  ]
+ },
+ {
+  "id": "lb-falafel-plate",
+  "name": "Falafel Plate",
+  "meal": [
+   "lunch",
+   "dinner"
+  ],
+  "servings": 3,
+  "ingredients": [
+   [
+    "falafel_mix",
+    200
+   ],
+   [
+    "oil_veg",
+    60
+   ],
+   [
+    "pita",
+    180
+   ],
+   [
+    "tomato",
+    200
+   ],
+   [
+    "cucumber",
+    100
+   ],
+   [
+    "tahini",
+    40
+   ],
+   [
+    "lemon",
+    30
+   ],
+   [
+    "parsley",
+    20
+   ],
+   [
+    "pickles",
+    40
+   ]
+  ],
+  "tags": [
+   "budget"
+  ]
+ },
+ {
+  "id": "lb-tabbouleh",
+  "name": "Tabbouleh",
+  "meal": [
+   "lunch",
+   "snack"
+  ],
+  "servings": 3,
+  "ingredients": [
+   [
+    "parsley",
+    200
+   ],
+   [
+    "bulgur",
+    60
+   ],
+   [
+    "tomato",
+    300
+   ],
+   [
+    "mint",
+    20
+   ],
+   [
+    "spring_onion",
+    50
+   ],
+   [
+    "lemon",
+    60
+   ],
+   [
+    "oil_olive",
+    45
+   ]
+  ]
+ },
+ {
+  "id": "lb-fattoush",
+  "name": "Fattoush",
+  "meal": [
+   "lunch",
+   "dinner"
+  ],
+  "servings": 3,
+  "ingredients": [
+   [
+    "lettuce",
+    250
+   ],
+   [
+    "tomato",
+    300
+   ],
+   [
+    "cucumber",
+    200
+   ],
+   [
+    "radish",
+    80
+   ],
+   [
+    "pita",
+    120
+   ],
+   [
+    "sumac",
+    5
+   ],
+   [
+    "mint",
+    10
+   ],
+   [
+    "oil_olive",
+    40
+   ],
+   [
+    "lemon",
+    40
+   ]
+  ],
+  "tags": [
+   "budget"
+  ]
+ },
+ {
+  "id": "lb-mujaddara",
+  "name": "Mujaddara",
+  "meal": [
+   "lunch",
+   "dinner"
+  ],
+  "servings": 4,
+  "ingredients": [
+   [
+    "lentils_brown",
+    250
+   ],
+   [
+    "rice_white",
+    150
+   ],
+   [
+    "onion",
+    500
+   ],
+   [
+    "oil_veg",
+    50
+   ],
+   [
+    "cumin",
+    3
+   ]
+  ],
+  "tags": [
+   "meal-prep",
+   "budget"
+  ]
+ },
+ {
+  "id": "lb-shish-tawook",
+  "name": "Shish Tawook with Rice",
+  "meal": [
+   "lunch",
+   "dinner"
+  ],
+  "servings": 2,
+  "ingredients": [
+   [
+    "chicken_breast",
+    360
+   ],
+   [
+    "curd",
+    100
+   ],
+   [
+    "lemon",
+    30
+   ],
+   [
+    "garlic",
+    10
+   ],
+   [
+    "tomato_paste",
+    15
+   ],
+   [
+    "oil_olive",
+    15
+   ],
+   [
+    "paprika",
+    3
+   ],
+   [
+    "rice_white",
+    140
+   ]
+  ],
+  "tags": [
+   "high-protein"
+  ]
+ },
+ {
+  "id": "lb-ful-medames",
+  "name": "Ful Medames",
+  "meal": [
+   "breakfast",
+   "lunch"
+  ],
+  "servings": 2,
+  "ingredients": [
+   [
+    "fava",
+    500
+   ],
+   [
+    "oil_olive",
+    20
+   ],
+   [
+    "lemon",
+    30
+   ],
+   [
+    "garlic",
+    5
+   ],
+   [
+    "cumin",
+    2
+   ],
+   [
+    "tomato",
+    100
+   ],
+   [
+    "parsley",
+    10
+   ],
+   [
+    "pita",
+    120
+   ]
+  ],
+  "tags": [
+   "budget"
+  ]
+ },
+ {
+  "id": "lb-labneh-toast",
+  "name": "Labneh with Zaatar and Pita",
+  "meal": [
+   "breakfast",
+   "snack"
+  ],
+  "servings": 1,
+  "ingredients": [
+   [
+    "greek_yogurt",
+    150
+   ],
+   [
+    "oil_olive",
+    8
+   ],
+   [
+    "za_atar",
+    3
+   ],
+   [
+    "pita",
+    60
+   ],
+   [
+    "cucumber",
+    60
+   ]
+  ],
+  "tags": [
+   "quick"
+  ]
+ },
+ {
+  "id": "lb-manakish-zaatar",
+  "name": "Manakish Zaatar",
+  "meal": [
+   "breakfast",
+   "snack",
+   "lunch"
+  ],
+  "servings": 3,
+  "ingredients": [
+   [
+    "maida",
+    200
+   ],
+   [
+    "yeast",
+    3
+   ],
+   [
+    "za_atar",
+    20
+   ],
+   [
+    "oil_olive",
+    30
+   ]
+  ],
+  "tags": [
+   "budget"
+  ]
+ },
+ {
+  "id": "lb-shakshuka",
+  "name": "Shakshuka",
+  "meal": [
+   "breakfast",
+   "lunch",
+   "dinner"
+  ],
+  "servings": 2,
+  "ingredients": [
+   [
+    "egg",
+    250
+   ],
+   [
+    "tomato_canned",
+    400
+   ],
+   [
+    "bell_pepper",
+    150
+   ],
+   [
+    "onion",
+    100
+   ],
+   [
+    "garlic",
+    10
+   ],
+   [
+    "oil_olive",
+    20
+   ],
+   [
+    "cumin",
+    2
+   ],
+   [
+    "paprika",
+    2
+   ],
+   [
+    "pita",
+    100
+   ]
+  ],
+  "tags": [
+   "budget"
+  ]
+ },
+ {
+  "id": "lb-kofta-rice",
+  "name": "Kofta with Rice",
+  "meal": [
+   "lunch",
+   "dinner"
+  ],
+  "servings": 4,
+  "ingredients": [
+   [
+    "beef_mince",
+    480
+   ],
+   [
+    "onion",
+    100
+   ],
+   [
+    "parsley",
+    30
+   ],
+   [
+    "cumin",
+    3
+   ],
+   [
+    "cinnamon",
+    1
+   ],
+   [
+    "rice_white",
+    240
+   ],
+   [
+    "tomato",
+    200
+   ]
+  ],
+  "tags": [
+   "meal-prep",
+   "high-protein"
+  ]
+ },
+ {
+  "id": "lb-lentil-soup",
+  "name": "Shorbet Adas",
+  "meal": [
+   "lunch",
+   "dinner"
+  ],
+  "servings": 4,
+  "ingredients": [
+   [
+    "masoor_dal",
+    250
+   ],
+   [
+    "onion",
+    150
+   ],
+   [
+    "carrot",
+    100
+   ],
+   [
+    "potato",
+    150
+   ],
+   [
+    "cumin",
+    3
+   ],
+   [
+    "lemon",
+    40
+   ],
+   [
+    "oil_olive",
+    30
+   ],
+   [
+    "stock",
+    1000
+   ]
+  ],
+  "tags": [
+   "meal-prep",
+   "budget"
+  ]
+ },
+ {
+  "id": "lb-balila",
+  "name": "Balila (Warm Chickpeas)",
+  "meal": [
+   "lunch",
+   "snack"
+  ],
+  "servings": 3,
+  "ingredients": [
+   [
+    "chickpeas_canned",
+    600
+   ],
+   [
+    "lemon",
+    40
+   ],
+   [
+    "oil_olive",
+    25
+   ],
+   [
+    "cumin",
+    2
+   ],
+   [
+    "parsley",
+    15
+   ],
+   [
+    "garlic",
+    5
+   ]
+  ],
+  "tags": [
+   "budget"
+  ]
+ },
+ {
+  "id": "lb-baba-ghanoush",
+  "name": "Baba Ghanoush with Pita",
+  "meal": [
+   "snack"
+  ],
+  "servings": 4,
+  "ingredients": [
+   [
+    "eggplant",
+    800
+   ],
+   [
+    "tahini",
+    60
+   ],
+   [
+    "lemon",
+    40
+   ],
+   [
+    "garlic",
+    10
+   ],
+   [
+    "oil_olive",
+    20
+   ],
+   [
+    "pita",
+    160
+   ]
+  ],
+  "tags": [
+   "budget"
+  ]
+ },
+ {
+  "id": "lb-muhammara",
+  "name": "Muhammara",
+  "meal": [
+   "snack"
+  ],
+  "servings": 5,
+  "ingredients": [
+   [
+    "bell_pepper",
+    400
+   ],
+   [
+    "walnuts",
+    100
+   ],
+   [
+    "breadcrumbs",
+    40
+   ],
+   [
+    "oil_olive",
+    30
+   ],
+   [
+    "tomato_paste",
+    20
+   ],
+   [
+    "lemon",
+    20
+   ]
+  ]
+ },
+ {
+  "id": "lb-kibbeh-baked",
+  "name": "Baked Kibbeh",
+  "meal": [
+   "dinner"
+  ],
+  "servings": 4,
+  "ingredients": [
+   [
+    "bulgur",
+    200
+   ],
+   [
+    "beef_mince",
+    450
+   ],
+   [
+    "onion",
+    100
+   ],
+   [
+    "pine_nuts",
+    30
+   ],
+   [
+    "oil_olive",
+    20
+   ]
+  ],
+  "tags": [
+   "high-protein"
+  ]
+ },
+ {
+  "id": "lb-chicken-shawarma-bowl",
+  "name": "Chicken Shawarma Bowl",
+  "meal": [
+   "lunch",
+   "dinner"
+  ],
+  "servings": 2,
+  "ingredients": [
+   [
+    "chicken_thigh",
+    360
+   ],
+   [
+    "rice_white",
+    140
+   ],
+   [
+    "tomato",
+    100
+   ],
+   [
+    "cucumber",
+    100
+   ],
+   [
+    "greek_yogurt",
+    80
+   ],
+   [
+    "paprika",
+    3
+   ],
+   [
+    "cumin",
+    2
+   ],
+   [
+    "oil_olive",
+    15
+   ],
+   [
+    "pickles",
+    30
+   ]
+  ],
+  "tags": [
+   "high-protein"
+  ]
+ },
+ {
+  "id": "lb-fatteh-hummus",
+  "name": "Fatteh with Chickpeas",
+  "meal": [
+   "lunch",
+   "dinner"
+  ],
+  "servings": 3,
+  "ingredients": [
+   [
+    "chickpeas_canned",
+    500
+   ],
+   [
+    "pita",
+    150
+   ],
+   [
+    "curd",
+    300
+   ],
+   [
+    "tahini",
+    40
+   ],
+   [
+    "garlic",
+    10
+   ],
+   [
+    "pine_nuts",
+    20
+   ],
+   [
+    "oil_olive",
+    15
+   ]
+  ]
+ },
+ {
+  "id": "lb-sayadiyeh",
+  "name": "Sayadiyeh (Fish and Spiced Rice)",
+  "meal": [
+   "dinner"
+  ],
+  "servings": 3,
+  "ingredients": [
+   [
+    "tilapia",
+    450
+   ],
+   [
+    "rice_white",
+    240
+   ],
+   [
+    "onion",
+    300
+   ],
+   [
+    "oil_olive",
+    40
+   ],
+   [
+    "cumin",
+    3
+   ],
+   [
+    "pine_nuts",
+    15
+   ]
+  ],
+  "tags": [
+   "high-protein"
+  ]
+ },
+ {
+  "id": "lb-samke-harra",
+  "name": "Samke Harra",
+  "meal": [
+   "dinner"
+  ],
+  "servings": 2,
+  "ingredients": [
+   [
+    "cod",
+    400
+   ],
+   [
+    "tahini",
+    40
+   ],
+   [
+    "lemon",
+    40
+   ],
+   [
+    "garlic",
+    10
+   ],
+   [
+    "chili_powder",
+    2
+   ],
+   [
+    "coriander_leaves",
+    20
+   ],
+   [
+    "walnuts",
+    20
+   ]
+  ],
+  "tags": [
+   "high-protein"
+  ]
+ },
+ {
+  "id": "lb-spinach-fatayer",
+  "name": "Spinach Fatayer",
+  "meal": [
+   "lunch",
+   "snack"
+  ],
+  "servings": 4,
+  "ingredients": [
+   [
+    "maida",
+    250
+   ],
+   [
+    "yeast",
+    3
+   ],
+   [
+    "spinach",
+    400
+   ],
+   [
+    "onion",
+    100
+   ],
+   [
+    "sumac",
+    4
+   ],
+   [
+    "lemon",
+    40
+   ],
+   [
+    "oil_olive",
+    50
+   ]
+  ],
+  "tags": [
+   "budget"
+  ]
+ },
+ {
+  "id": "lb-cheese-manakish",
+  "name": "Cheese Manakish",
+  "meal": [
+   "breakfast",
+   "snack",
+   "lunch"
+  ],
+  "servings": 4,
+  "ingredients": [
+   [
+    "maida",
+    250
+   ],
+   [
+    "yeast",
+    3
+   ],
+   [
+    "mozzarella",
+    150
+   ],
+   [
+    "oil_olive",
+    15
+   ]
+  ]
+ },
+ {
+  "id": "lb-egg-pita-wrap",
+  "name": "Egg and Labneh Pita Wrap",
+  "meal": [
+   "breakfast"
+  ],
+  "servings": 1,
+  "ingredients": [
+   [
+    "pita",
+    90
+   ],
+   [
+    "egg",
+    100
+   ],
+   [
+    "tomato",
+    60
+   ],
+   [
+    "mint",
+    4
+   ],
+   [
+    "greek_yogurt",
+    40
+   ]
+  ],
+  "tags": [
+   "quick",
+   "high-protein",
+   "budget"
+  ]
+ },
+ {
+  "id": "lb-lahm-bi-ajeen",
+  "name": "Lahm bi Ajeen",
+  "meal": [
+   "lunch",
+   "dinner"
+  ],
+  "servings": 4,
+  "ingredients": [
+   [
+    "maida",
+    250
+   ],
+   [
+    "yeast",
+    3
+   ],
+   [
+    "beef_mince",
+    250
+   ],
+   [
+    "onion",
+    100
+   ],
+   [
+    "tomato",
+    150
+   ],
+   [
+    "tomato_paste",
+    20
+   ],
+   [
+    "oil_olive",
+    15
+   ]
+  ]
+ },
+ {
+  "id": "lb-fasoulia",
+  "name": "Fasoulia with Beef and Rice",
+  "meal": [
+   "dinner"
+  ],
+  "servings": 4,
+  "ingredients": [
+   [
+    "green_beans",
+    600
+   ],
+   [
+    "beef_stew",
+    400
+   ],
+   [
+    "tomato_canned",
+    400
+   ],
+   [
+    "onion",
+    150
+   ],
+   [
+    "garlic",
+    15
+   ],
+   [
+    "oil_olive",
+    30
+   ],
+   [
+    "rice_white",
+    240
+   ]
+  ],
+  "tags": [
+   "high-protein"
+  ]
+ },
+ {
+  "id": "lb-bamieh",
+  "name": "Bamieh bi Zeit",
+  "meal": [
+   "dinner"
+  ],
+  "servings": 4,
+  "ingredients": [
+   [
+    "okra",
+    600
+   ],
+   [
+    "tomato_canned",
+    400
+   ],
+   [
+    "onion",
+    150
+   ],
+   [
+    "garlic",
+    20
+   ],
+   [
+    "oil_olive",
+    40
+   ],
+   [
+    "coriander_leaves",
+    30
+   ],
+   [
+    "rice_white",
+    240
+   ]
+  ],
+  "tags": [
+   "budget"
+  ]
+ },
+ {
+  "id": "lb-maghmour",
+  "name": "Maghmour (Eggplant and Chickpea Stew)",
+  "meal": [
+   "lunch",
+   "dinner"
+  ],
+  "servings": 4,
+  "ingredients": [
+   [
+    "eggplant",
+    800
+   ],
+   [
+    "chickpeas_canned",
+    400
+   ],
+   [
+    "tomato_canned",
+    400
+   ],
+   [
+    "onion",
+    150
+   ],
+   [
+    "oil_olive",
+    40
+   ],
+   [
+    "garlic",
+    10
+   ]
+  ],
+  "tags": [
+   "meal-prep",
+   "budget"
+  ]
+ },
+ {
+  "id": "lb-kousa-mahshi",
+  "name": "Kousa Mahshi",
+  "meal": [
+   "dinner"
+  ],
+  "servings": 4,
+  "ingredients": [
+   [
+    "zucchini",
+    800
+   ],
+   [
+    "beef_mince",
+    400
+   ],
+   [
+    "rice_white",
+    100
+   ],
+   [
+    "tomato_paste",
+    40
+   ],
+   [
+    "mint",
+    10
+   ],
+   [
+    "lemon",
+    30
+   ]
+  ]
+ },
+ {
+  "id": "lb-lamb-kebab-plate",
+  "name": "Lamb Kebab Plate",
+  "meal": [
+   "dinner"
+  ],
+  "servings": 2,
+  "ingredients": [
+   [
+    "lamb",
+    360
+   ],
+   [
+    "onion",
+    60
+   ],
+   [
+    "parsley",
+    10
+   ],
+   [
+    "tomato",
+    200
+   ],
+   [
+    "pita",
+    120
+   ],
+   [
+    "sumac",
+    2
+   ]
+  ],
+  "tags": [
+   "high-protein"
+  ]
+ },
+ {
+  "id": "lb-chicken-kofta",
+  "name": "Chicken Kofta with Rice",
+  "meal": [
+   "lunch",
+   "dinner"
+  ],
+  "servings": 3,
+  "ingredients": [
+   [
+    "chicken_mince",
+    500
+   ],
+   [
+    "onion",
+    80
+   ],
+   [
+    "parsley",
+    30
+   ],
+   [
+    "cumin",
+    3
+   ],
+   [
+    "rice_white",
+    210
+   ]
+  ],
+  "tags": [
+   "high-protein"
+  ]
+ },
+ {
+  "id": "lb-bulgur-chicken-pilaf",
+  "name": "Bulgur Chicken Pilaf",
+  "meal": [
+   "dinner"
+  ],
+  "servings": 3,
+  "ingredients": [
+   [
+    "bulgur",
+    240
+   ],
+   [
+    "chicken_thigh",
+    450
+   ],
+   [
+    "onion",
+    100
+   ],
+   [
+    "tomato_paste",
+    20
+   ],
+   [
+    "oil_olive",
+    20
+   ],
+   [
+    "cinnamon",
+    1
+   ],
+   [
+    "almonds",
+    25
+   ]
+  ],
+  "tags": [
+   "high-protein"
+  ]
+ },
+ {
+  "id": "lb-labneh-honey-dates",
+  "name": "Labneh with Honey and Dates",
+  "meal": [
+   "breakfast",
+   "snack"
+  ],
+  "servings": 1,
+  "ingredients": [
+   [
+    "greek_yogurt",
+    200
+   ],
+   [
+    "honey",
+    10
+   ],
+   [
+    "pistachios",
+    15
+   ],
+   [
+    "dates",
+    40
+   ]
+  ],
+  "tags": [
+   "quick",
+   "sweet"
+  ]
+ },
+ {
+  "id": "lb-halloumi-pita",
+  "name": "Halloumi Pita",
+  "meal": [
+   "breakfast",
+   "lunch"
+  ],
+  "servings": 1,
+  "ingredients": [
+   [
+    "halloumi",
+    80
+   ],
+   [
+    "pita",
+    90
+   ],
+   [
+    "tomato",
+    80
+   ],
+   [
+    "cucumber",
+    60
+   ],
+   [
+    "mint",
+    3
+   ]
+  ],
+  "tags": [
+   "quick",
+   "high-protein"
+  ]
+ },
+ {
+  "id": "lb-date-tahini",
+  "name": "Date and Tahini Bites",
+  "meal": [
+   "snack"
+  ],
+  "servings": 2,
+  "ingredients": [
+   [
+    "dates",
+    80
+   ],
+   [
+    "tahini",
+    30
+   ],
+   [
+    "sesame",
+    5
+   ]
+  ],
+  "tags": [
+   "sweet"
+  ]
+ },
+ {
+  "id": "lb-roasted-chickpeas",
+  "name": "Roasted Chickpeas",
+  "meal": [
+   "snack"
+  ],
+  "servings": 2,
+  "ingredients": [
+   [
+    "chickpeas_canned",
+    400
+   ],
+   [
+    "oil_olive",
+    10
+   ],
+   [
+    "cumin",
+    2
+   ],
+   [
+    "paprika",
+    2
+   ]
+  ],
+  "tags": [
+   "budget"
+  ]
+ },
+ {
+  "id": "lb-salata-laban",
+  "name": "Cucumber Yogurt Salad",
+  "meal": [
+   "snack",
+   "lunch"
+  ],
+  "servings": 2,
+  "ingredients": [
+   [
+    "curd",
+    300
+   ],
+   [
+    "cucumber",
+    250
+   ],
+   [
+    "mint",
+    8
+   ],
+   [
+    "garlic",
+    3
+   ]
+  ],
+  "tags": [
+   "quick",
+   "budget"
+  ]
+ },
+ {
+  "id": "lb-arabic-salad",
+  "name": "Arabic Salad",
+  "meal": [
+   "snack",
+   "lunch"
+  ],
+  "servings": 2,
+  "ingredients": [
+   [
+    "tomato",
+    300
+   ],
+   [
+    "cucumber",
+    250
+   ],
+   [
+    "red_onion",
+    50
+   ],
+   [
+    "parsley",
+    20
+   ],
+   [
+    "oil_olive",
+    20
+   ],
+   [
+    "lemon",
+    30
+   ]
+  ],
+  "tags": [
+   "quick",
+   "budget"
+  ]
+ },
+ {
+  "id": "lb-nuts-dates",
+  "name": "Pistachios and Dates",
+  "meal": [
+   "snack"
+  ],
+  "servings": 1,
+  "ingredients": [
+   [
+    "pistachios",
+    25
+   ],
+   [
+    "dates",
+    40
+   ]
+  ],
+  "tags": [
+   "quick"
+  ]
+ },
+ {
+  "id": "lb-batata-harra",
+  "name": "Batata Harra",
+  "meal": [
+   "lunch",
+   "dinner"
+  ],
+  "servings": 3,
+  "ingredients": [
+   [
+    "potato",
+    700
+   ],
+   [
+    "oil_olive",
+    30
+   ],
+   [
+    "garlic",
+    15
+   ],
+   [
+    "coriander_leaves",
+    30
+   ],
+   [
+    "chili_powder",
+    2
+   ],
+   [
+    "lemon",
+    30
+   ]
+  ],
+  "tags": [
+   "budget"
+  ]
+ },
+ {
+  "id": "lb-adas-bi-hamod",
+  "name": "Lentil and Spinach Soup",
+  "meal": [
+   "lunch",
+   "dinner"
+  ],
+  "servings": 4,
+  "ingredients": [
+   [
+    "masoor_dal",
+    200
+   ],
+   [
+    "spinach",
+    300
+   ],
+   [
+    "potato",
+    200
+   ],
+   [
+    "lemon",
+    60
+   ],
+   [
+    "onion",
+    100
+   ],
+   [
+    "oil_olive",
+    30
+   ],
+   [
+    "garlic",
+    15
+   ],
+   [
+    "coriander_leaves",
+    20
+   ]
+  ],
+  "tags": [
+   "meal-prep",
+   "budget"
+  ]
+ },
+ {
+  "id": "lb-eggs-zaatar-pita",
+  "name": "Eggs with Zaatar and Pita",
+  "meal": [
+   "breakfast"
+  ],
+  "servings": 1,
+  "ingredients": [
+   [
+    "egg",
+    100
+   ],
+   [
+    "za_atar",
+    8
+   ],
+   [
+    "pita",
+    80
+   ],
+   [
+    "tomato",
+    80
+   ],
+   [
+    "olives",
+    30
+   ],
+   [
+    "oil_olive",
+    8
+   ]
+  ],
+  "tags": [
+   "quick",
+   "budget"
+  ]
+ },
+ {
+  "id": "lb-hummus-egg-bowl",
+  "name": "Hummus and Egg Bowl",
+  "meal": [
+   "breakfast",
+   "lunch"
+  ],
+  "servings": 1,
+  "ingredients": [
+   [
+    "hummus",
+    120
+   ],
+   [
+    "egg",
+    100
+   ],
+   [
+    "pita",
+    70
+   ],
+   [
+    "cucumber",
+    50
+   ]
+  ],
+  "tags": [
+   "quick",
+   "high-protein"
+  ]
+ },
+ {
+  "id": "lb-kafta-bi-tahini",
+  "name": "Kafta bi Tahini",
+  "meal": [
+   "dinner"
+  ],
+  "servings": 3,
+  "ingredients": [
+   [
+    "beef_mince",
+    450
+   ],
+   [
+    "potato",
+    500
+   ],
+   [
+    "tahini",
+    60
+   ],
+   [
+    "onion",
+    100
+   ],
+   [
+    "parsley",
+    20
+   ],
+   [
+    "lemon",
+    30
+   ]
+  ],
+  "tags": [
+   "high-protein"
+  ]
+ },
+ {
+  "id": "lb-riz-djej",
+  "name": "Chicken and Spiced Rice",
+  "meal": [
+   "dinner"
+  ],
+  "servings": 4,
+  "ingredients": [
+   [
+    "rice_white",
+    280
+   ],
+   [
+    "chicken_thigh",
+    600
+   ],
+   [
+    "onion",
+    100
+   ],
+   [
+    "cinnamon",
+    2
+   ],
+   [
+    "almonds",
+    30
+   ],
+   [
+    "oil_olive",
+    20
+   ],
+   [
+    "carrot",
+    100
+   ]
+  ],
+  "tags": [
+   "high-protein"
+  ]
+ }
+]

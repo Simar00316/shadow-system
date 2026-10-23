@@ -1,0 +1,2200 @@
+[
+ {
+  "id": "th-pad-thai",
+  "name": "Pad Thai with Prawns",
+  "meal": [
+   "lunch",
+   "dinner"
+  ],
+  "servings": 2,
+  "ingredients": [
+   [
+    "rice_noodles",
+    140
+   ],
+   [
+    "prawns",
+    140
+   ],
+   [
+    "egg",
+    100
+   ],
+   [
+    "tofu",
+    60
+   ],
+   [
+    "bean_sprouts",
+    80
+   ],
+   [
+    "peanuts",
+    24
+   ],
+   [
+    "oil_veg",
+    16
+   ],
+   [
+    "fish_sauce",
+    20
+   ],
+   [
+    "tamarind",
+    10
+   ],
+   [
+    "sugar",
+    12
+   ],
+   [
+    "lime",
+    30
+   ],
+   [
+    "spring_onion",
+    30
+   ]
+  ],
+  "tags": [
+   "high-protein"
+  ]
+ },
+ {
+  "id": "th-pad-thai-veg",
+  "name": "Vegetarian Pad Thai",
+  "meal": [
+   "lunch",
+   "dinner"
+  ],
+  "servings": 2,
+  "ingredients": [
+   [
+    "rice_noodles",
+    140
+   ],
+   [
+    "tofu",
+    160
+   ],
+   [
+    "egg",
+    100
+   ],
+   [
+    "bean_sprouts",
+    80
+   ],
+   [
+    "peanuts",
+    24
+   ],
+   [
+    "oil_veg",
+    16
+   ],
+   [
+    "soy_sauce",
+    24
+   ],
+   [
+    "tamarind",
+    10
+   ],
+   [
+    "sugar",
+    12
+   ],
+   [
+    "lime",
+    30
+   ],
+   [
+    "spring_onion",
+    30
+   ]
+  ],
+  "tags": [
+   "high-protein",
+   "budget"
+  ]
+ },
+ {
+  "id": "th-green-curry-chicken",
+  "name": "Thai Green Curry with Chicken",
+  "meal": [
+   "lunch",
+   "dinner"
+  ],
+  "servings": 2,
+  "ingredients": [
+   [
+    "chicken_thigh",
+    260
+   ],
+   [
+    "curry_paste",
+    50
+   ],
+   [
+    "coconut_milk",
+    140
+   ],
+   [
+    "eggplant",
+    160
+   ],
+   [
+    "green_beans",
+    80
+   ],
+   [
+    "basil",
+    10
+   ],
+   [
+    "fish_sauce",
+    16
+   ],
+   [
+    "sugar",
+    8
+   ],
+   [
+    "rice_white",
+    130
+   ]
+  ],
+  "tags": [
+   "high-protein"
+  ]
+ },
+ {
+  "id": "th-green-curry-veg",
+  "name": "Tofu Green Curry",
+  "meal": [
+   "lunch",
+   "dinner"
+  ],
+  "servings": 2,
+  "ingredients": [
+   [
+    "tofu",
+    240
+   ],
+   [
+    "curry_paste",
+    50
+   ],
+   [
+    "coconut_milk",
+    160
+   ],
+   [
+    "eggplant",
+    160
+   ],
+   [
+    "bamboo_shoots",
+    100
+   ],
+   [
+    "basil",
+    10
+   ],
+   [
+    "soy_sauce",
+    16
+   ],
+   [
+    "rice_white",
+    130
+   ]
+  ],
+  "tags": [
+   "high-protein"
+  ]
+ },
+ {
+  "id": "th-tom-yum-goong",
+  "name": "Tom Yum Goong with Rice",
+  "meal": [
+   "lunch",
+   "dinner"
+  ],
+  "servings": 2,
+  "ingredients": [
+   [
+    "prawns",
+    300
+   ],
+   [
+    "mushroom",
+    160
+   ],
+   [
+    "lemongrass",
+    20
+   ],
+   [
+    "ginger",
+    16
+   ],
+   [
+    "lime",
+    40
+   ],
+   [
+    "fish_sauce",
+    20
+   ],
+   [
+    "green_chili",
+    10
+   ],
+   [
+    "tomato",
+    100
+   ],
+   [
+    "stock",
+    600
+   ],
+   [
+    "coriander_leaves",
+    10
+   ],
+   [
+    "curry_paste",
+    20
+   ],
+   [
+    "rice_white",
+    120
+   ]
+  ],
+  "tags": [
+   "high-protein"
+  ]
+ },
+ {
+  "id": "th-tom-yum-veg",
+  "name": "Vegan Tom Yum Tofu Soup",
+  "meal": [
+   "lunch",
+   "dinner"
+  ],
+  "servings": 2,
+  "ingredients": [
+   [
+    "tofu",
+    200
+   ],
+   [
+    "mushroom",
+    200
+   ],
+   [
+    "lemongrass",
+    20
+   ],
+   [
+    "ginger",
+    16
+   ],
+   [
+    "lime",
+    40
+   ],
+   [
+    "soy_sauce",
+    20
+   ],
+   [
+    "green_chili",
+    10
+   ],
+   [
+    "tomato",
+    100
+   ],
+   [
+    "stock",
+    600
+   ],
+   [
+    "rice_white",
+    130
+   ]
+  ],
+  "tags": [
+   "high-protein",
+   "budget"
+  ]
+ },
+ {
+  "id": "th-tom-kha-gai",
+  "name": "Tom Kha Gai",
+  "meal": [
+   "lunch",
+   "dinner"
+  ],
+  "servings": 2,
+  "ingredients": [
+   [
+    "chicken_breast",
+    220
+   ],
+   [
+    "coconut_milk",
+    200
+   ],
+   [
+    "mushroom",
+    120
+   ],
+   [
+    "lemongrass",
+    20
+   ],
+   [
+    "ginger",
+    16
+   ],
+   [
+    "lime",
+    30
+   ],
+   [
+    "fish_sauce",
+    16
+   ],
+   [
+    "stock",
+    400
+   ]
+  ],
+  "tags": [
+   "high-protein"
+  ]
+ },
+ {
+  "id": "th-pad-kra-pao",
+  "name": "Pad Kra Pao with Fried Egg",
+  "meal": [
+   "breakfast",
+   "lunch",
+   "dinner"
+  ],
+  "servings": 2,
+  "ingredients": [
+   [
+    "chicken_mince",
+    260
+   ],
+   [
+    "basil",
+    40
+   ],
+   [
+    "garlic",
+    16
+   ],
+   [
+    "green_chili",
+    20
+   ],
+   [
+    "oyster_sauce",
+    20
+   ],
+   [
+    "soy_sauce",
+    16
+   ],
+   [
+    "fish_sauce",
+    10
+   ],
+   [
+    "sugar",
+    6
+   ],
+   [
+    "oil_veg",
+    20
+   ],
+   [
+    "rice_white",
+    150
+   ],
+   [
+    "egg",
+    110
+   ]
+  ],
+  "tags": [
+   "high-protein",
+   "budget"
+  ]
+ },
+ {
+  "id": "th-khao-pad-moo",
+  "name": "Pork Khao Pad",
+  "meal": [
+   "breakfast",
+   "lunch",
+   "dinner"
+  ],
+  "servings": 2,
+  "ingredients": [
+   [
+    "rice_white",
+    160
+   ],
+   [
+    "egg",
+    120
+   ],
+   [
+    "pork_loin",
+    140
+   ],
+   [
+    "tomato",
+    100
+   ],
+   [
+    "onion",
+    60
+   ],
+   [
+    "spring_onion",
+    30
+   ],
+   [
+    "garlic",
+    10
+   ],
+   [
+    "oil_veg",
+    20
+   ],
+   [
+    "soy_sauce",
+    16
+   ],
+   [
+    "lime",
+    20
+   ]
+  ],
+  "tags": [
+   "high-protein",
+   "budget"
+  ]
+ },
+ {
+  "id": "th-khao-pad-veg",
+  "name": "Vegetable Khao Pad",
+  "meal": [
+   "lunch",
+   "dinner"
+  ],
+  "servings": 2,
+  "ingredients": [
+   [
+    "rice_white",
+    160
+   ],
+   [
+    "egg",
+    120
+   ],
+   [
+    "tofu",
+    80
+   ],
+   [
+    "mixed_veg",
+    120
+   ],
+   [
+    "garlic",
+    10
+   ],
+   [
+    "oil_veg",
+    20
+   ],
+   [
+    "soy_sauce",
+    16
+   ],
+   [
+    "lime",
+    20
+   ]
+  ],
+  "tags": [
+   "budget"
+  ]
+ },
+ {
+  "id": "th-som-tam",
+  "name": "Som Tam Green Papaya Salad",
+  "meal": [
+   "snack",
+   "lunch"
+  ],
+  "servings": 2,
+  "ingredients": [
+   [
+    "papaya",
+    400
+   ],
+   [
+    "tomato",
+    100
+   ],
+   [
+    "green_beans",
+    80
+   ],
+   [
+    "peanuts",
+    40
+   ],
+   [
+    "dried_shrimp",
+    16
+   ],
+   [
+    "garlic",
+    10
+   ],
+   [
+    "green_chili",
+    10
+   ],
+   [
+    "lime",
+    50
+   ],
+   [
+    "fish_sauce",
+    20
+   ],
+   [
+    "sugar",
+    16
+   ]
+  ],
+  "tags": [
+   "quick",
+   "budget"
+  ]
+ },
+ {
+  "id": "th-som-tam-veg",
+  "name": "Vegan Som Tam with Sticky Rice",
+  "meal": [
+   "lunch",
+   "dinner"
+  ],
+  "servings": 2,
+  "ingredients": [
+   [
+    "papaya",
+    400
+   ],
+   [
+    "tomato",
+    100
+   ],
+   [
+    "green_beans",
+    80
+   ],
+   [
+    "peanuts",
+    40
+   ],
+   [
+    "garlic",
+    10
+   ],
+   [
+    "green_chili",
+    10
+   ],
+   [
+    "lime",
+    50
+   ],
+   [
+    "soy_sauce",
+    20
+   ],
+   [
+    "sugar",
+    16
+   ],
+   [
+    "rice_white",
+    140
+   ]
+  ],
+  "tags": [
+   "budget"
+  ]
+ },
+ {
+  "id": "th-larb-gai",
+  "name": "Larb Gai",
+  "meal": [
+   "lunch",
+   "dinner"
+  ],
+  "servings": 2,
+  "ingredients": [
+   [
+    "chicken_mince",
+    300
+   ],
+   [
+    "red_onion",
+    60
+   ],
+   [
+    "spring_onion",
+    30
+   ],
+   [
+    "mint",
+    16
+   ],
+   [
+    "coriander_leaves",
+    16
+   ],
+   [
+    "lime",
+    40
+   ],
+   [
+    "fish_sauce",
+    24
+   ],
+   [
+    "chili_powder",
+    4
+   ],
+   [
+    "rice_white",
+    40
+   ],
+   [
+    "lettuce",
+    120
+   ]
+  ],
+  "tags": [
+   "high-protein",
+   "budget"
+  ]
+ },
+ {
+  "id": "th-larb-tofu",
+  "name": "Tofu Mushroom Larb",
+  "meal": [
+   "lunch",
+   "dinner"
+  ],
+  "servings": 2,
+  "ingredients": [
+   [
+    "tofu",
+    320
+   ],
+   [
+    "mushroom",
+    120
+   ],
+   [
+    "red_onion",
+    60
+   ],
+   [
+    "spring_onion",
+    30
+   ],
+   [
+    "mint",
+    16
+   ],
+   [
+    "coriander_leaves",
+    16
+   ],
+   [
+    "lime",
+    40
+   ],
+   [
+    "soy_sauce",
+    24
+   ],
+   [
+    "chili_powder",
+    4
+   ],
+   [
+    "rice_white",
+    140
+   ],
+   [
+    "lettuce",
+    120
+   ]
+  ],
+  "tags": [
+   "high-protein",
+   "budget"
+  ]
+ },
+ {
+  "id": "th-massaman-beef",
+  "name": "Massaman Beef Curry",
+  "meal": [
+   "lunch",
+   "dinner"
+  ],
+  "servings": 2,
+  "ingredients": [
+   [
+    "beef_stew",
+    240
+   ],
+   [
+    "potato",
+    200
+   ],
+   [
+    "onion",
+    80
+   ],
+   [
+    "curry_paste",
+    40
+   ],
+   [
+    "coconut_milk",
+    140
+   ],
+   [
+    "peanuts",
+    20
+   ],
+   [
+    "fish_sauce",
+    12
+   ],
+   [
+    "tamarind",
+    10
+   ],
+   [
+    "sugar",
+    8
+   ],
+   [
+    "rice_white",
+    120
+   ]
+  ],
+  "tags": [
+   "high-protein"
+  ]
+ },
+ {
+  "id": "th-chicken-satay-meal",
+  "name": "Chicken Satay with Cucumber",
+  "meal": [
+   "lunch",
+   "dinner"
+  ],
+  "servings": 2,
+  "ingredients": [
+   [
+    "chicken_breast",
+    260
+   ],
+   [
+    "peanut_sauce",
+    80
+   ],
+   [
+    "coconut_milk",
+    40
+   ],
+   [
+    "curry_powder",
+    6
+   ],
+   [
+    "turmeric",
+    2
+   ],
+   [
+    "sugar",
+    6
+   ],
+   [
+    "oil_veg",
+    10
+   ],
+   [
+    "cucumber",
+    100
+   ]
+  ],
+  "tags": [
+   "high-protein"
+  ]
+ },
+ {
+  "id": "th-chicken-satay-snack",
+  "name": "Chicken Satay Skewers",
+  "meal": [
+   "snack"
+  ],
+  "servings": 2,
+  "ingredients": [
+   [
+    "chicken_breast",
+    160
+   ],
+   [
+    "peanut_sauce",
+    60
+   ],
+   [
+    "curry_powder",
+    4
+   ],
+   [
+    "sugar",
+    4
+   ],
+   [
+    "cucumber",
+    80
+   ]
+  ]
+ },
+ {
+  "id": "th-jok-moo",
+  "name": "Thai Jok with Pork and Egg",
+  "meal": [
+   "breakfast",
+   "lunch"
+  ],
+  "servings": 2,
+  "ingredients": [
+   [
+    "rice_white",
+    100
+   ],
+   [
+    "pork_mince",
+    120
+   ],
+   [
+    "ginger",
+    20
+   ],
+   [
+    "egg",
+    110
+   ],
+   [
+    "spring_onion",
+    20
+   ],
+   [
+    "stock",
+    600
+   ],
+   [
+    "soy_sauce",
+    10
+   ]
+  ],
+  "tags": [
+   "budget"
+  ]
+ },
+ {
+  "id": "th-jok-mushroom",
+  "name": "Mushroom Jok with Egg",
+  "meal": [
+   "breakfast"
+  ],
+  "servings": 2,
+  "ingredients": [
+   [
+    "rice_white",
+    100
+   ],
+   [
+    "mushroom",
+    120
+   ],
+   [
+    "egg",
+    110
+   ],
+   [
+    "ginger",
+    20
+   ],
+   [
+    "spring_onion",
+    20
+   ],
+   [
+    "soy_sauce",
+    12
+   ],
+   [
+    "stock",
+    500
+   ]
+  ],
+  "tags": [
+   "budget"
+  ]
+ },
+ {
+  "id": "th-khao-tom-goong",
+  "name": "Khao Tom Goong",
+  "meal": [
+   "breakfast",
+   "dinner"
+  ],
+  "servings": 2,
+  "ingredients": [
+   [
+    "rice_white",
+    120
+   ],
+   [
+    "prawns",
+    160
+   ],
+   [
+    "ginger",
+    16
+   ],
+   [
+    "spring_onion",
+    20
+   ],
+   [
+    "garlic",
+    6
+   ],
+   [
+    "fish_sauce",
+    10
+   ],
+   [
+    "stock",
+    600
+   ]
+  ],
+  "tags": [
+   "budget"
+  ]
+ },
+ {
+  "id": "th-tom-jued-tofu",
+  "name": "Tom Jued Tofu Pork Soup",
+  "meal": [
+   "lunch",
+   "dinner"
+  ],
+  "servings": 2,
+  "ingredients": [
+   [
+    "tofu_silken",
+    300
+   ],
+   [
+    "pork_mince",
+    100
+   ],
+   [
+    "rice_noodles",
+    40
+   ],
+   [
+    "bok_choy",
+    120
+   ],
+   [
+    "stock",
+    600
+   ],
+   [
+    "soy_sauce",
+    12
+   ],
+   [
+    "garlic",
+    6
+   ]
+  ],
+  "tags": [
+   "budget"
+  ]
+ },
+ {
+  "id": "th-pad-pak-boong",
+  "name": "Stir-fried Morning Glory with Rice",
+  "meal": [
+   "lunch",
+   "dinner"
+  ],
+  "servings": 2,
+  "ingredients": [
+   [
+    "spinach",
+    500
+   ],
+   [
+    "garlic",
+    16
+   ],
+   [
+    "green_chili",
+    16
+   ],
+   [
+    "soy_sauce",
+    24
+   ],
+   [
+    "sugar",
+    6
+   ],
+   [
+    "oil_veg",
+    24
+   ],
+   [
+    "rice_white",
+    150
+   ]
+  ],
+  "tags": [
+   "budget"
+  ]
+ },
+ {
+  "id": "th-pad-prik-king",
+  "name": "Pad Prik King Pork and Green Beans",
+  "meal": [
+   "lunch",
+   "dinner"
+  ],
+  "servings": 2,
+  "ingredients": [
+   [
+    "pork_loin",
+    260
+   ],
+   [
+    "green_beans",
+    300
+   ],
+   [
+    "curry_paste",
+    50
+   ],
+   [
+    "oil_veg",
+    20
+   ],
+   [
+    "fish_sauce",
+    12
+   ],
+   [
+    "sugar",
+    6
+   ],
+   [
+    "rice_white",
+    140
+   ]
+  ],
+  "tags": [
+   "high-protein",
+   "budget"
+  ]
+ },
+ {
+  "id": "th-panang-chicken",
+  "name": "Panang Chicken Curry",
+  "meal": [
+   "lunch",
+   "dinner"
+  ],
+  "servings": 2,
+  "ingredients": [
+   [
+    "chicken_thigh",
+    260
+   ],
+   [
+    "curry_paste",
+    50
+   ],
+   [
+    "coconut_milk",
+    160
+   ],
+   [
+    "peanuts",
+    20
+   ],
+   [
+    "bell_pepper",
+    80
+   ],
+   [
+    "fish_sauce",
+    12
+   ],
+   [
+    "sugar",
+    8
+   ],
+   [
+    "basil",
+    6
+   ],
+   [
+    "rice_white",
+    130
+   ]
+  ],
+  "tags": [
+   "high-protein"
+  ]
+ },
+ {
+  "id": "th-pineapple-fried-rice",
+  "name": "Pineapple Fried Rice",
+  "meal": [
+   "lunch",
+   "dinner"
+  ],
+  "servings": 2,
+  "ingredients": [
+   [
+    "rice_white",
+    160
+   ],
+   [
+    "pineapple",
+    160
+   ],
+   [
+    "egg",
+    100
+   ],
+   [
+    "cashews",
+    24
+   ],
+   [
+    "curry_powder",
+    6
+   ],
+   [
+    "onion",
+    60
+   ],
+   [
+    "oil_veg",
+    20
+   ],
+   [
+    "soy_sauce",
+    16
+   ],
+   [
+    "raisins",
+    16
+   ]
+  ],
+  "tags": [
+   "budget"
+  ]
+ },
+ {
+  "id": "th-khai-jeow",
+  "name": "Khai Jeow Thai Omelette with Rice",
+  "meal": [
+   "breakfast",
+   "lunch",
+   "dinner"
+  ],
+  "servings": 2,
+  "ingredients": [
+   [
+    "egg",
+    300
+   ],
+   [
+    "fish_sauce",
+    10
+   ],
+   [
+    "oil_veg",
+    30
+   ],
+   [
+    "onion",
+    40
+   ],
+   [
+    "rice_white",
+    150
+   ]
+  ],
+  "tags": [
+   "budget"
+  ]
+ },
+ {
+  "id": "th-gaeng-jued-woonsen",
+  "name": "Glass Noodle Soup with Pork",
+  "meal": [
+   "lunch",
+   "dinner"
+  ],
+  "servings": 2,
+  "ingredients": [
+   [
+    "rice_noodles",
+    60
+   ],
+   [
+    "pork_mince",
+    120
+   ],
+   [
+    "tofu",
+    100
+   ],
+   [
+    "napa_cabbage",
+    160
+   ],
+   [
+    "mushroom",
+    60
+   ],
+   [
+    "stock",
+    600
+   ],
+   [
+    "soy_sauce",
+    12
+   ]
+  ],
+  "tags": [
+   "high-protein",
+   "budget"
+  ]
+ },
+ {
+  "id": "th-yum-woonsen",
+  "name": "Yum Woon Sen Glass Noodle Salad",
+  "meal": [
+   "lunch",
+   "dinner"
+  ],
+  "servings": 2,
+  "ingredients": [
+   [
+    "rice_noodles",
+    70
+   ],
+   [
+    "prawns",
+    140
+   ],
+   [
+    "pork_mince",
+    80
+   ],
+   [
+    "peanuts",
+    16
+   ],
+   [
+    "lime",
+    40
+   ],
+   [
+    "fish_sauce",
+    20
+   ],
+   [
+    "green_chili",
+    6
+   ],
+   [
+    "tomato",
+    80
+   ],
+   [
+    "red_onion",
+    40
+   ]
+  ],
+  "tags": [
+   "high-protein"
+  ]
+ },
+ {
+  "id": "th-yum-neua",
+  "name": "Yum Neua Beef Salad",
+  "meal": [
+   "lunch",
+   "dinner"
+  ],
+  "servings": 2,
+  "ingredients": [
+   [
+    "beef_lean",
+    260
+   ],
+   [
+    "cucumber",
+    160
+   ],
+   [
+    "tomato",
+    120
+   ],
+   [
+    "red_onion",
+    60
+   ],
+   [
+    "mint",
+    16
+   ],
+   [
+    "coriander_leaves",
+    16
+   ],
+   [
+    "lime",
+    50
+   ],
+   [
+    "fish_sauce",
+    20
+   ],
+   [
+    "green_chili",
+    10
+   ],
+   [
+    "sugar",
+    6
+   ],
+   [
+    "rice_white",
+    100
+   ]
+  ],
+  "tags": [
+   "high-protein"
+  ]
+ },
+ {
+  "id": "th-gai-yang",
+  "name": "Gai Yang Grilled Chicken",
+  "meal": [
+   "lunch",
+   "dinner"
+  ],
+  "servings": 2,
+  "ingredients": [
+   [
+    "chicken_thigh",
+    320
+   ],
+   [
+    "garlic",
+    16
+   ],
+   [
+    "coriander_leaves",
+    10
+   ],
+   [
+    "fish_sauce",
+    16
+   ],
+   [
+    "soy_sauce",
+    16
+   ],
+   [
+    "sugar",
+    10
+   ],
+   [
+    "black_pepper",
+    2
+   ],
+   [
+    "rice_white",
+    140
+   ]
+  ],
+  "tags": [
+   "high-protein"
+  ]
+ },
+ {
+  "id": "th-moo-ping",
+  "name": "Moo Ping Pork Skewers with Sticky Rice",
+  "meal": [
+   "breakfast",
+   "lunch"
+  ],
+  "servings": 2,
+  "ingredients": [
+   [
+    "pork_loin",
+    260
+   ],
+   [
+    "coconut_milk",
+    40
+   ],
+   [
+    "soy_sauce",
+    20
+   ],
+   [
+    "oil_veg",
+    10
+   ],
+   [
+    "sugar",
+    12
+   ],
+   [
+    "garlic",
+    10
+   ],
+   [
+    "coriander_leaves",
+    10
+   ],
+   [
+    "rice_white",
+    140
+   ]
+  ],
+  "tags": [
+   "high-protein"
+  ]
+ },
+ {
+  "id": "th-mango-sticky-rice",
+  "name": "Mango Sticky Rice",
+  "meal": [
+   "snack"
+  ],
+  "servings": 2,
+  "ingredients": [
+   [
+    "rice_white",
+    80
+   ],
+   [
+    "coconut_milk",
+    80
+   ],
+   [
+    "sugar",
+    16
+   ],
+   [
+    "mango",
+    200
+   ],
+   [
+    "salt",
+    1
+   ]
+  ],
+  "tags": [
+   "sweet"
+  ]
+ },
+ {
+  "id": "th-banana-roti",
+  "name": "Banana Roti",
+  "meal": [
+   "snack",
+   "breakfast"
+  ],
+  "servings": 2,
+  "ingredients": [
+   [
+    "maida",
+    80
+   ],
+   [
+    "egg",
+    50
+   ],
+   [
+    "banana",
+    160
+   ],
+   [
+    "oil_veg",
+    10
+   ],
+   [
+    "condensed_milk",
+    20
+   ]
+  ],
+  "tags": [
+   "sweet",
+   "budget"
+  ]
+ },
+ {
+  "id": "th-fruit-plate",
+  "name": "Tropical Fruit Plate",
+  "meal": [
+   "breakfast",
+   "snack"
+  ],
+  "servings": 2,
+  "ingredients": [
+   [
+    "papaya",
+    200
+   ],
+   [
+    "pineapple",
+    200
+   ],
+   [
+    "watermelon",
+    200
+   ],
+   [
+    "mango",
+    100
+   ],
+   [
+    "lime",
+    20
+   ]
+  ],
+  "tags": [
+   "sweet",
+   "quick",
+   "budget"
+  ]
+ },
+ {
+  "id": "th-pad-see-ew",
+  "name": "Pad See Ew",
+  "meal": [
+   "lunch",
+   "dinner"
+  ],
+  "servings": 2,
+  "ingredients": [
+   [
+    "rice_noodles",
+    160
+   ],
+   [
+    "pork_loin",
+    200
+   ],
+   [
+    "egg",
+    110
+   ],
+   [
+    "bok_choy",
+    200
+   ],
+   [
+    "soy_sauce",
+    30
+   ],
+   [
+    "oyster_sauce",
+    16
+   ],
+   [
+    "sugar",
+    8
+   ],
+   [
+    "oil_veg",
+    20
+   ]
+  ],
+  "tags": [
+   "high-protein"
+  ]
+ },
+ {
+  "id": "th-pad-kee-mao",
+  "name": "Drunken Noodles",
+  "meal": [
+   "lunch",
+   "dinner"
+  ],
+  "servings": 2,
+  "ingredients": [
+   [
+    "rice_noodles",
+    150
+   ],
+   [
+    "chicken_breast",
+    220
+   ],
+   [
+    "basil",
+    30
+   ],
+   [
+    "green_chili",
+    16
+   ],
+   [
+    "bell_pepper",
+    80
+   ],
+   [
+    "onion",
+    60
+   ],
+   [
+    "garlic",
+    10
+   ],
+   [
+    "oyster_sauce",
+    16
+   ],
+   [
+    "soy_sauce",
+    16
+   ],
+   [
+    "oil_veg",
+    20
+   ]
+  ],
+  "tags": [
+   "high-protein",
+   "budget"
+  ]
+ },
+ {
+  "id": "th-steamed-fish-lime",
+  "name": "Steamed Fish with Lime and Chili",
+  "meal": [
+   "lunch",
+   "dinner"
+  ],
+  "servings": 2,
+  "ingredients": [
+   [
+    "tilapia",
+    400
+   ],
+   [
+    "lime",
+    60
+   ],
+   [
+    "garlic",
+    20
+   ],
+   [
+    "green_chili",
+    20
+   ],
+   [
+    "coriander_leaves",
+    20
+   ],
+   [
+    "fish_sauce",
+    24
+   ],
+   [
+    "sugar",
+    8
+   ],
+   [
+    "rice_white",
+    120
+   ]
+  ],
+  "tags": [
+   "high-protein"
+  ]
+ },
+ {
+  "id": "th-fish-cakes",
+  "name": "Tod Mun Fish Cakes",
+  "meal": [
+   "snack"
+  ],
+  "servings": 2,
+  "ingredients": [
+   [
+    "cod",
+    200
+   ],
+   [
+    "curry_paste",
+    30
+   ],
+   [
+    "green_beans",
+    60
+   ],
+   [
+    "egg",
+    30
+   ],
+   [
+    "oil_veg",
+    30
+   ],
+   [
+    "sugar",
+    4
+   ]
+  ]
+ },
+ {
+  "id": "th-corn-fritters",
+  "name": "Corn Fritters",
+  "meal": [
+   "snack"
+  ],
+  "servings": 2,
+  "ingredients": [
+   [
+    "corn",
+    160
+   ],
+   [
+    "maida",
+    40
+   ],
+   [
+    "egg",
+    50
+   ],
+   [
+    "oil_veg",
+    20
+   ],
+   [
+    "curry_paste",
+    10
+   ]
+  ],
+  "tags": [
+   "budget"
+  ]
+ },
+ {
+  "id": "th-cashew-chicken",
+  "name": "Pad Med Mamuang Cashew Chicken",
+  "meal": [
+   "lunch",
+   "dinner"
+  ],
+  "servings": 2,
+  "ingredients": [
+   [
+    "chicken_breast",
+    240
+   ],
+   [
+    "cashews",
+    40
+   ],
+   [
+    "bell_pepper",
+    120
+   ],
+   [
+    "onion",
+    80
+   ],
+   [
+    "soy_sauce",
+    16
+   ],
+   [
+    "oyster_sauce",
+    16
+   ],
+   [
+    "sugar",
+    8
+   ],
+   [
+    "oil_veg",
+    16
+   ],
+   [
+    "rice_white",
+    130
+   ]
+  ],
+  "tags": [
+   "high-protein"
+  ]
+ },
+ {
+  "id": "th-pad-woonsen-veg",
+  "name": "Vegetable Pad Woon Sen",
+  "meal": [
+   "lunch",
+   "dinner"
+  ],
+  "servings": 2,
+  "ingredients": [
+   [
+    "rice_noodles",
+    120
+   ],
+   [
+    "egg",
+    100
+   ],
+   [
+    "cabbage",
+    160
+   ],
+   [
+    "carrot",
+    60
+   ],
+   [
+    "mushroom",
+    80
+   ],
+   [
+    "soy_sauce",
+    24
+   ],
+   [
+    "oil_veg",
+    16
+   ],
+   [
+    "tomato",
+    80
+   ]
+  ],
+  "tags": [
+   "budget"
+  ]
+ },
+ {
+  "id": "th-khao-man-gai",
+  "name": "Khao Man Gai",
+  "meal": [
+   "lunch",
+   "dinner"
+  ],
+  "servings": 2,
+  "ingredients": [
+   [
+    "rice_white",
+    160
+   ],
+   [
+    "chicken_breast",
+    300
+   ],
+   [
+    "ginger",
+    20
+   ],
+   [
+    "garlic",
+    16
+   ],
+   [
+    "cucumber",
+    100
+   ],
+   [
+    "soy_sauce",
+    20
+   ],
+   [
+    "chicken_stock",
+    200
+   ]
+  ],
+  "tags": [
+   "high-protein",
+   "budget"
+  ]
+ },
+ {
+  "id": "th-tofu-satay",
+  "name": "Tofu Satay Skewers",
+  "meal": [
+   "snack"
+  ],
+  "servings": 2,
+  "ingredients": [
+   [
+    "tofu",
+    260
+   ],
+   [
+    "peanut_sauce",
+    60
+   ],
+   [
+    "soy_sauce",
+    10
+   ]
+  ],
+  "tags": [
+   "high-protein"
+  ]
+ },
+ {
+  "id": "th-pumpkin-curry",
+  "name": "Pumpkin Tofu Curry",
+  "meal": [
+   "lunch",
+   "dinner"
+  ],
+  "servings": 2,
+  "ingredients": [
+   [
+    "pumpkin",
+    400
+   ],
+   [
+    "curry_paste",
+    50
+   ],
+   [
+    "coconut_milk",
+    140
+   ],
+   [
+    "tofu",
+    120
+   ],
+   [
+    "soy_sauce",
+    16
+   ],
+   [
+    "basil",
+    10
+   ],
+   [
+    "rice_white",
+    120
+   ]
+  ],
+  "tags": [
+   "budget"
+  ]
+ },
+ {
+  "id": "th-tofu-pad-kra-pao",
+  "name": "Tofu Pad Kra Pao (Holy Basil Stir-Fry)",
+  "meal": [
+   "lunch",
+   "dinner"
+  ],
+  "servings": 2,
+  "ingredients": [
+   [
+    "tofu",
+    300
+   ],
+   [
+    "rice_white",
+    150
+   ],
+   [
+    "garlic",
+    12
+   ],
+   [
+    "green_chili",
+    10
+   ],
+   [
+    "basil",
+    20
+   ],
+   [
+    "soy_sauce",
+    30
+   ],
+   [
+    "sugar",
+    8
+   ],
+   [
+    "oil_veg",
+    20
+   ],
+   [
+    "bell_pepper",
+    80
+   ]
+  ],
+  "tags": [
+   "high-protein",
+   "quick"
+  ]
+ },
+ {
+  "id": "th-vegetable-green-curry",
+  "name": "Vegetable Green Curry (Kaeng Khiao Wan Phak)",
+  "meal": [
+   "lunch",
+   "dinner"
+  ],
+  "servings": 2,
+  "ingredients": [
+   [
+    "coconut_milk",
+    300
+   ],
+   [
+    "curry_paste",
+    40
+   ],
+   [
+    "eggplant",
+    150
+   ],
+   [
+    "bell_pepper",
+    100
+   ],
+   [
+    "tofu",
+    200
+   ],
+   [
+    "basil",
+    10
+   ],
+   [
+    "sugar",
+    8
+   ],
+   [
+    "soy_sauce",
+    15
+   ],
+   [
+    "rice_white",
+    150
+   ]
+  ],
+  "tags": []
+ },
+ {
+  "id": "th-pad-pak-ruam",
+  "name": "Stir-Fried Mixed Vegetables with Tofu (Pad Pak Ruam)",
+  "meal": [
+   "lunch",
+   "dinner"
+  ],
+  "servings": 2,
+  "ingredients": [
+   [
+    "tofu",
+    250
+   ],
+   [
+    "broccoli",
+    150
+   ],
+   [
+    "carrot",
+    80
+   ],
+   [
+    "cabbage",
+    120
+   ],
+   [
+    "mushroom",
+    100
+   ],
+   [
+    "garlic",
+    10
+   ],
+   [
+    "soy_sauce",
+    30
+   ],
+   [
+    "oil_veg",
+    15
+   ],
+   [
+    "rice_white",
+    150
+   ]
+  ],
+  "tags": [
+   "budget"
+  ]
+ }
+]

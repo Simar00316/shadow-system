@@ -3,7 +3,8 @@ import { motion } from 'motion/react'
 import { Icon } from './icons'
 import { sfx } from '@/audio/sfx'
 
-export type SetType = 'warmup' | 'working' | 'drop' | 'failure' | 'superset'
+import type { SetType } from '@/engine/types'
+export type { SetType }
 const TYPE_BADGE: Record<SetType, string> = { warmup: 'W', working: '', drop: 'D', failure: 'F', superset: 'S' }
 
 export type SetRowData = { index: number; type: SetType; weight: number; reps: number; rir: number | null; done: boolean; target?: { weight: number; reps: number; rir?: number }; pr?: boolean }

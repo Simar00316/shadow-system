@@ -28,3 +28,39 @@ export type ShadowRank = (typeof SHADOW_RANKS)[number]
 export type Sex = 'male' | 'female'
 export type Experience = 'beginner' | 'intermediate' | 'advanced'
 export type Goal = 'strength' | 'hypertrophy' | 'endurance' | 'mobility' | 'fat_loss' | 'recomp'
+
+export const EQUIPMENT = ['bodyweight', 'dumbbell', 'barbell', 'ez_bar', 'kettlebell', 'cable', 'machine', 'smith_machine', 'bands', 'bench', 'pullup_bar', 'medicine_ball', 'stability_ball', 'foam_roller', 'cardio_machine', 'other'] as const
+export type Equipment = (typeof EQUIPMENT)[number]
+
+export const PATTERNS = ['squat', 'hinge', 'lunge', 'horizontal_push', 'vertical_push', 'horizontal_pull', 'vertical_pull', 'curl', 'extension', 'raise', 'fly', 'crunch', 'rotation', 'carry', 'plyo', 'cardio', 'stretch', 'other'] as const
+export type Pattern = (typeof PATTERNS)[number]
+
+export const FORM_LIFTS = ['squat', 'pushup', 'deadlift', 'lunge', 'ohp', 'curl'] as const
+export type FormLift = (typeof FORM_LIFTS)[number]
+
+export type Exercise = {
+  id: string
+  name: string
+  aliases: string[]
+  primary: Muscle[]
+  secondary: Muscle[]
+  equipment: Equipment[]
+  difficulty: Experience
+  mechanics: 'compound' | 'isolation'
+  category: string
+  force: 'push' | 'pull' | 'static' | null
+  classTags: BaseClass[]
+  pattern: Pattern
+  swapGroup: string
+  met: number
+  formCheck: FormLift | null
+  media: { kind: 'anim' | 'frames'; src: string[]; thumb: string; credit?: string }
+  description: string
+  instructions: string[]
+  tips: string[]
+  mistakes: string[]
+  /** Common gym lift, preferred by the plan generator. */
+  core: boolean
+}
+
+export type SetType = 'warmup' | 'working' | 'drop' | 'failure' | 'superset'
