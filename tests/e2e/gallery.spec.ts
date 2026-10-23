@@ -6,7 +6,7 @@ test.use({ reducedMotion: 'reduce' })
 
 test.describe('component gallery visual snapshots', () => {
   test.beforeEach(async ({ page }) => {
-    await page.clock.install({ time: new Date('2026-10-23T09:00:00') })
+    await page.clock.setFixedTime(new Date('2026-10-23T09:00:00'))
     await page.goto('/dev/gallery')
     await page.evaluate(() => document.fonts.ready)
   })
