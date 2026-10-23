@@ -200,6 +200,8 @@ export async function ensureToday(today: Day = dayOf()) {
       if (pq && pq.status === 'issued') await db.quests.put({ ...pq, status: res.event === 'penalty_failed' ? 'failed' : 'cleared' })
       if (res.event === 'penalty_failed') await say('penalty_failed', { streak: streak.streak, best: streak.best }, { quiet })
     }
+    const { closeNutritionDay } = await import('./diet')
+    await closeNutritionDay(day)
     const q = (await db.quests.get(`daily-${day}`)) ?? (await issueDaily(day, profile))
     const before = streak.freezes
     const r = closeDay(streak, day, { cleared: q.status === 'cleared', waived: !!q.meta?.waived, restPass: !!(await getSetting<Day[]>('restPasses'))?.includes(day) })

@@ -68,6 +68,8 @@ export class ShadowDB extends Dexie {
       settings: 'key',
       notificationSchedule: 'id, kind',
     })
+    // v2: index meal logs by time for "recent foods" (issue #107). Index-only change; no data rewrite needed.
+    this.version(2).stores({ mealLogs: 'id, day, meal, at' })
   }
 }
 
