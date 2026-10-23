@@ -175,7 +175,7 @@ Generated at first open of the day (or at midnight by the scheduler) from plan +
 Goal (training day): the planned session  |  (rest day): 10–15 min mobility block OR step goal
 Always also: drink water target, protein target, readiness check-in
 Time limit: until 23:59:59 local
-Reward: XP (§4.2), 40 gold, +3 allocation points if all items cleared, a loot roll (after a workout)
+Reward: XP (§4.2), 40 gold, a loot roll (after a workout). (Canon gives +3 stat points per Daily Quest; we give 3 per level-up instead so points stay scarce.)
 Penalty: Penalty Zone (unless waived)
 ```
 
@@ -288,4 +288,5 @@ Increment on core cleared (planned rest days count when the readiness check-in i
 | HP/MP/Fatigue on Status Window mapped to recovery/readiness | R1 §2 canon fields |
 | Rep extension: when one equipment step is > 10% of load, extend the rep range by up to +4, then take one step and reset | 12-week simulation found unbounded rep growth (#96) |
 | Plateau only counts when the last session missed the target | simulation (#97) |
+| Daily Quest no longer grants stat points (3 per level only) | 365 × 3 points a year would make allocation meaningless |
 | Reactive deloads need ≥ 3 weeks since the last deload; stall/drop signals only use exposures since then | simulation found deload loops (#98) |
