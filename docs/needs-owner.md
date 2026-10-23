@@ -19,6 +19,8 @@ The Worker (`worker/`) and client (`src/app/push.ts`) are built and tested again
 
 ## 2. Deploy the app (Cloudflare Pages, free)
 
+**Done (2026-10-24):** live at https://shadow-system.pages.dev (Pages project `shadow-system`). To update: `npm run deploy`. Note: new Cloudflare accounts now route `wrangler pages project create` to Workers and may rewrite the project for it; the project was created with `--force` as a classic Pages project, so plain `npm run deploy` keeps working. Do not accept wrangler's offer to convert the project.
+
 Prepared: `public/_redirects` (SPA fallback), `public/_headers` (no-cache for the service worker and HTML, `noindex`, camera allowed), and `npm run deploy`. The build is about 4,000 files and 98 MB, inside the Pages free limits (20,000 files, 25 MiB per file).
 
 1. `npx wrangler login` (same free account as section 1).
