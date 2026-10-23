@@ -300,8 +300,8 @@ export async function consumeItem(itemId: string, opt?: { day?: string; stat?: S
     const passes = (await getSetting<string[]>('restPasses')) ?? []
     await setSetting('restPasses', [...new Set([...passes, day])])
   } else if (itemId === 'respec') {
-    const p = await refreshPlayer()
-    await db.player.put({ ...p, allocated: { str: 0, agi: 0, vit: 0, int: 0, per: 0 } })
+    await db.player.update('me', { allocated: { str: 0, agi: 0, vit: 0, int: 0, per: 0 } })
+    await refreshPlayer()
   } else if (itemId.startsWith('theme_')) {
     await db.player.update('me', { theme: itemById.get(itemId)?.theme ?? 'system' })
     return true

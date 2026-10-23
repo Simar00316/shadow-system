@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useLiveQuery } from 'dexie-react-hooks'
 import { db } from '@/db/schema'
@@ -9,6 +10,7 @@ import { Icon } from '@/ui/icons'
 import { ITEMS, itemById, STORE } from '@/data/items'
 import { TITLES } from '@/data/titles'
 import { buy, consumeItem } from '@/app/progression'
+import { awardMany } from '@/app/game'
 import { odds } from '@/engine/loot'
 import { addDays, dayOf } from '@/engine/dates'
 import type { Rarity } from '@/engine/types'
@@ -51,6 +53,8 @@ export function Inventory() {
 
 /** Titles: equip one for +3% XP in its category. */
 export function Titles() {
+  // Self-heal: grant any title already earned (an unlock can be lost if the app closes mid-workout-finish).
+  useEffect(() => { void awardMany([], { quiet: true }) }, [])
   const owned = useLiveQuery(async () => new Set((await db.titles.toArray()).map((t) => t.id)), [], new Set<string>())
   const player = useLiveQuery(() => db.player.get('me'), [])
   return (

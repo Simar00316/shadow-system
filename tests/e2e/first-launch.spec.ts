@@ -18,7 +18,7 @@ test('full first launch: Awakening → Status Window → readiness check-in → 
   await expect(page.getByText('Jinwoo')).toBeVisible()
   await expect(page.getByRole('progressbar', { name: 'Experience' })).toBeVisible()
   await expect(page.getByRole('img', { name: /E rank/ })).toBeVisible()
-  await expect(page.getByText('Preparation to Become Strong')).toBeVisible()
+  await expect(page.getByText('Preparation to Become Strong', { exact: true })).toBeVisible()
   await expect(page.getByText('Readiness check-in')).toBeVisible()
   // Awakening XP was granted, and the System spoke
   await expect(page.getByRole('progressbar', { name: 'Experience' })).not.toHaveAttribute('aria-valuenow', '0')

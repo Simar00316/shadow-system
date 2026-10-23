@@ -17,14 +17,35 @@ The Worker (`worker/`) and client (`src/app/push.ts`) are built and tested again
 
 **Real-iPhone push test (device needed):** install the app to the Home Screen (iOS 16.4+), Settings → Reminders → turn on, accept the prompt. Set a reminder 5 minutes ahead and lock the phone. Expected: a `SYSTEM` notification arrives within 15 minutes; tapping it opens the matching screen. Then log water and confirm the water reminder is skipped. If nothing arrives, check `wrangler tail` for 400/403 responses.
 
-## 2. Deploy the app
+## 2. Deploy the app (Cloudflare Pages, free)
 
-Prepared in M13 (see that section once written).
+Prepared: `public/_redirects` (SPA fallback), `public/_headers` (no-cache for the service worker and HTML, `noindex`, camera allowed), and `npm run deploy`. The build is about 4,000 files and 98 MB, inside the Pages free limits (20,000 files, 25 MiB per file).
+
+1. `npx wrangler login` (same free account as section 1).
+2. Create the project once: `npx wrangler pages project create shadow-system --production-branch main`.
+3. Optional: put the push settings in `.env.local` first (section 1, step 7).
+4. Deploy: `npm run deploy`. The app is served at `https://shadow-system.pages.dev` (or the name Cloudflare assigns). HTTPS is automatic, which PWA install, the service worker, push and the camera all need.
+5. Put that origin into `worker/wrangler.toml` (`ALLOWED_ORIGIN`, `VAPID_SUBJECT`) and redeploy the Worker.
+6. Later deploys: `npm run deploy` again. Installed apps pick up the new version the next time they are closed and reopened.
+
+**Privacy (replaces Cloudflare Access):** Access breaks offline PWAs (icon and manifest requests carry no cookie; research/platform.md Findings 11), so it was not used. Instead the URL is unlisted (`noindex`, never linked), the app has an optional PIN (Settings → Security), and the Worker needs a bearer token. All records stay on the phone. If you still want Access, protect only a different preview hostname, not the production one.
 
 ## 3. Real-iPhone QA
 
-See `docs/iphone-qa.md` (M13).
+Work through `docs/iphone-qa.md` on your iPhone after the first deploy: install, offline workout, push, camera form check, barcode scan, audio after the first tap, safe areas, wake lock, and storage after a week. File an issue for each failure.
 
 ## 4. Form check validation on real video
 
-The form analyser is validated on synthetic pose clips only. Record one short side-on clip per lift on the iPhone and check that reps and cues match what you did.
+The form analyser is validated on synthetic pose clips only (`tests/fixtures/form/synth.ts`). Record one short side-on clip per lift (squat, push-up, deadlift, lunge, overhead press, curl) with the iPhone, run Form Check on each, and note miscounted reps or wrong cues in an issue. Thresholds are in `src/engine/form.ts` (`LIFTS`).
+
+## 5. Licences before anything goes public
+
+The repo is private and the app is for personal use. Before making either public:
+
+- **Exercise animations** (`public/assets/third-party/exercises/hx*.webp`) are © Gym Visual and are used here with attribution only. Replace them, or buy a licence from gymvisual.com (issue #4). The free-exercise-db frames (`fx-*.webp`, Unlicense) can stay.
+- **IFCT 2017 numbers** (Indian food composition, ICMR-NIN) are used for personal use. Ask NIN for permission, or switch those foods to USDA equivalents, before a public release.
+- Everything else is MIT, Apache-2.0, OFL, CC0 or public domain (`docs/asset-sources.md`).
+
+## 6. Optional: full CI on GitHub
+
+CI runs only on demand. To run it: GitHub → Actions → CI → Run workflow (or add the `full-ci` label to a PR). It uses the free Windows runner minutes.

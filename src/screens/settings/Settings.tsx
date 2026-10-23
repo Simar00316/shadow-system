@@ -156,7 +156,7 @@ export function Settings() {
       <SystemWindow tag="ABOUT" animate={false}>
         <Row label="Version">{pkg.version}</Row>
         <Row label="Database">v{db.verno}</Row>
-        <p className="t-small mt-2 text-dim">Shadow System is a private, offline-first training app. All records stay on this device. Exercise data and media: hasaneyldrm/exercises-dataset (MIT) and yuhonas/free-exercise-db (Unlicense). Body map: MuscleMap (MIT). Food data: USDA SR Legacy (CC0), IFCT 2017 (ICMR-NIN) and Open Food Facts (ODbL). Pose model: Google MediaPipe (Apache-2.0). Full credits: docs/asset-sources.md.</p>
+        <p className="t-small mt-2 text-dim">Shadow System is a private, offline-first training app. All records stay on this device. Exercise data: hasaneyldrm/exercises-dataset (MIT) and yuhonas/free-exercise-db (Unlicense). Exercise animations © Gym Visual (gymvisual.com), used in this private build with attribution. Body map: MuscleMap (MIT). Food data: USDA SR Legacy (CC0), IFCT 2017 (ICMR-NIN) and Open Food Facts (ODbL). Pose model: Google MediaPipe (Apache-2.0). Full credits: docs/asset-sources.md.</p>
         <p className="t-small mt-2 text-dim">Not medical advice. Stop any exercise that causes pain and consult a professional for injuries.</p>
       </SystemWindow>
 

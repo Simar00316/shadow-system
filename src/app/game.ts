@@ -36,13 +36,16 @@ async function multContext(player: Player): Promise<MultContext> {
 
 /** Recompute the player row from the whole ledger. */
 export async function refreshPlayer(): Promise<Player> {
-  const p = (await db.player.get('me')) ?? newPlayer()
   const fold = foldLedger(await db.xpEvents.toArray())
   const streak = await getStreak()
-  const allocated = Object.values(p.allocated).reduce((a, b) => a + b, 0)
-  const next: Player = { ...p, level: fold.level, xp: fold.xp, totalXp: fold.totalXp, gold: fold.gold, stats: fold.stats, unspent: Math.max(0, fold.pointsEarned - allocated), streak: streak.streak, bestStreak: streak.best, activeDays: streak.activeDays, updatedAt: Date.now() }
-  await db.player.put(next)
-  return next
+  // Read-modify-write in one transaction: a concurrent change (equipped title, theme, pity) must not be overwritten (#126).
+  return db.transaction('rw', db.player, async () => {
+    const p = (await db.player.get('me')) ?? newPlayer()
+    const allocated = Object.values(p.allocated).reduce((a, b) => a + b, 0)
+    const next: Player = { ...p, level: fold.level, xp: fold.xp, totalXp: fold.totalXp, gold: fold.gold, stats: fold.stats, unspent: Math.max(0, fold.pointsEarned - allocated), streak: streak.streak, bestStreak: streak.best, activeDays: streak.activeDays, updatedAt: Date.now() }
+    await db.player.put(next)
+    return next
+  })
 }
 
 /** Append ledger entries (idempotent by type+refId), level up, pay level gold, unlock titles and hidden quests. */
@@ -260,9 +263,12 @@ export async function progressDaily(key: string, value: number, mode: 'set' | 'a
 
 /** Spend one unspent point on a stat (cap 60 allocated per stat, game-design §4.3). */
 export async function allocatePoint(stat: Stat) {
-  const p = await refreshPlayer()
-  if (p.unspent <= 0 || p.allocated[stat] >= 60) return p
-  await db.player.put({ ...p, allocated: { ...p.allocated, [stat]: p.allocated[stat] + 1 }, unspent: p.unspent - 1 })
+  await refreshPlayer()
+  await db.transaction('rw', db.player, async () => {
+    const p = (await db.player.get('me'))!
+    if (p.unspent <= 0 || p.allocated[stat] >= 60) return
+    await db.player.update('me', { allocated: { ...p.allocated, [stat]: p.allocated[stat] + 1 }, unspent: p.unspent - 1 })
+  })
   return refreshPlayer()
 }
 

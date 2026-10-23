@@ -5,14 +5,15 @@ import { Toaster } from './ui/feedback'
 import { usePrefs } from './app/prefs'
 import { Shell } from './screens/Shell'
 import { Status } from './screens/status/Status'
-import { Awakening } from './screens/awakening/Awakening'
-import { Settings } from './screens/settings/Settings'
-import { ImportScreen, ReportScreen } from './screens/settings/DataScreens'
 import { SystemMenu } from './screens/system/SystemMenu'
 import { SystemLog } from './screens/system/SystemLog'
 import { Sealed } from './screens/Sealed'
 
-const page = <T extends Record<string, ComponentType>>(load: () => Promise<T>, name: keyof T) => lazy(() => load().then((m) => ({ default: m[name] as ComponentType })))
+const page = <T,>(load: () => Promise<T>, name: keyof T) => lazy(() => load().then((m) => ({ default: m[name] as ComponentType })))
+const Awakening = page(() => import('./screens/awakening/Awakening'), 'Awakening')
+const Settings = page(() => import('./screens/settings/Settings'), 'Settings')
+const ImportScreen = page(() => import('./screens/settings/DataScreens'), 'ImportScreen')
+const ReportScreen = page(() => import('./screens/settings/DataScreens'), 'ReportScreen')
 const Gallery = page(() => import('./screens/dev/Gallery'), 'Gallery')
 const Train = page(() => import('./screens/train/Train'), 'Train')
 const BodyMapScreen = page(() => import('./screens/train/BodyMapScreen'), 'BodyMapScreen')
