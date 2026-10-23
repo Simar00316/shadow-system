@@ -54,7 +54,7 @@ export function Inventory() {
 /** Titles: equip one for +3% XP in its category. */
 export function Titles() {
   // Self-heal: grant any title already earned (an unlock can be lost if the app closes mid-workout-finish).
-  useEffect(() => { void awardMany([], { quiet: true }) }, [])
+  useEffect(() => { void awardMany([], { quiet: true }).catch((e) => console.warn('[System] title check failed', e)) }, [])
   const owned = useLiveQuery(async () => new Set((await db.titles.toArray()).map((t) => t.id)), [], new Set<string>())
   const player = useLiveQuery(() => db.player.get('me'), [])
   return (

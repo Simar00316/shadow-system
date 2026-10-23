@@ -28,7 +28,7 @@ const idle = (fn: () => void) => ('requestIdleCallback' in window ? requestIdleC
 addEventListener('load', () => idle(() => void seedExercises()), { once: true })
 
 // Push reminders: heal a silently dropped subscription, then keep the Worker's daily booleans current.
-void import('./app/push').then((p) => { void p.repairPush().catch(() => undefined); p.startStatusSync() })
+void import('./app/push').then((p) => { void p.repairPush().catch(() => undefined); p.startStatusSync() }).catch((e) => console.warn('[System] push setup skipped', e))
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
