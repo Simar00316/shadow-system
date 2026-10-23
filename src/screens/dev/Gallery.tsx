@@ -13,6 +13,8 @@ import { ARCHETYPES, ShadowArt } from '@/ui/ShadowArt'
 import { Icon, iconNames } from '@/ui/icons'
 import { Backdrop } from '@/ui/Backdrop'
 import { sfx, SOUNDS } from '@/audio/sfx'
+import { LevelUpBurst, LootReveal, AriseSequence } from '@/ui/cinematics'
+import { ExerciseMedia } from '@/ui/ExerciseMedia'
 import { ADVANCED_CLASSES, BASE_CLASSES, RANKS, type Muscle } from '@/engine/types'
 
 const STATES: UiState[] = ['default', 'active', 'disabled', 'loading', 'error', 'success']
@@ -45,6 +47,7 @@ export function Gallery() {
   const [restEnd, setRestEnd] = useState<number | null>(() => Date.now() + 90_000)
   const [full, setFull] = useState(false)
   const [nav, setNav] = useState('status')
+  const [arise, setArise] = useState(false)
   const [now] = useState(() => Date.now())
   const [midnight] = useState(() => { const d = new Date(); d.setHours(24, 0, 0, 0); return d })
 
@@ -213,6 +216,20 @@ export function Gallery() {
       <Section id="empty-state" title="EmptyState">
         <SystemWindow tag="SYSTEM LOG" animate={false}><EmptyState message="[No System messages have been recorded.]" icon="log" /></SystemWindow>
         <SystemWindow tag="INVENTORY" animate={false}><EmptyState message="[Your inventory is empty.]" icon="inventory" action={<Button variant="secondary">Visit the Store</Button>} /></SystemWindow>
+      </Section>
+
+      <Section id="cinematics" title="Cinematics">
+        <LevelUpBurst level={12} />
+        {(['common', 'rare', 'epic', 'legendary'] as const).map((r) => <LootReveal key={r} rarity={r} name={`${r} item`} detail="+120 gold" />)}
+        <Button variant="shadow" onClick={() => setArise(true)}>Play ARISE</Button>
+        {arise ? <AriseSequence name="Ferros" rank="elite" archetype="giant" seed="ferros" lore="A gatekeeper who held a collapsing tunnel." onAccept={() => setArise(false)} /> : null}
+      </Section>
+
+      <Section id="exercise-media" title="ExerciseMedia">
+        <div className="flex justify-around">
+          <ExerciseMedia ex={{ name: 'No media', media: { kind: 'anim', src: [], thumb: '' } }} size={120} />
+          <ExerciseMedia ex={{ name: 'Frames', media: { kind: 'frames', src: [], thumb: '' } }} size={120} />
+        </div>
       </Section>
 
       <Section id="icons" title="Icons">

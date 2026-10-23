@@ -14,6 +14,8 @@ import { Emblem } from './Emblem'
 import { ARCHETYPES, ShadowArt } from './ShadowArt'
 import { Icon, iconNames } from './icons'
 import { useToasts } from '@/state/toasts'
+import { AriseSequence, LevelUpBurst, LootReveal } from './cinematics'
+import { ExerciseMedia } from './ExerciseMedia'
 import { ADVANCED_CLASSES, BASE_CLASSES, MUSCLES, RANKS, type Muscle } from '@/engine/types'
 
 describe('SystemWindow', () => {
@@ -276,5 +278,36 @@ describe('charts and layout', () => {
     expect(screen.getByRole('dialog', { name: 'Plates' })).toBeInTheDocument()
     await userEvent.keyboard('{Escape}')
     expect(close).toHaveBeenCalled()
+  })
+})
+
+describe('cinematics and media', () => {
+  it('LootReveal opens on tap and announces the item', async () => {
+    render(<LootReveal rarity="epic" name="Instant Dungeon Key" onDone={() => {}} />)
+    await userEvent.click(screen.getByRole('button', { name: 'Open the loot box' }))
+    expect(screen.getByText('Instant Dungeon Key')).toBeInTheDocument()
+    expect(screen.getByRole('button', { name: 'Continue' })).toBeInTheDocument()
+  })
+  it('AriseSequence reaches the accept step', async () => {
+    vi.useFakeTimers()
+    const fn = vi.fn()
+    render(<AriseSequence name="Ferros" rank="elite" archetype="giant" seed="f" onAccept={fn} />)
+    act(() => { vi.advanceTimersByTime(2000) })
+    vi.useRealTimers()
+    fireEvent.click(screen.getByRole('button', { name: 'Accept' }))
+    expect(fn).toHaveBeenCalled()
+  })
+  it('LevelUpBurst labels the new level', () => {
+    render(<LevelUpBurst level={7} />)
+    expect(screen.getByLabelText('Level up: 7')).toBeInTheDocument()
+  })
+  it('ExerciseMedia renders animation, frames and fallback with credit', () => {
+    const { rerender } = render(<ExerciseMedia ex={{ name: 'Squat', media: { kind: 'anim', src: ['/a.webp'], thumb: '/t.webp', credit: '(c) X' } }} />)
+    expect(screen.getByRole('img', { name: 'Squat demonstration' })).toBeInTheDocument()
+    expect(screen.getByText('(c) X')).toBeInTheDocument()
+    rerender(<ExerciseMedia ex={{ name: 'Row', media: { kind: 'frames', src: ['/0.webp', '/1.webp'], thumb: '' } }} />)
+    expect(screen.getByRole('img', { name: 'Row demonstration' })).toBeInTheDocument()
+    rerender(<ExerciseMedia ex={{ name: 'None', media: { kind: 'frames', src: [], thumb: '' } }} />)
+    expect(screen.queryByRole('img', { name: 'None demonstration' })).toBeNull()
   })
 })

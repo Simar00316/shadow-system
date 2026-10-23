@@ -36,13 +36,13 @@ const KIND: Record<ToastKind, { color: string; icon: IconName; tag: string }> = 
 export function ToastView({ kind, text, onClose }: { kind: ToastKind; text: string; onClose?: () => void }) {
   const k = KIND[kind]
   return (
-    <div role={kind === 'warning' ? 'alert' : 'status'} className="pointer-events-auto flex items-start gap-3 rounded-[var(--r-1)] border bg-panel px-4 py-3" style={{ borderColor: k.color, boxShadow: `0 0 16px color-mix(in srgb, ${k.color} 40%, transparent)` }}>
+    <div role={kind === 'warning' ? 'alert' : 'status'} className="pointer-events-none flex items-start gap-3 rounded-[var(--r-1)] border bg-panel px-4 py-3" style={{ borderColor: k.color, boxShadow: `0 0 16px color-mix(in srgb, ${k.color} 40%, transparent)` }}>
       <span style={{ color: k.color }} className="mt-0.5"><Icon name={k.icon} size={20} /></span>
       <div className="min-w-0 flex-1">
         <div className="t-tag" style={{ color: k.color }}>{k.tag}</div>
         <TypedText text={text} />
       </div>
-      {onClose ? <button type="button" aria-label="Dismiss" className="-m-2 p-2 text-dim" onClick={onClose}><Icon name="close" size={18} /></button> : null}
+      {onClose ? <button type="button" aria-label="Dismiss" className="pointer-events-auto -m-2 p-2 text-dim" onClick={onClose}><Icon name="close" size={18} /></button> : null}
     </div>
   )
 }
@@ -55,7 +55,7 @@ export function Toaster() {
     return () => timers.forEach(clearTimeout)
   }, [toasts, dismiss])
   return (
-    <div className="pointer-events-none fixed inset-x-0 z-50 mx-auto flex max-w-[480px] flex-col gap-2 px-4" style={{ top: 'calc(env(safe-area-inset-top) + 8px)' }}>
+    <div className="pointer-events-none fixed inset-x-0 z-50 mx-auto flex max-w-[480px] flex-col gap-2 px-4" style={{ top: 'calc(env(safe-area-inset-top) + 68px)' }}>
       <AnimatePresence initial={false}>
         {toasts.map((t) => (
           <motion.div key={t.id} initial={{ opacity: 0, y: -16 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -8 }} transition={{ duration: 0.2 }}>
