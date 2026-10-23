@@ -24,3 +24,10 @@ One line per decision: what, and why.
 - Shadow art is procedural SVG per archetype with seeded variants instead of hand-painted art. Why: original, tiny, infinitely many unique shadows.
 - Visual snapshots taken with reduced motion and a fixed clock. Why: deterministic screenshots.
 - CI runs Playwright with `--ignore-snapshots`; visual regression is checked locally on the owner's Windows machine where snapshots were approved. Why: font rasterisation differs on Linux runners.
+- Exercise library: 1,915 exercises = hasaneyldrm (spine, GIFs) ∪ free-exercise-db (unmatched entries kept with 2-frame media); match at token-Jaccard ≥ 0.8 with the same first equipment and a shared muscle. Why: R6 merge strategy; 0.75 produced wrong merges (bench press ↔ bench press with chains).
+- Exercises that appear in both datasets, or match a hand list of common lifts, are tagged `core` (259) and preferred by the plan generator. Why: popularity proxy without manual curation of 400 lifts.
+- Tips/mistakes authored per movement pattern (18 patterns) plus dataset "Tip:" sentences. Why: no dataset has mistakes; pattern-level coaching is accurate and covers all 1,915.
+- Only English instructions kept. Why: the owner reads English; cuts bundle size.
+- Ingredient table: 305 curated rows resolved by query against the frozen SR Legacy release + IFCT codes; 755 dishes across 16 cuisines authored as raw-gram recipes with macros computed at build time. Why: R6 §2.4, §3.3.
+- Dish authoring was split across four subagents writing data/dishes/*.json against the real ingredient ids, validated by `data/build-dishes.ts`.
+- Exercise media are committed (58 MB WebP). Why: offline-capable deterministic builds; private repo.
