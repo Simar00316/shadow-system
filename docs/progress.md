@@ -4,8 +4,8 @@
 | --- | --- | --- |
 | M0 Repo and CI | done | lint, type-check, Vitest, Playwright WebKit green locally |
 | M1 Research | done | 7 notes, game-design.md, architecture.md (PR #86) |
-| M2 Design system and assets | in progress | |
-| M3 Data pipeline and database | | |
+| M2 Design system and assets | done | PR #90 |
+| M3 Data pipeline and database | done | 1,915 exercises, 305 ingredients, 755 dishes; Dexie v1 |
 | M4 Training and nutrition engines | | |
 | M5 Game engines | | |
 | M6 App shell and Awakening | | |
