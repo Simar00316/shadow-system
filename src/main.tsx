@@ -21,12 +21,14 @@ if ('serviceWorker' in navigator && import.meta.env.PROD) {
   })
 }
 
-// Ask the browser not to evict our data (R7 §2), then load the exercise library into IndexedDB.
+// Ask the browser not to evict our data (R7 §2), then load the exercise library into IndexedDB once the app is idle
+// (the library is ~350 KB gzipped; fetching it during first paint slowed launch). The Awakening seeds it itself.
 void requestPersistence()
-void seedExercises()
+const idle = (fn: () => void) => ('requestIdleCallback' in window ? requestIdleCallback(fn, { timeout: 4000 }) : setTimeout(fn, 2000))
+addEventListener('load', () => idle(() => void seedExercises()), { once: true })
 
 // Push reminders: heal a silently dropped subscription, then keep the Worker's daily booleans current.
-void import('./app/push').then((p) => { void p.repairPush().catch(() => undefined); p.startStatusSync() })
+void import('./app/push').then((p) => { void p.repairPush().catch(() => undefined); p.startStatusSync() }).catch((e) => console.warn('[System] push setup skipped', e))
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>

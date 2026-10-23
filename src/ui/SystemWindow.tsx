@@ -46,7 +46,7 @@ export function SystemWindow({ tag, title, variant = 'system', state = 'default'
       {tag ? <div className="sys-tag t-tag">{variant === 'alert' ? '⚠ ' : ''}{tag}</div> : null}
       {title ? <h2 className="t-title mb-3" style={{ color: 'var(--text)' }}>{title}</h2> : null}
       {state === 'loading' ? (
-        <div className="flex flex-col gap-2" aria-label="Loading">
+        <div className="flex flex-col gap-2" role="status" aria-label="Loading">
           <div className="skeleton h-4 w-3/4" />
           <div className="skeleton h-4 w-full" />
           <div className="skeleton h-4 w-1/2" />

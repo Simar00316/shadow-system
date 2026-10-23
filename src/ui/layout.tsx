@@ -6,6 +6,12 @@ import { sfx } from '@/audio/sfx'
 /** Bottom sheet with scrim, close button, Escape and focus trap. (Drag-to-close removed: it never settled on Linux WebKit, #94.) */
 export function Sheet({ open, onClose, title, children }: { open: boolean; onClose: () => void; title: string; children: ReactNode }) {
   const ref = useRef<HTMLDivElement>(null)
+  // System window sounds (DESIGN.md §6), keyed on `open` only so re-renders do not replay them.
+  useEffect(() => {
+    if (!open) return
+    sfx.play('window-open')
+    return () => sfx.play('window-close')
+  }, [open])
   useEffect(() => {
     if (!open) return
     const prev = document.activeElement as HTMLElement | null

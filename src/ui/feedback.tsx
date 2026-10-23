@@ -19,8 +19,9 @@ export function TypedText({ text, className = '', onDone }: { text: string; clas
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [done])
   return (
-    <span className={`t-system ${done ? '' : 'cursor-block'} ${className}`} onClick={() => setN(text.length)} aria-label={text}>
-      <span aria-hidden="true">{text.slice(0, n)}</span>
+    <span className={`t-system ${done ? '' : 'cursor-block'} ${className}`} onClick={() => setN(text.length)} data-testid="typed">
+      {/* While typing, screen readers get the whole line at once and the typed copy is hidden from them. */}
+      {done ? text : <><span className="sr-only">{text}</span><span aria-hidden="true">{text.slice(0, n)}</span></>}
     </span>
   )
 }

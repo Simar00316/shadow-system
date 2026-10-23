@@ -1,0 +1,13 @@
+# Cloudflare Pages headers. The service worker and HTML must revalidate so updates reach installed apps;
+# everything else is cached by the service worker (src/sw.ts).
+/sw.js
+  Cache-Control: no-cache
+/index.html
+  Cache-Control: no-cache
+/manifest.webmanifest
+  Cache-Control: no-cache
+/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: no-referrer
+  X-Robots-Tag: noindex, nofollow
+  Permissions-Policy: camera=(self), microphone=(), geolocation=()

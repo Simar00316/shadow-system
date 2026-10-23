@@ -106,8 +106,8 @@ describe('controls', () => {
 describe('feedback', () => {
   it('TypedText finishes on tap', async () => {
     render(<TypedText text="[You have leveled up.]" />)
-    await userEvent.click(screen.getByLabelText('[You have leveled up.]'))
-    expect(screen.getByLabelText('[You have leveled up.]')).toHaveTextContent('[You have leveled up.]')
+    await userEvent.click(screen.getByTestId('typed'))
+    expect(screen.getByTestId('typed')).toHaveTextContent(/^\[You have leveled up\.\]$/)
   })
   it.each(['info', 'success', 'warning', 'reward', 'shadow'] as const)('ToastView %s', (kind) => {
     render(<ToastView kind={kind} text="[x]" />)

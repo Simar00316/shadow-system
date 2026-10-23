@@ -13,8 +13,6 @@
 | M8 Progress and game screens | done | progress, measurements and photos, quests and trials, dungeons and Demon Castle, Shadow Army, inventory, titles, store, themes |
 | M9 Diet | done | diet dashboard, food search, barcode, water, meal plan, swaps, grocery; logged-day E2E |
 | M10 Form check | done | analyser for 6 lifts, ±1 rep on synthetic clips, MediaPipe screen |
-| M11 Notifications | | |
-| M12 Data features | | |
-| M13 Polish and release | | |
 | M11 Notifications | done | Worker + VAPID + cron + skip logic, tested against a mocked push service (#113); deploy is an owner task (#74) |
 | M12 Data features | done | Backup/restore, CSV export, Hevy/Strong import with review, AI report, Settings, app PIN; round-trip tests |
+| M13 Polish and release | done | lazy routes + boot splash + idle seeding, a11y 100, window sounds, Pages deploy config, iPhone QA checklist, README, complete needs-owner; lost-update race fixed (#126) |

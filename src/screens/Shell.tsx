@@ -33,10 +33,11 @@ export function Shell() {
 
   useEffect(() => {
     if (!profile) return
-    const run = () => ensureToday().then(() => maintenance())
+    // Background jobs: a reload can abort them mid-import; log instead of leaving an unhandled rejection.
+    const run = () => ensureToday().then(() => maintenance()).catch((e) => console.warn('[System] day update interrupted', e))
     void run()
     // Backup reminder waits until the app has settled; extra startup reads made some live queries miss updates (#115).
-    const nag = setTimeout(() => void maybeNagBackup(), 5000)
+    const nag = setTimeout(() => void maybeNagBackup().catch((e) => console.warn('[System] backup check failed', e)), 5000)
     const onVis = () => { if (document.visibilityState === 'visible') void run() }
     document.addEventListener('visibilitychange', onVis)
     const onOffline = () => void say('offline', {}, { kind: 'info' })

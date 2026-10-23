@@ -10,9 +10,15 @@
     <link rel="apple-touch-icon" href="/icons/icon-180.png" />
     <link rel="icon" href="/icons/icon.svg" type="image/svg+xml" />
     <title>Shadow System</title>
+    <style>
+      /* First paint before any JavaScript: on-theme boot screen (research/platform.md §11). React replaces #root. */
+      html, body { margin: 0; background: #05070f; color: #9fd8ff; }
+      .boot { min-height: 100dvh; display: flex; flex-direction: column; gap: 12px; align-items: center; justify-content: center; text-align: center; font: 600 14px/1.4 ui-monospace, Menlo, Consolas, monospace; letter-spacing: 0.3em; text-shadow: 0 0 12px #2fa8ff; }
+      .boot h1 { margin: 0; font-size: 32px; letter-spacing: 0.2em; color: #e6f1ff; }
+    </style>
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root"><div class="boot" role="status"><h1>SHADOW SYSTEM</h1><p>[ SYSTEM BOOTING ]</p></div></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

@@ -56,7 +56,7 @@ export function Heatmap({ rows, cols, values, max, label }: { rows: string[]; co
             {cols.map((c, j) => {
               const v = values[i]?.[j] ?? 0
               return (
-                <td key={c} title={`${r} ${c}: ${v}`} className="t-num h-7 text-center text-[11px]" style={{ background: `rgb(47 168 255 / ${0.06 + 0.8 * Math.min(1, v / max)})`, color: v / max > 0.5 ? 'var(--text-on-accent)' : 'var(--text)' }}>
+                <td key={c} title={`${r} ${c}: ${v}`} className="t-num h-7 text-center text-[11px]" style={{ background: `rgb(47 168 255 / ${0.06 + 0.8 * Math.min(1, v / max)})`, color: v / max > 0.86 ? 'var(--text-on-accent)' : 'var(--text)' }}>
                   {v || ''}
                 </td>
               )
