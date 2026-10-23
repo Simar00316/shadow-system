@@ -8,7 +8,10 @@ import { ensureToday } from '@/app/game'
 import { maintenance } from '@/app/progression'
 import { dayOf } from '@/engine/dates'
 import { say } from '@/app/notify'
+import { maybeNagBackup } from '@/app/backup'
+import { lockedAtLaunch } from '@/app/pin'
 import { ReadinessModal } from './ReadinessModal'
+import { PinLock } from './PinLock'
 
 const TAB_FOR = (path: string) => (path === '/' ? 'status' : path.startsWith('/quests') || path.startsWith('/dungeons') ? 'quests' : path.startsWith('/train') || path.startsWith('/workout') || path.startsWith('/bodymap') || path.startsWith('/exercises') || path.startsWith('/plan') || path.startsWith('/cardio') ? 'train' : path.startsWith('/diet') ? 'diet' : 'system')
 const ROUTE_FOR: Record<string, string> = { status: '/', quests: '/quests', train: '/train', diet: '/diet', system: '/system' }
@@ -24,19 +27,24 @@ export function Shell() {
   const theme = useLiveQuery(() => db.player.get('me').then((p) => p?.theme ?? 'system'), [], 'system')
   useEffect(() => { document.documentElement.dataset.theme = theme }, [theme])
   const [dismissed, setDismissed] = useState<string | null>(null)
+  // Decided synchronously at launch; setting a PIN in Settings also unlocks the current session.
+  const [locked, setLocked] = useState(lockedAtLaunch)
   const readinessOpen = !!profile && readiness === false && dismissed !== today
 
   useEffect(() => {
     if (!profile) return
     const run = () => ensureToday().then(() => maintenance())
     void run()
+    // Backup reminder waits until the app has settled; extra startup reads made some live queries miss updates (#115).
+    const nag = setTimeout(() => void maybeNagBackup(), 5000)
     const onVis = () => { if (document.visibilityState === 'visible') void run() }
     document.addEventListener('visibilitychange', onVis)
     const onOffline = () => void say('offline', {}, { kind: 'info' })
     window.addEventListener('offline', onOffline)
-    return () => { document.removeEventListener('visibilitychange', onVis); window.removeEventListener('offline', onOffline) }
+    return () => { clearTimeout(nag); document.removeEventListener('visibilitychange', onVis); window.removeEventListener('offline', onOffline) }
   }, [profile])
 
+  if (locked) return <PinLock onUnlock={() => setLocked(false)} />
   if (profile === undefined) return null
   if (profile === false) return <Navigate to="/awakening" replace />
   const tab = TAB_FOR(loc.pathname)

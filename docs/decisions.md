@@ -43,3 +43,8 @@ One line per decision: what, and why.
 - Push runs in mock mode when VITE_PUSH_* is unset: the toggle and schedule work, nothing leaves the device. Why: keeps the app and tests working before the owner deploys the Worker.
 - `calorie_check` push text uses a fixed line because every catalogue variant needs kcal numbers, which never leave the device.
 - The Worker uses minimal local types for KV/handlers instead of `@cloudflare/workers-types`. Why: no extra dependency for four methods.
+- App PIN is per device: the PBKDF2 hash lives in settings (and in backups), and a localStorage flag lets the Shell decide synchronously at launch whether to show the lock. Why: an async "pending" render at startup coincided with live queries missing updates in WebKit (#115); a restored backup on a new device asks for a new PIN to be set.
+- Backups contain every store except the bundled exercise library (rebuilt from the app); photo bytes travel as base64 `{ $ab }`; restore is one all-or-nothing transaction and refuses files from a newer DB version. iOS gets the share sheet first ("Save to Files"), then an anchor download (R7 §11).
+- Imported Hevy/Strong history becomes normal workouts and sets (it feeds e1RM, PRs, recovery and the report) but awards no XP or gold. Why: XP is earned in the System; importing years of history would skip the whole level curve.
+- Import matching: exact name/alias, then a small curated table for generic names ("Squat (Barbell)" → Barbell Full Squat), then token overlap with gear-word penalties as suggestions the Player confirms. Distance-only rows become cardio logs.
+- Backup reminder runs 5 s after launch at most once per 7 days, as a System message.

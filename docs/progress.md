@@ -16,3 +16,5 @@
 | M11 Notifications | | |
 | M12 Data features | | |
 | M13 Polish and release | | |
+| M11 Notifications | done | Worker + VAPID + cron + skip logic, tested against a mocked push service (#113); deploy is an owner task (#74) |
+| M12 Data features | done | Backup/restore, CSV export, Hevy/Strong import with review, AI report, Settings, app PIN; round-trip tests |
