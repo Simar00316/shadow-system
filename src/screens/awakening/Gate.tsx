@@ -24,12 +24,15 @@ export function AwakeningGate() {
   const [phase, setPhase] = useState<'install' | 'prologue' | 'intro' | 'declined' | 'flow'>(isIosSafari() && !isStandalone() ? 'install' : prologueSeen() ? 'intro' : 'prologue')
   // A Player who already exists (e.g. installed before the awakened hint) goes back to their Status screen.
   const hasProfile = () => import('@/db/schema').then(({ db }) => db.profile.get('me')).then((p) => !!p).catch(() => false)
+  // After the first interaction (not during the cold-start paint): prefetch the onboarding flow and return an
+  // existing Player to Status. Accept re-checks the profile too, so nothing can re-run the Awakening by mistake.
   useEffect(() => {
-    const id = setTimeout(() => {
+    const go = () => {
       void hasProfile().then((p) => { if (p) { try { localStorage.setItem('shadow-awakened', '1') } catch { /* blocked */ } nav('/', { replace: true }) } })
       void loadFlow().catch(() => undefined)
-    }, 1200)
-    return () => clearTimeout(id)
+    }
+    addEventListener('pointerdown', go, { once: true })
+    return () => removeEventListener('pointerdown', go)
   }, [nav])
   const accept = async () => {
     sfx.play('quest-accept')
@@ -52,7 +55,7 @@ export function AwakeningGate() {
               </li>
             ))}
           </ol>
-          <p className="t-small mt-2 text-faint">[Notifications, full offline play and storage protection require the installed app.]</p>
+          <p className="t-small mt-2 text-dim">[Notifications, full offline play and storage protection require the installed app.]</p>
           <Button className="mt-4 w-full" variant="ghost" onClick={() => setPhase(prologueSeen() ? 'intro' : 'prologue')}>Continue in the browser</Button>
         </SystemWindow>
       </main>

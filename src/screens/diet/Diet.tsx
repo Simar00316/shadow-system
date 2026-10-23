@@ -87,7 +87,7 @@ export function Diet() {
               <button type="button" className="group-row press text-glow" data-glitch="" onClick={() => setSlot(s)}>
                 <span className="well h-8 w-8"><Icon name="plus" size={16} /></span>
                 <span className="t-label">Add food</span>
-                {!mine.length ? <span className="t-small ml-auto text-faint">Nothing logged</span> : null}
+                {!mine.length ? <span className="t-small ml-auto text-dim">Nothing logged</span> : null}
               </button>
             </div>
           </section>

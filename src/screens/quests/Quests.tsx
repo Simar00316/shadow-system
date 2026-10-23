@@ -105,7 +105,7 @@ export function Quests() {
           {HIDDEN.map((h) => (
             <li key={h.id} className="flex items-center gap-3 px-3.5 py-3">
               <span className={`well ${hiddenDone.has(h.id) ? 'text-gold' : 'text-purple-text'}`}><Icon name={hiddenDone.has(h.id) ? 'check' : 'hidden'} size={18} /></span>
-              <div className="min-w-0 flex-1"><div className={`t-row ${hiddenDone.has(h.id) ? 'text-gold' : 'text-dim'}`}>{hiddenDone.has(h.id) ? h.title : '???'}</div><div className="t-small text-faint">{h.hint}</div></div>
+              <div className="min-w-0 flex-1"><div className={`t-row ${hiddenDone.has(h.id) ? 'text-gold' : 'text-dim'}`}>{hiddenDone.has(h.id) ? h.title : '???'}</div><div className="t-small text-dim">{h.hint}</div></div>
               <span className="chip shrink-0" data-tone={hiddenDone.has(h.id) ? 'gold' : 'purple'}>{hiddenDone.has(h.id) ? 'Cleared' : `${h.xp} XP`}</span>
             </li>
           ))}

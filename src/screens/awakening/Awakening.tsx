@@ -229,7 +229,7 @@ export function Awakening({ start }: { start?: Phase } = {}) {
               </li>
             ))}
           </ol>
-          <p className="t-small mt-2 text-faint">[Notifications, full offline play and storage protection require the installed app.]</p>
+          <p className="t-small mt-2 text-dim">[Notifications, full offline play and storage protection require the installed app.]</p>
           <Button className="mt-4 w-full" variant="ghost" onClick={() => setPhase('intro')}>Continue in the browser</Button>
         </SystemWindow>
       </main>

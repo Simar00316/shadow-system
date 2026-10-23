@@ -32,7 +32,7 @@ export function MealPlan() {
     <Screen tag="MEAL PLAN" title="This week" back="/diet">
       <SystemWindow tag="SETTINGS" animate={false}>
         <p className="t-small text-dim">{DIET_LABEL[profile.dietType] ?? profile.dietType} · {CUISINE_LABEL[profile.cuisine] ?? profile.cuisine} cuisine{profile.budget ? ' · budget mode' : ''}</p>
-        <p className="t-small mt-1 text-faint">On today's tab, tap “I ate this” to add a planned meal to your food log in one step.</p>
+        <p className="t-small mt-1 text-dim">On today's tab, tap “I ate this” to add a planned meal to your food log in one step.</p>
         <label className="mt-2 flex min-h-12 items-center gap-2"><input type="checkbox" checked={profile.budget} onChange={async (e) => { await db.profile.update('me', { budget: e.target.checked }); await generateMealPlan({ ...profile, budget: e.target.checked }, week) }} /> Budget mode</label>
         <Button className="mt-2 w-full" variant="secondary" icon="swap" onClick={() => void generateMealPlan(profile, week)}>{plan ? 'Generate a new plan' : 'Generate this week'}</Button>
       </SystemWindow>
