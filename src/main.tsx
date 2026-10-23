@@ -25,6 +25,9 @@ if ('serviceWorker' in navigator && import.meta.env.PROD) {
 void requestPersistence()
 void seedExercises()
 
+// Push reminders: heal a silently dropped subscription, then keep the Worker's daily booleans current.
+void import('./app/push').then((p) => { void p.repairPush().catch(() => undefined); p.startStatusSync() })
+
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <App />

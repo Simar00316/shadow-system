@@ -1,0 +1,21 @@
+# Shadow System push Worker. Owner setup: docs/needs-owner.md, section "Push reminders".
+name = "shadow-system-push"
+main = "src/index.ts"
+compatibility_date = "2026-10-01"
+
+# The Worker reuses the app's System message catalogue.
+[alias]
+"@/data/system-messages.json" = "../src/data/system-messages.json"
+
+[triggers]
+crons = ["*/15 * * * *"]
+
+[[kv_namespaces]]
+binding = "DEVICES"
+id = "REPLACE_WITH_KV_NAMESPACE_ID"
+
+[vars]
+ALLOWED_ORIGIN = "https://REPLACE_WITH_APP_HOST.pages.dev"
+VAPID_SUBJECT = "https://REPLACE_WITH_APP_HOST.pages.dev"
+VAPID_PUBLIC_KEY = "REPLACE_WITH_VAPID_PUBLIC_KEY"
+# Secrets (never in this file): npx wrangler secret put VAPID_PRIVATE_KEY / API_TOKEN

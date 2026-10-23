@@ -13,6 +13,9 @@
     "test:cov": "vitest run --coverage",
     "e2e": "playwright test",
     "check": "npm run lint && npm run typecheck && npm test",
+    "vapid:keys": "node scripts/vapid-keys.mjs",
+    "worker:dev": "npx wrangler dev -c worker/wrangler.toml",
+    "worker:deploy": "npx wrangler deploy -c worker/wrangler.toml",
     "data": "node data/copy-wasm.ts && node data/build-exercises.ts && node data/build-foods.ts && node data/build-dishes.ts && node data/bodymap.ts && node data/sfx.ts && node data/icons.ts"
   },
   "dependencies": {
@@ -39,6 +42,7 @@
     "zustand": "^5.0.16"
   },
   "devDependencies": {
+    "@block65/webcrypto-web-push": "^2.0.0",
     "@eslint/js": "^10.0.1",
     "@playwright/test": "^1.64.1",
     "@tailwindcss/vite": "^4.3.3",
