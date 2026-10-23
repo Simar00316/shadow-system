@@ -29,3 +29,8 @@ test('shadow-purple meets 3:1 for UI and large text', () => {
 test.each(['system-blue', 'gold', 'success', 'warning'])('text-on-accent on %s meets AA', (name) => {
   expect(ratio(tok('text-on-accent'), tok(name))).toBeGreaterThanOrEqual(4.5)
 })
+
+test.each(['ff8a3d', 'ffb37a', '9fd3ff', 'd6ecff', '34d399', '7ef0c2', 'ff4d6d', 'ff8fa3', 'a77bff', 'c9a6ff', 'ffc94a', 'ffe08a'])('theme accent #%s meets AA on bg and panel', (hex) => {
+  expect(ratio(`#${hex}`, tok('bg'))).toBeGreaterThanOrEqual(4.5)
+  expect(ratio(`#${hex}`, panel)).toBeGreaterThanOrEqual(4.5)
+})

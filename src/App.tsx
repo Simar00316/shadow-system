@@ -20,6 +20,16 @@ const PlanEditor = page(() => import('./screens/train/PlanEditor'), 'PlanEditor'
 const Workout = page(() => import('./screens/train/Workout'), 'Workout')
 const Summary = page(() => import('./screens/train/Summary'), 'Summary')
 const Cardio = page(() => import('./screens/train/Cardio'), 'Cardio')
+const Progress = page(() => import('./screens/progress/Progress'), 'Progress')
+const Measurements = page(() => import('./screens/progress/Measurements'), 'Measurements')
+const Quests = page(() => import('./screens/quests/Quests'), 'Quests')
+const Dungeons = page(() => import('./screens/dungeons/Dungeons'), 'Dungeons')
+const DungeonDetail = page(() => import('./screens/dungeons/Dungeons'), 'DungeonDetail')
+const Castle = page(() => import('./screens/dungeons/Dungeons'), 'Castle')
+const Shadows = page(() => import('./screens/shadows/Shadows'), 'Shadows')
+const Inventory = page(() => import('./screens/shadows/Items'), 'Inventory')
+const Titles = page(() => import('./screens/shadows/Items'), 'Titles')
+const Store = page(() => import('./screens/shadows/Items'), 'Store')
 
 export function App() {
   const reduce = usePrefs((p) => p.reduceMotion)
@@ -44,6 +54,16 @@ export function App() {
               <Route path="workout/:id" element={<Workout />} />
               <Route path="workout/:id/summary" element={<Summary />} />
               <Route path="cardio" element={<Cardio />} />
+              <Route path="progress" element={<Progress />} />
+              <Route path="measurements" element={<Measurements />} />
+              <Route path="quests" element={<Quests />} />
+              <Route path="dungeons" element={<Dungeons />} />
+              <Route path="dungeons/:id" element={<DungeonDetail />} />
+              <Route path="castle" element={<Castle />} />
+              <Route path="shadows" element={<Shadows />} />
+              <Route path="inventory" element={<Inventory />} />
+              <Route path="titles" element={<Titles />} />
+              <Route path="store" element={<Store />} />
               <Route path="*" element={<Sealed />} />
             </Route>
           </Routes>

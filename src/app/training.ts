@@ -190,6 +190,9 @@ export async function finishWorkout(workoutId: string): Promise<WorkoutSummary> 
     sets: working.length, volumeKg: Math.round(working.reduce((a, s) => a + s.weightKg * s.reps, 0)), durationMin: Math.round((now - w.startedAt) / 60000),
   }
   await db.workouts.update(workoutId, { summary })
+  const { updatePowerLevel, castleCheck } = await import('./progression')
+  await updatePowerLevel()
+  await castleCheck()
   await say('workout_complete', { xp }, { quiet: true })
   return summary
 }

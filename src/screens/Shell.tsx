@@ -5,6 +5,7 @@ import { db } from '@/db/schema'
 import { BottomNav, NAV } from '@/ui/layout'
 import { Backdrop } from '@/ui/Backdrop'
 import { ensureToday } from '@/app/game'
+import { maintenance } from '@/app/progression'
 import { dayOf } from '@/engine/dates'
 import { say } from '@/app/notify'
 import { ReadinessModal } from './ReadinessModal'
@@ -20,13 +21,16 @@ export function Shell() {
   const today = dayOf()
   const readiness = useLiveQuery(() => db.readiness.get(today).then((r) => r ?? false), [today], undefined)
   const pending = useLiveQuery(() => db.quests.where('day').equals(today).filter((q) => q.status === 'issued' && q.type !== 'hidden').count(), [today], 0)
+  const theme = useLiveQuery(() => db.player.get('me').then((p) => p?.theme ?? 'system'), [], 'system')
+  useEffect(() => { document.documentElement.dataset.theme = theme }, [theme])
   const [dismissed, setDismissed] = useState<string | null>(null)
   const readinessOpen = !!profile && readiness === false && dismissed !== today
 
   useEffect(() => {
     if (!profile) return
-    void ensureToday()
-    const onVis = () => { if (document.visibilityState === 'visible') void ensureToday() }
+    const run = () => ensureToday().then(() => maintenance())
+    void run()
+    const onVis = () => { if (document.visibilityState === 'visible') void run() }
     document.addEventListener('visibilitychange', onVis)
     const onOffline = () => void say('offline', {}, { kind: 'info' })
     window.addEventListener('offline', onOffline)
