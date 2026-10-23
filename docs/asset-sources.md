@@ -10,6 +10,9 @@ Every third-party asset lives in `public/assets/third-party/` and is listed here
 | Exercise text (instructions, names, levels) | `src/data/exercises.json` | same two repos | MIT / Unlicense | |
 | Food composition (USDA SR Legacy) | `src/data/ingredients.json` | https://fdc.nal.usda.gov/fdc-datasets/FoodData_Central_sr_legacy_food_csv_2018-04.zip | CC0 | |
 | Food composition (IFCT 2017 numbers) | `src/data/ingredients.json` | https://github.com/nodef/ifct2017 (commit b65621ddcf), book by ICMR-NIN | numbers only; ask NIN before public release | |
+| MediaPipe Pose Landmarker lite model | `public/models/pose_landmarker_lite.task` | https://storage.googleapis.com/mediapipe-models/pose_landmarker/pose_landmarker_lite/float16/1/pose_landmarker_lite.task | Apache-2.0 | downloaded by `data/copy-wasm.ts` |
+| MediaPipe Tasks Vision wasm | `public/wasm/mediapipe/*` | npm `@mediapipe/tasks-vision` | Apache-2.0 | copied from node_modules |
+| zxing-cpp reader wasm | `public/wasm/zxing_reader.wasm` | npm `zxing-wasm` (zxing-cpp) | MIT / Apache-2.0 | copied from node_modules |
 | Fonts: Orbitron, Rajdhani, Inter, JetBrains Mono | `node_modules/@fontsource*` (bundled at build) | https://fontsource.org | OFL-1.1 | permissive font licence |
 
 ## Original assets

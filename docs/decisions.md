@@ -33,3 +33,6 @@ One line per decision: what, and why.
 - Exercise media are committed (58 MB WebP). Why: offline-capable deterministic builds; private repo.
 - Gallery visual snapshot spec skips on CI (Linux WebKit crashes on the heavy gallery page, #94); snapshots are verified locally. Why: unblock CI for functional E2E.
 - CI runs on windows-latest (2× minutes, still free quota; full CI only on demand). Why: Linux WebKit crashes/never settles on our SVG-heavy pages (#94) while Windows WebKit matches local runs and the approved snapshots; the product target is iOS Safari, not Linux WebKit.
+- Form analyser is validated against synthetic "recorded" clips: a kinematic stick-figure driven through known reps with MediaPipe-style landmarks, noise, low frame rate, tempo jitter and injected faults (tests/fixtures/form/synth.ts). Why: no licensed video clips exist in the repo and MediaPipe cannot run headless in Node; real-iPhone clip validation is listed as an owner task.
+- Counting thresholds are lenient (partial reps still count) while rules hold strict depth/lockout standards. Why: a shallow rep should be counted and corrected, not ignored.
+- Form check uses the front camera, mirrored, MediaPipe lite model with GPU delegate and CPU fallback; model and wasm self-hosted (~32 MB, runtime-cached). Why: R7 §7.
