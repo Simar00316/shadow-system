@@ -14,6 +14,7 @@ import { scheduleReminders } from '@/app/awakening'
 import { backupFileName, backupTables, exportBackup, exportCsv, restoreBackup, saveFile, validateBackup, type Backup } from '@/app/backup'
 import { disablePush, enablePush, isStandalone, pushConfigured, pushSupported, type PushState } from '@/app/push'
 import { clearPin, hasPin, setPin, validPin } from '@/app/pin'
+import { resetTours } from '@/ui/Tour'
 import { dayOf } from '@/engine/dates'
 import type { NotificationPrefs, Units } from '@/engine/model'
 import pkg from '../../../package.json'
@@ -89,6 +90,7 @@ export function Settings() {
         <Row label="Goal">{profile.goal.replace(/_/g, ' ')}</Row>
         <p className="t-small mt-2 text-dim">Re-running the Awakening updates your profile and rebuilds your plan. Your level, history and rewards are kept.</p>
         <Link to="/awakening" className="mt-2 flex min-h-12 items-center justify-center rounded-[var(--r-1)] border border-[color:var(--line)] text-glow">Re-run the Awakening</Link>
+        <Button variant="secondary" className="mt-2 w-full" icon="info" onClick={() => { resetTours(); try { localStorage.removeItem('shadow-prologue-seen') } catch { /* blocked */ } toast('info', '[Tutorials reset. Each screen will explain itself again.]') }}>Replay tutorials</Button>
       </SystemWindow>
 
       <SystemWindow tag="UNITS" animate={false}>

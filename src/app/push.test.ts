@@ -20,7 +20,7 @@ test('daily status flips as the Player logs, and carries no health values', asyn
   const { dailyStatus } = await import('./push')
   await awaken(answers)
   const s0 = (await dailyStatus())!
-  expect(s0).toMatchObject({ day: dayOf(), readinessDone: false, waterHit: false, mealsLogged: 0, workoutDone: false, restDay: false })
+  expect(s0).toMatchObject({ day: dayOf(), readinessDone: false, waterHit: false, mealsLogged: 0, workoutDone: false }) // restDay depends on the weekday
   await checkIn({ sleep: 4, soreness: 2, energy: 4, stress: 2 })
   await addWater(6000)
   await logMeal('breakfast', [{ ref: 'x', name: 'Oats', grams: 100, k: 380, p: 13, c: 60, f: 7 }])

@@ -185,7 +185,7 @@ async function issueDaily(day: Day, profile: Profile): Promise<Quest> {
  * Bring the game up to date: close every day since the last visit (streak, Elixir, Second Wind, Penalty Zone),
  * then issue today's Daily Quest and maybe an Emergency Quest. Safe to call on every app open.
  */
-export async function ensureToday(today: Day = dayOf()) {
+export async function ensureToday(today: Day = dayOf(), opts: { quiet?: boolean } = {}) {
   const profile = await db.profile.get('me')
   if (!profile) return null
   let lastClosed = (await getSetting<Day>('lastClosedDay')) ?? addDays(dayOf(profile.createdAt), -1)
@@ -227,7 +227,7 @@ export async function ensureToday(today: Day = dayOf()) {
   await setSetting('lastClosedDay', lastClosed)
   const fresh = !(await db.quests.get(`daily-${today}`))
   const daily = await issueDaily(today, profile)
-  if (fresh) await say('daily_issued')
+  if (fresh) await say('daily_issued', {}, { quiet: opts.quiet })
   if (fresh) await maybeIssueEmergency(today, profile)
   // Self-heal quest progress for protein and water: a reload can kill a sync that was still in flight.
   const { syncNutrition } = await import('./diet')

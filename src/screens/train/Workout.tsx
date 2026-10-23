@@ -12,6 +12,7 @@ import { Sheet } from '@/ui/layout'
 import { ExerciseMedia } from '@/ui/ExerciseMedia'
 import { MUSCLE_LABEL } from '@/ui/BodyMap'
 import { Icon } from '@/ui/icons'
+import { Tour, type TourStep } from '@/ui/Tour'
 import { useExercises, useProfile } from '@/app/hooks'
 import { useUnits } from '@/app/units'
 import { usePrefs } from '@/app/prefs'
@@ -39,6 +40,12 @@ function useWakeLock() {
   }, [])
 }
 
+const WORKOUT_TOUR: TourStep[] = [
+  { target: 'exercise', title: 'One exercise at a time', body: 'Each row is a set with the target weight and reps already filled in. Did it as shown? Tap the check: one tap logs the set and starts the rest timer.' },
+  { target: 'exercise', title: 'Did something different?', body: 'Tap the weight × reps on a row to change it, and pick RIR: how many more reps you could have done (0 = nothing left). The System uses it to set your next targets.' },
+  { target: 'finish', title: 'Finish to clear the dungeon', body: 'When you are done, tap Finish for XP, loot and progress. Use the arrows to move between exercises; Plates shows what to load on the bar.' },
+]
+
 export function Workout() {
   const { id } = useParams()
   const nav = useNavigate()
@@ -55,7 +62,7 @@ export function Workout() {
   const [restTotal, setRestTotal] = useState(0)
   const [full, setFull] = useState(false)
   const [editing, setEditing] = useState<{ key: string; index: number } | null>(null)
-  const [sheet, setSheet] = useState<'plates' | 'swap' | 'add' | 'notes' | null>(null)
+  const [sheet, setSheet] = useState<'plates' | 'swap' | 'add' | 'notes' | 'empty' | null>(null)
   const [gain, setGain] = useState<{ key: string; xp: number; pr: boolean } | null>(null)
   const [last, setLast] = useState<Record<string, SetLog[]>>({})
   const [best, setBest] = useState<Record<string, number>>({})
@@ -136,7 +143,12 @@ export function Workout() {
     setPending((x) => { const n = { ...x }; delete n[it.key]; return n })
     setSheet(null)
   }
-  const finish = async () => { setFinishing(true); sfx.play('quest-clear'); await finishWorkout(workout.id); nav(`/workout/${workout.id}/summary`, { replace: true }) }
+  const finish = async () => {
+    // Nothing logged: an empty session must not count as a cleared dungeon (no XP, quests or titles).
+    if (!logged.length) { setSheet('empty'); return }
+    setFinishing(true); sfx.play('quest-clear'); await finishWorkout(workout.id); nav(`/workout/${workout.id}/summary`, { replace: true })
+  }
+  const discard = async () => { await db.workouts.delete(workout.id); setSheet(null); nav('/train', { replace: true }) }
   const elapsed = Math.max(0, Math.round((clock - workout.startedAt) / 60000))
   const editRow = editing ? (pending[editing.key] ?? [])[editing.index] : null
   const editItem = editing ? items.find((i) => i.key === editing.key) : null
@@ -144,7 +156,7 @@ export function Workout() {
   const curEx = cur ? byId.get(cur.exerciseId) : undefined
 
   return (
-    <Screen tag="DUNGEON" title={workout.name} back="/train" actions={<Button variant="gold" className="px-3" loading={finishing} onClick={finish}>Finish</Button>}>
+    <Screen tag="DUNGEON" title={workout.name} back="/train" actions={<Button variant="gold" className="px-3" loading={finishing} onClick={finish} data-tour="finish">Finish</Button>}>
       <div className="t-small -mt-2 text-dim">{elapsed} min · {logged.filter((s) => s.type !== 'warmup').length} sets logged</div>
       {groups.length > 1 ? (
         <nav aria-label="Exercises" className="-mx-1 flex gap-1 overflow-x-auto pb-1">
@@ -166,7 +178,7 @@ export function Workout() {
         const lastStr = last[it.key]?.length ? last[it.key].map((s) => `${u.w(s.weightKg)}×${s.reps}`).join(', ') : null
         const todayBest = Math.max(0, ...done.map((s) => e1rm(s.weightKg, s.reps, s.rir) ?? 0))
         return (
-          <SystemWindow key={it.key} tag={group.length > 1 ? `SUPERSET · ${group.indexOf(it) + 1}/${group.length}` : 'EXERCISE'} animate={false}>
+          <SystemWindow key={it.key} tag={group.length > 1 ? `SUPERSET · ${group.indexOf(it) + 1}/${group.length}` : 'EXERCISE'} animate={false} tour={it === group[0] ? 'exercise' : undefined}>
             <div className="flex gap-3">
               <button type="button" onClick={() => nav(`/exercises/${ex.id}`)} aria-label={`${ex.name} details`}><ExerciseMedia ex={ex} size={96} credit={false} /></button>
               <div className="min-w-0 flex-1">
@@ -249,6 +261,14 @@ export function Workout() {
       <Sheet open={sheet === 'add'} onClose={() => setSheet(null)} title="Add exercise">
         <AddExercise all={exercises} onPick={async (exId) => { const it = await freeItem(exId); await updateItems(workout.id, [...items, it]); setCurrent(groups.length); setSheet(null) }} />
       </Sheet>
+      <Sheet open={sheet === 'empty'} onClose={() => setSheet(null)} title="No sets logged">
+        <p className="t-system">[This dungeon has no logged sets. Leave without saving, or keep training?]</p>
+        <div className="mt-4 flex flex-col gap-2">
+          <Button variant="danger" onClick={() => void discard()}>Leave without saving</Button>
+          <Button variant="ghost" onClick={() => setSheet(null)}>Keep training</Button>
+        </div>
+      </Sheet>
+      {items.length ? <Tour id="workout" steps={WORKOUT_TOUR} /> : null}
     </Screen>
   )
 }

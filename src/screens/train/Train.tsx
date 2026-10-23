@@ -14,10 +14,18 @@ import { estimateDuration } from '@/engine/plan'
 import { INSTANT_DUNGEONS } from '@/data/programs'
 import { getSetting } from '@/db/repo'
 import { sfx } from '@/audio/sfx'
+import { Tour, type TourStep } from '@/ui/Tour'
 
 const LINKS: { to: string; label: string; icon: IconName }[] = [
   { to: '/bodymap', label: 'Body map', icon: 'status' }, { to: '/exercises', label: 'Exercises', icon: 'search' }, { to: '/plan', label: 'Plan', icon: 'edit' },
   { to: '/cardio', label: 'Cardio', icon: 'cardio' }, { to: '/form', label: 'Form check', icon: 'pose' }, { to: '/dungeons', label: 'Dungeons', icon: 'dungeon' },
+]
+
+const TRAIN_TOUR: TourStep[] = [
+  { target: 'today', title: "Today's dungeon", body: 'Your workout for today, built from your plan and how recovered each muscle is. Tap Enter the dungeon to start: each exercise shows the weight and reps to aim for. Free session lets you train anything.' },
+  { target: 'tools', title: 'Training tools', body: 'Body map (recovery per muscle), the exercise library, your weekly plan, a cardio log, the camera form check, and Dungeons (multi-week programs). Swipe for more.' },
+  { target: 'instant', title: 'Instant dungeons', body: 'Short bonus workouts (arms, abs, conditioning). Each needs a key: you get one a week or as loot.' },
+  { target: 'deload', title: 'Recovery Phase', body: 'Feeling run down? Ask for a lighter week. The System also schedules one automatically every few weeks.' },
 ]
 
 /** Train tab: today's dungeon, quick links, Instant Dungeons. */
@@ -43,7 +51,7 @@ export function Train() {
         </SystemWindow>
       ) : null}
       {data.deload ? <SystemWindow tag="RECOVERY PHASE" variant="shadow" animate={false}><p className="t-system">[Recovery Phase until {data.deload.until}. Lighter loads, same exercises, bonus VIT.]</p></SystemWindow> : null}
-      <SystemWindow tag="TODAY" hero={!data.active} aria-label="TODAY">
+      <SystemWindow tag="TODAY" hero={!data.active} aria-label="TODAY" tour="today">
         {data.session ? (
           <>
             <div className="flex items-start gap-3">
@@ -73,7 +81,7 @@ export function Train() {
         <Button variant="ghost" className="mt-1 w-full" onClick={() => begin()} disabled={!!data.active}>Free session</Button>
       </SystemWindow>
 
-      <nav aria-label="Training tools" className="-mx-4 overflow-x-auto px-4 [scrollbar-width:none]">
+      <nav aria-label="Training tools" data-tour="tools" className="-mx-4 overflow-x-auto px-4 [scrollbar-width:none]">
         <ul className="flex w-max gap-2 pb-1">
           {LINKS.map((l) => (
             <li key={l.to}>
@@ -86,7 +94,7 @@ export function Train() {
         </ul>
       </nav>
 
-      <section aria-label="INSTANT DUNGEONS">
+      <section aria-label="INSTANT DUNGEONS" data-tour="instant">
         <div className="section-head">
           <span className="t-label text-dim">Instant dungeons</span>
           <span className="flex items-center gap-1" aria-label={`Keys held: ${data.keys}`}>
@@ -104,7 +112,8 @@ export function Train() {
           ))}
         </div>
       </section>
-      <Button variant="ghost" onClick={() => void requestDeload()}>I feel beat up: request a Recovery Phase</Button>
+      <Button variant="ghost" onClick={() => void requestDeload()} data-tour="deload">I feel beat up: request a Recovery Phase</Button>
+      <Tour id="train" steps={TRAIN_TOUR} />
     </Screen>
   )
 }

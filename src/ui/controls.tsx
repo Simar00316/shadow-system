@@ -63,7 +63,7 @@ export function Tabs<T extends string>({ tabs, value, onChange, label }: { tabs:
 }
 
 /** Big thumb-friendly stepper for weight/reps. Long-press repeats; tap the value to type. */
-export function NumberStepper({ value, onChange, step = 1, min = 0, max = 9999, unit, label, disabled, error }: { value: number; onChange: (v: number) => void; step?: number; min?: number; max?: number; unit?: string; label: string; disabled?: boolean; error?: boolean }) {
+export function NumberStepper({ value, onChange, step = 1, min = 0, max = 9999, unit, label, disabled, error, caption }: { value: number; onChange: (v: number) => void; step?: number; min?: number; max?: number; unit?: string; label: string; disabled?: boolean; error?: boolean; /** Show the label above the stepper (when nothing else on screen names it). */ caption?: boolean }) {
   const [editing, setEditing] = useState(false)
   const timer = useRef<ReturnType<typeof setInterval> | null>(null)
   const latest = useRef(value)
@@ -79,7 +79,7 @@ export function NumberStepper({ value, onChange, step = 1, min = 0, max = 9999, 
     timer.current = setInterval(() => { if (Date.now() - started > 400) { latest.current = clamp(latest.current + dir * step); onChange(latest.current) } }, 90)
   }
   const hold = { onPointerUp: stop, onPointerLeave: stop, onPointerCancel: stop }
-  return (
+  const body = (
     <div className={`flex items-center gap-2 ${disabled ? 'opacity-40' : ''}`} role="group" aria-label={label}>
       <button type="button" aria-label={`Decrease ${label}`} disabled={disabled || value <= min} className="flex h-12 w-12 items-center justify-center rounded-full border border-[color:var(--line)] text-glow active:scale-95 disabled:opacity-40" onPointerDown={() => start(-1)} {...hold}>
         <Icon name="minus" />
@@ -105,6 +105,7 @@ export function NumberStepper({ value, onChange, step = 1, min = 0, max = 9999, 
       </button>
     </div>
   )
+  return caption ? <div className="flex flex-col gap-1.5"><span className="t-label text-dim" aria-hidden="true">{label}</span>{body}</div> : body
 }
 
 /** Segmented picker for RIR (0, 1, 2, 3, 4, 5+). */

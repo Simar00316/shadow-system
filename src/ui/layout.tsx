@@ -15,7 +15,8 @@ export function Sheet({ open, onClose, title, children }: { open: boolean; onClo
   useEffect(() => {
     if (!open) return
     const prev = document.activeElement as HTMLElement | null
-    ref.current?.focus()
+    // Keep focus on a child that asked for it (e.g. a search box with autoFocus); otherwise focus the sheet.
+    if (!ref.current?.contains(document.activeElement)) ref.current?.focus()
     const onKey = (e: KeyboardEvent) => {
       if (e.key === 'Escape') onClose()
       if (e.key === 'Tab' && ref.current) {

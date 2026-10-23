@@ -28,6 +28,7 @@ export function Dungeons() {
   const byRank = RANKS.filter((r) => PROGRAMS.some((p) => p.rank === r))
   return (
     <Screen tag="GATES" title="Dungeons" back="/system">
+      <p className="t-small -mt-1 text-dim">A Gate is a multi-week training program. Enter one and each workout clears a floor; the last floor is a boss test. Gates unlock with your rank.</p>
       {run ? (
         <SystemWindow tag="ACTIVE GATE" variant={COLOR[programById.get(run.programId)!.color]}>
           <div className="t-heading">{programById.get(run.programId)!.name}</div>
@@ -125,7 +126,7 @@ export function Castle() {
   const shown = Array.from({ length: 11 }, (_, i) => Math.min(CASTLE_FLOORS, Math.max(1, floor - 4) + i)).filter((v, i, a) => a.indexOf(v) === i).reverse()
   return (
     <Screen tag="DEMON CASTLE" title={`Floor ${floor} / ${CASTLE_FLOORS}`} back="/dungeons">
-      <SystemWindow tag="ASCENT" variant="alert" animate={false}>
+      <SystemWindow tag="ASCENT" hero animate={false}>
         <p className="t-system">[Score {Math.round(score)}: tonnes lifted + km covered + 5 per workout.]</p>
         {next ? <p className="t-small text-dim">Next floor at {next}.</p> : <p className="t-system text-gold">[The tower has been conquered.]</p>}
       </SystemWindow>

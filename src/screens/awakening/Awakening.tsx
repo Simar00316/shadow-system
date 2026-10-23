@@ -11,16 +11,13 @@ import { RankBadge } from '@/ui/RankBadge'
 import { Icon } from '@/ui/icons'
 import { sfx } from '@/audio/sfx'
 import { isIosSafari, isStandalone } from './Gate'
+import { CUISINE_LABEL } from '@/data/labels'
 import { fromKg, toKg } from '@/engine/strength'
 import { prescribe } from '@/engine/prescription'
 import { BASE_CLASSES, EQUIPMENT, type BaseClass, type Equipment, type Experience, type Goal, type Muscle, type Sex } from '@/engine/types'
 import type { DietType, Units } from '@/engine/model'
 import { DEFAULT_NOTIFICATIONS, EQUIPMENT_PRESETS, revealPower, suggestedClass, type AwakeningAnswers, type EquipmentPreset } from '@/app/awakening-setup'
 
-export const CUISINE_LABEL: Record<string, string> = {
-  india: 'India', pakistan: 'Pakistan', usa: 'United States', uk: 'United Kingdom', mexico: 'Mexico', brazil: 'Brazil', spain: 'Spain', italy: 'Italy', france: 'France',
-  greece: 'Greece / Mediterranean', lebanon: 'Lebanon / Middle East', china: 'China', japan: 'Japan', thailand: 'Thailand', korea: 'Korea', generic: 'Anywhere (simple staples)',
-}
 export const CLASS_INFO: Record<BaseClass, { title: string; focus: string }> = {
   fighter: { title: 'Fighter', focus: 'Strength. Heavy weights, few reps, long rest.' },
   tank: { title: 'Tank', focus: 'Hypertrophy. Build muscle with moderate weights and volume.' },
@@ -141,13 +138,13 @@ export function Awakening({ start }: { start?: Phase } = {}) {
   const bodyUnit = units.body
   const steps: ReactNode[] = [
     <Step key="name" index={1} total={total} title="What shall the System call you?" onNext={next} nextDisabled={!name.trim()}>
-      <input autoFocus aria-label="Name" value={name} onChange={(e) => setName(e.target.value)} maxLength={24} className="min-h-12 rounded-[var(--r-1)] border border-[color:var(--line)] bg-panel px-4 text-text" placeholder="Player" />
+      <input autoFocus aria-label="Name" value={name} onChange={(e) => setName(e.target.value)} maxLength={24} className="min-h-12 rounded-[var(--r-1)] border border-[color:var(--line)] bg-panel px-4 text-text" placeholder="Your name" />
     </Step>,
     <Step key="sex" index={2} total={total} title="Body type for the anatomical model" onNext={next} onBack={back}>
       <Choice label="Sex" value={sex} onChange={(v) => { setSex(v); setHeightCm(v === 'female' ? 163 : 175); setWeightKg(v === 'female' ? 62 : 75) }} options={[{ id: 'male', label: 'Male' }, { id: 'female', label: 'Female' }]} />
     </Step>,
     <Step key="age" index={3} total={total} title="Year of birth" onNext={next} onBack={back}>
-      <NumberStepper label="Birth year" value={birthYear} onChange={setBirthYear} min={1930} max={new Date().getFullYear() - 13} />
+      <NumberStepper caption label="Birth year" value={birthYear} onChange={setBirthYear} min={1930} max={new Date().getFullYear() - 13} />
       <p className="t-small text-dim">Age adjusts recovery and safe training targets.</p>
     </Step>,
     <Step key="units" index={4} total={total} title="Units" onNext={next} onBack={back}>
@@ -162,9 +159,9 @@ export function Awakening({ start }: { start?: Phase } = {}) {
     </Step>,
     <Step key="height" index={5} total={total} title="Height and weight" onNext={next} onBack={back}>
       {units.height === 'cm'
-        ? <NumberStepper label="Height" value={heightCm} onChange={setHeightCm} min={120} max={230} unit="cm" />
-        : <NumberStepper label="Height" value={Math.round(heightCm / 2.54)} onChange={(v) => setHeightCm(Math.round(v * 2.54))} min={48} max={90} unit="in" />}
-      <NumberStepper label="Weight" value={Math.round(fromKg(weightKg, bodyUnit) * 10) / 10} step={bodyUnit === 'kg' ? 0.5 : 1} onChange={(v) => setWeightKg(toKg(v, bodyUnit))} min={30} max={bodyUnit === 'kg' ? 250 : 550} unit={bodyUnit} />
+        ? <NumberStepper caption label="Height" value={heightCm} onChange={setHeightCm} min={120} max={230} unit="cm" />
+        : <NumberStepper caption label="Height" value={Math.round(heightCm / 2.54)} onChange={(v) => setHeightCm(Math.round(v * 2.54))} min={48} max={90} unit="in" />}
+      <NumberStepper caption label="Weight" value={Math.round(fromKg(weightKg, bodyUnit) * 10) / 10} step={bodyUnit === 'kg' ? 0.5 : 1} onChange={(v) => setWeightKg(toKg(v, bodyUnit))} min={30} max={bodyUnit === 'kg' ? 250 : 550} unit={bodyUnit} />
     </Step>,
     <Step key="goal" index={6} total={total} title="Your goal" onNext={() => { setCls(suggestedClass(goal)); next() }} onBack={back}>
       <Choice label="Goal" value={goal} onChange={setGoal} options={GOALS} />
@@ -196,7 +193,7 @@ export function Awakening({ start }: { start?: Phase } = {}) {
           <button key={d} type="button" aria-pressed={days.includes(i)} onClick={() => setDays((x) => (x.includes(i) ? x.filter((y) => y !== i) : [...x, i].sort()))} className={`t-label h-12 rounded-[var(--r-1)] border ${days.includes(i) ? 'border-glow bg-[rgb(47_168_255/.18)] text-glow' : 'border-[color:var(--line)] text-dim'}`}>{d}</button>
         ))}
       </div>
-      <NumberStepper label="Session length" value={minutes} onChange={setMinutes} step={5} min={20} max={150} unit="min" />
+      <NumberStepper caption label="Session length" value={minutes} onChange={setMinutes} step={5} min={20} max={150} unit="min" />
     </Step>,
     <Step key="diet" index={11} total={total} title="Diet" onNext={next} onBack={back}>
       <Choice label="Diet type" value={diet} onChange={setDiet} options={[{ id: 'nonveg', label: 'Non-vegetarian' }, { id: 'eggetarian', label: 'Eggetarian' }, { id: 'vegetarian', label: 'Vegetarian' }, { id: 'vegan', label: 'Vegan' }]} />
@@ -273,7 +270,7 @@ export function Awakening({ start }: { start?: Phase } = {}) {
             {experience !== 'beginner' ? (
               <div>
                 <div className="t-heading mb-1">4. Estimated 1RM (optional)</div>
-                <p className="t-small mb-2 text-dim">From a recent heavy set. Leave 0 if unknown. Beginners skip loaded tests.</p>
+                <p className="t-small mb-2 text-dim">1RM is the most you could lift for one rep; estimate it from a recent heavy set. Leave 0 if unknown. Beginners skip loaded tests.</p>
                 {(['squat', 'bench', 'deadlift', 'ohp'] as const).map((l) => (
                   <div key={l} className="mb-2">
                     <div className="t-label text-dim">{l === 'ohp' ? 'Overhead press' : l[0].toUpperCase() + l.slice(1)}</div>
@@ -289,6 +286,7 @@ export function Awakening({ start }: { start?: Phase } = {}) {
 
       {phase === 'class' ? (
         <SystemWindow tag="CLASS SELECTION" title="Choose your class">
+          <p className="t-small mb-3 text-dim">Your class sets how you train. <b className="text-text">RIR</b> = reps in reserve: stop that many reps before you could not do another. <b className="text-text">Rest</b> is the break between sets. You can change class later.</p>
           <div className="flex flex-col gap-2">
             {BASE_CLASSES.map((c) => {
               const rx = prescribe({ mechanics: 'compound', pattern: 'squat', classTags: [c] }, { cls: c, experience })

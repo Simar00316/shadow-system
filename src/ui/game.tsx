@@ -33,14 +33,14 @@ export function MiniBar({ pct, color = 'var(--glow)', className = '' }: { pct: n
 }
 
 /** The canonical four-part quest window: Goal / Time limit / Reward / Penalty (R1 §4), as a System hero. */
-export function QuestCard({ tag, title, goals, until, reward, penalty, status = 'active', variant = 'system', hero, loading, onOpen }: {
-  tag: string; title: string; goals: QuestGoal[]; until?: number; reward?: string[]; penalty?: string; status?: QuestStatus; variant?: WindowVariant; hero?: boolean; loading?: boolean; onOpen?: () => void
+export function QuestCard({ tag, title, goals, until, reward, penalty, status = 'active', variant = 'system', hero, loading, onOpen, tour }: {
+  tag: string; title: string; goals: QuestGoal[]; until?: number; reward?: string[]; penalty?: string; status?: QuestStatus; variant?: WindowVariant; hero?: boolean; loading?: boolean; onOpen?: () => void; tour?: string
 }) {
   const left = useCountdown(status === 'active' ? until : undefined)
   const done = goals.filter((g) => g.current >= g.target).length
   const locked = status === 'locked'
   return (
-    <SystemWindow tag={tag} variant={variant} hero={hero} state={loading ? 'loading' : STATUS_STATE[status]} animate={false}>
+    <SystemWindow tag={tag} variant={variant} hero={hero} tour={tour} state={loading ? 'loading' : STATUS_STATE[status]} animate={false}>
       <button type="button" className="press block w-full text-left disabled:cursor-default" onClick={onOpen} disabled={!onOpen || locked} data-glitch={onOpen && !locked ? '' : undefined}>
         <div className="flex items-start justify-between gap-3">
           <h3 className="t-h2 text-text">{locked ? '???' : title}</h3>
@@ -110,7 +110,7 @@ export function StatBar({ stat, value, allocated = 0, canAllocate, onAllocate, m
         <MiniBar className="mt-2" pct={(value / max) * 100} />
       </div>
       <button type="button" aria-label={`Allocate a point to ${m.label}`} disabled={!canAllocate} onClick={onAllocate} data-glitch={canAllocate ? '' : undefined}
-        className={`press flex h-11 w-11 shrink-0 items-center justify-center rounded-[var(--r-ctl)] disabled:opacity-25 ${canAllocate ? 'btn-gold' : 'border border-[color:var(--edge)] text-dim'}`}>
+        className={`press flex h-11 w-11 shrink-0 items-center justify-center rounded-[var(--r-ctl)] disabled:opacity-25 ${canAllocate ? 'btn btn-gold' : 'border border-[color:var(--edge)] text-dim'}`}>
         <Icon name="plus" size={18} />
       </button>
     </div>

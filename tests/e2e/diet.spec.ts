@@ -19,8 +19,9 @@ test('a full logged day hits the targets (M9 gate)', async ({ page }) => {
     expect(n).toBe(4)
     for (let i = 0; i < n; i++) {
       await logButtons.nth(i).click()
-      await expect(logButtons.nth(i)).toHaveText('Again')
+      await expect(logButtons.nth(i)).toHaveText('Log another serving')
     }
+    await expect(page.getByText('Eaten', { exact: true })).toHaveCount(4)
   })
 
   await test.step('water to target', async () => {

@@ -14,8 +14,16 @@ import { useProfile, useToday } from '@/app/hooks'
 import { addWater, dayTargets, deleteMealLog, foodIndex, itemFrom, logMeal, lookupBarcode, recentItems, saveManualFood, saveMeal, totals, type FoodHit } from '@/app/diet'
 import type { MealItem, MealSlot } from '@/engine/model'
 import { Scanner } from './Scanner'
+import { Tour, type TourStep } from '@/ui/Tour'
 
 const SLOT_LABEL: Record<MealSlot, string> = { breakfast: 'Breakfast', lunch: 'Lunch', dinner: 'Dinner', snack: 'Snacks' }
+
+const DIET_TOUR: TourStep[] = [
+  { target: 'kcal', title: 'Calories left today', body: 'Your daily target comes from your body, goal and training. The ring shows what is left; it turns gold when you hit it. Below: protein, carbs and fat for today.' },
+  { target: 'water', title: 'Water', body: 'Tap +250 or +500 each time you drink. The target rises on training days.' },
+  { target: 'meals', title: 'Log what you eat', body: 'Tap Add food under a meal: search 1,000+ foods and dishes, scan a barcode, reuse recent foods, or quick-add calories. Protein and water also tick off your Daily Quest.' },
+  { target: 'plan', title: 'Meal plan', body: 'A weekly plan built for your diet and cuisine, with a grocery list. On today’s tab, tap “I ate this” to log a planned meal in one step.' },
+]
 
 /** Diet dashboard (PRD F3.12): rings, water, meals by slot, logging by search, barcode, recents, saved meals. */
 export function Diet() {
@@ -30,8 +38,8 @@ export function Diet() {
   const t = totals(logs)
   const cups = 8, per = targets.waterMl / cups
   return (
-    <Screen tag="NUTRITION" title="Diet" actions={<IconButton icon="log" label="Meal plan" onClick={() => nav('/diet/plan')} />}>
-      <SystemWindow tag="TODAY" hero>
+    <Screen tag="NUTRITION" title="Diet" actions={<span data-tour="plan"><IconButton icon="log" label="Meal plan" onClick={() => nav('/diet/plan')} /></span>}>
+      <SystemWindow tag="TODAY" hero tour="kcal">
         <div className="flex justify-center">
           <Ring label="Calories" value={t.k} target={targets.kcal} unit="" size={200} remaining caption={false} />
         </div>
@@ -44,7 +52,7 @@ export function Diet() {
         <p className="t-small mt-3 text-dim">[Target {targets.kcal.toLocaleString()} kcal ({targets.phase}). Safe minimum {targets.floor.toLocaleString()} kcal.]</p>
       </SystemWindow>
 
-      <SystemWindow tag="WATER" index={1}>
+      <SystemWindow tag="WATER" index={1} tour="water">
         <figure aria-label={`Water: ${Math.round(water)} of ${Math.round(targets.waterMl)} ml`} className="flex items-center gap-3">
           <div className="flex flex-1 gap-1" aria-hidden="true">
             {Array.from({ length: cups }, (_, i) => {
@@ -63,7 +71,7 @@ export function Diet() {
         const mine = logs.filter((l) => l.meal === s)
         const k = totals(mine).k
         return (
-          <section key={s} aria-label={SLOT_LABEL[s].toUpperCase()}>
+          <section key={s} aria-label={SLOT_LABEL[s].toUpperCase()} data-tour={s === 'breakfast' ? 'meals' : undefined}>
             <div className="section-head">
               <span className="t-label text-dim">{SLOT_LABEL[s]}</span>
               <span className="t-num text-[13px] text-dim">{k.toLocaleString()} kcal</span>
@@ -89,6 +97,7 @@ export function Diet() {
         <Button variant="secondary" icon="diet" onClick={() => nav('/diet/plan')}>Meal plan</Button>
         <Button variant="secondary" icon="inventory" onClick={() => nav('/diet/grocery')}>Grocery list</Button>
       </div>
+      <Tour id="diet" steps={DIET_TOUR} />
       <Sheet open={!!slot} onClose={() => setSlot(null)} title={slot ? `Add to ${SLOT_LABEL[slot]}` : ''}>
         {slot ? <AddFood slot={slot} onDone={() => setSlot(null)} /> : null}
       </Sheet>
@@ -146,7 +155,7 @@ function AddFood({ slot, onDone }: { slot: MealSlot; onDone: () => void }) {
 
   return (
     <div className="flex flex-col gap-3">
-      <Tabs label="Add food by" value={tab} onChange={setTab} tabs={[{ id: 'search', label: 'Search' }, { id: 'recent', label: 'Recent' }, { id: 'saved', label: 'Saved' }, { id: 'scan', label: 'Scan' }, { id: 'quick', label: 'Quick' }]} />
+      <Tabs label="Add food by" value={tab} onChange={setTab} tabs={[{ id: 'search', label: 'Search' }, { id: 'recent', label: 'Recent' }, { id: 'saved', label: 'Saved' }, { id: 'scan', label: 'Scan' }, { id: 'quick', label: 'Quick add' }]} />
       {basket.length ? (
         <div className="rounded-[var(--r-1)] border border-[color:var(--line)] p-2">
           <div className="t-small text-dim">In this meal: {basket.map((b) => b.name).join(', ')}</div>
