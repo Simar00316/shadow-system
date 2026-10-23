@@ -157,7 +157,7 @@ Append-only `xpEvents {id, ts, day, type, base, multiplier, xp, gold, category, 
 - **Strength (0–100)**: for each of squat, bench, deadlift, OHP with a valid e1RM in the last 8 weeks: ratio = e1RM / bodyweight, interpolate the ratio across the R5 standards for the user's sex (untrained → 5, beginner → 10, novice → 25, intermediate → 50, advanced → 75, elite → 95, beyond elite → up to 100). Mean of available lifts. Lifts with no data contribute the bodyweight-test estimate: push-ups/squats/plank from the Awakening Test mapped to 0–40.
 - **Conditioning (0–100)**: weekly cardio minutes vs 150 (ACSM) → 0–60, plus best-effort test (Awakening plank/squat or 12-min test) → 0–40.
 - **Consistency (0–100)**: sessions completed / planned over the last 8 weeks × 100.
-- Standards are interpolated by bodyweight (R5 table at 180 lb men / 140 lb women scaled by `(bw/ref)^-0.33` on the ratio [D, allometric scaling]).
+- Standards: R5 table at 82 kg men / 64 kg women. Men's multiples are flat across bodyweight; women's are scaled by `(bw/64)^-0.33` (R5 §8.1: about −7% per 18 kg).
 
 e1RM: `min(Epley, Brzycki)` = Brzycki for 1–10 effective reps (`reps + RIR`); sets above 10 effective reps or RIR ≥ 4 do not update e1RM [R5 §4].
 
@@ -286,3 +286,6 @@ Increment on core cleared (planned rest days count when the readiness check-in i
 | Red Gate entry rank C (not B) | B arrives ~day 195; challenge should be available earlier |
 | Second Wind (once per 30 days auto streak save) | R1 mapping row 61 (Black Heart) |
 | HP/MP/Fatigue on Status Window mapped to recovery/readiness | R1 §2 canon fields |
+| Rep extension: when one equipment step is > 10% of load, extend the rep range by up to +4, then take one step and reset | 12-week simulation found unbounded rep growth (#96) |
+| Plateau only counts when the last session missed the target | simulation (#97) |
+| Reactive deloads need ≥ 3 weeks since the last deload; stall/drop signals only use exposures since then | simulation found deload loops (#98) |
