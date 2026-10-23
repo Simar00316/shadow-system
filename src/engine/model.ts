@@ -50,9 +50,13 @@ export type PlanExercise = {
   /** Exercises sharing a group run as a superset/circuit. */
   group?: string; technique?: 'straight' | 'drop' | 'cluster' | 'myo' | 'emom' | 'top_backoff' | 'hold'
   holdSec?: number; edited: boolean
+  /** Class rep ceiling before a rep extension (progression engine). */
+  baseRepMax?: number
 }
 
-export type Workout = { id: string; startedAt: number; endedAt?: number; day: Day; planDayId?: string; dungeonId?: string; kind: 'plan' | 'free' | 'instant' | 'trial' | 'boss' | 'penalty' | 'recovery'; notes?: string }
+export type WorkoutSummary = { xp: number; gold: number; levelBefore: number; levelAfter: number; prs: { exerciseId: string; e1rm: number }[]; loot?: { itemId: string; rarity: Rarity; gold: number }; shadow?: { id: string; name: string; rank: ShadowRank; promoted: boolean }; stats: Partial<Record<Stat, number>>; titles: string[]; sets: number; volumeKg: number; durationMin: number }
+export type Workout = { id: string; startedAt: number; endedAt?: number; day: Day; planDayId?: string; dungeonId?: string; kind: 'plan' | 'free' | 'instant' | 'trial' | 'boss' | 'penalty' | 'recovery'; notes?: string; name?: string; summary?: WorkoutSummary; recoveryAtStart?: Partial<Record<Muscle, number>>; items?: SessionItem[] }
+export type SessionItem = { key: string; planExerciseId?: string; exerciseId: string; sets: number; repMin: number; repMax: number; rir: number; loadKg: number | null; restSec: number; holdSec?: number; group?: string; technique?: PlanExercise['technique'] }
 export type SetLog = {
   id: string; workoutId: string; exerciseId: string; order: number; setIndex: number; type: SetType
   weightKg: number; reps: number; rir: number | null; rpe?: number | null; holdSec?: number
