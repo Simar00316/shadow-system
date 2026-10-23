@@ -13,13 +13,14 @@
     "test:cov": "vitest run --coverage",
     "e2e": "playwright test",
     "check": "npm run lint && npm run typecheck && npm test",
-    "data": "node data/build-exercises.ts && node data/build-foods.ts && node data/build-dishes.ts && node data/bodymap.ts && node data/sfx.ts && node data/icons.ts"
+    "data": "node data/copy-wasm.ts && node data/build-exercises.ts && node data/build-foods.ts && node data/build-dishes.ts && node data/bodymap.ts && node data/sfx.ts && node data/icons.ts"
   },
   "dependencies": {
     "@fontsource-variable/inter": "^5.3.0",
     "@fontsource-variable/jetbrains-mono": "^5.3.0",
     "@fontsource/orbitron": "^5.3.0",
     "@fontsource/rajdhani": "^5.3.0",
+    "barcode-detector": "^3.2.3",
     "dexie": "^4.4.6",
     "dexie-react-hooks": "^4.4.0",
     "fuse.js": "^7.5.0",

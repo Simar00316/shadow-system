@@ -25,7 +25,7 @@ export async function awaken(page: Page, opts: { experience?: 'Beginner' | 'Inte
   await next() // equipment
   await next() // injuries
   await next() // schedule (Mon/Wed/Fri default)
-  if (opts.diet) await page.getByRole('radio', { name: opts.diet }).click()
+  if (opts.diet) await page.getByRole('radio', { name: opts.diet, exact: true }).click()
   await next() // diet
   await next() // reminders
   await next() // begin test
