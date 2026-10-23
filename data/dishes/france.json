@@ -1,0 +1,1632 @@
+[
+ {
+  "id": "fr-omelette-fines-herbes",
+  "name": "Omelette aux Fines Herbes",
+  "meal": [
+   "breakfast",
+   "lunch"
+  ],
+  "servings": 1,
+  "ingredients": [
+   [
+    "egg",
+    150
+   ],
+   [
+    "butter",
+    8
+   ],
+   [
+    "parsley",
+    5
+   ],
+   [
+    "cheddar",
+    20
+   ],
+   [
+    "baguette",
+    50
+   ]
+  ],
+  "tags": [
+   "quick",
+   "high-protein"
+  ]
+ },
+ {
+  "id": "fr-omelette-champignons",
+  "name": "Mushroom Omelette",
+  "meal": [
+   "breakfast",
+   "lunch"
+  ],
+  "servings": 1,
+  "ingredients": [
+   [
+    "egg",
+    150
+   ],
+   [
+    "mushroom",
+    100
+   ],
+   [
+    "butter",
+    8
+   ],
+   [
+    "parsley",
+    3
+   ]
+  ],
+  "tags": [
+   "quick"
+  ]
+ },
+ {
+  "id": "fr-ratatouille",
+  "name": "Ratatouille",
+  "meal": [
+   "lunch",
+   "dinner"
+  ],
+  "servings": 4,
+  "ingredients": [
+   [
+    "eggplant",
+    400
+   ],
+   [
+    "zucchini",
+    400
+   ],
+   [
+    "bell_pepper",
+    300
+   ],
+   [
+    "tomato_canned",
+    400
+   ],
+   [
+    "onion",
+    150
+   ],
+   [
+    "garlic",
+    10
+   ],
+   [
+    "oil_olive",
+    50
+   ],
+   [
+    "thyme",
+    2
+   ]
+  ],
+  "tags": [
+   "meal-prep",
+   "budget"
+  ]
+ },
+ {
+  "id": "fr-coq-au-vin",
+  "name": "Coq au Vin (lighter)",
+  "meal": [
+   "dinner"
+  ],
+  "servings": 4,
+  "ingredients": [
+   [
+    "chicken_thigh",
+    800
+   ],
+   [
+    "mushroom",
+    250
+   ],
+   [
+    "onion",
+    150
+   ],
+   [
+    "carrot",
+    150
+   ],
+   [
+    "bacon",
+    60
+   ],
+   [
+    "wine_red",
+    300
+   ],
+   [
+    "tomato_paste",
+    20
+   ],
+   [
+    "oil_olive",
+    20
+   ],
+   [
+    "garlic",
+    10
+   ],
+   [
+    "thyme",
+    2
+   ]
+  ],
+  "tags": [
+   "high-protein"
+  ]
+ },
+ {
+  "id": "fr-salade-nicoise",
+  "name": "Salade Nicoise",
+  "meal": [
+   "lunch",
+   "dinner"
+  ],
+  "servings": 2,
+  "ingredients": [
+   [
+    "tuna_canned",
+    200
+   ],
+   [
+    "egg",
+    100
+   ],
+   [
+    "potato",
+    300
+   ],
+   [
+    "green_beans",
+    200
+   ],
+   [
+    "tomato",
+    200
+   ],
+   [
+    "olives",
+    40
+   ],
+   [
+    "oil_olive",
+    20
+   ],
+   [
+    "lettuce",
+    100
+   ],
+   [
+    "anchovy",
+    20
+   ]
+  ],
+  "tags": [
+   "high-protein"
+  ]
+ },
+ {
+  "id": "fr-croque-monsieur",
+  "name": "Croque Monsieur",
+  "meal": [
+   "lunch",
+   "dinner"
+  ],
+  "servings": 2,
+  "ingredients": [
+   [
+    "bread_white",
+    200
+   ],
+   [
+    "ham",
+    100
+   ],
+   [
+    "cheddar",
+    80
+   ],
+   [
+    "butter",
+    20
+   ],
+   [
+    "milk_whole",
+    100
+   ],
+   [
+    "maida",
+    10
+   ]
+  ],
+  "tags": [
+   "high-protein"
+  ]
+ },
+ {
+  "id": "fr-lentilles-vertes",
+  "name": "Lentilles Vertes",
+  "meal": [
+   "lunch",
+   "dinner"
+  ],
+  "servings": 3,
+  "ingredients": [
+   [
+    "lentils_brown",
+    240
+   ],
+   [
+    "carrot",
+    100
+   ],
+   [
+    "onion",
+    100
+   ],
+   [
+    "celery",
+    50
+   ],
+   [
+    "garlic",
+    10
+   ],
+   [
+    "oil_olive",
+    20
+   ],
+   [
+    "mustard",
+    10
+   ],
+   [
+    "vinegar",
+    15
+   ],
+   [
+    "thyme",
+    2
+   ]
+  ],
+  "tags": [
+   "meal-prep",
+   "budget"
+  ]
+ },
+ {
+  "id": "fr-quiche-lorraine",
+  "name": "Quiche Lorraine",
+  "meal": [
+   "lunch",
+   "dinner"
+  ],
+  "servings": 6,
+  "ingredients": [
+   [
+    "maida",
+    250
+   ],
+   [
+    "butter",
+    100
+   ],
+   [
+    "egg",
+    250
+   ],
+   [
+    "cream",
+    100
+   ],
+   [
+    "milk_whole",
+    150
+   ],
+   [
+    "bacon",
+    150
+   ],
+   [
+    "cheddar",
+    80
+   ]
+  ],
+  "tags": [
+   "meal-prep"
+  ]
+ },
+ {
+  "id": "fr-quiche-epinards",
+  "name": "Spinach Quiche",
+  "meal": [
+   "lunch",
+   "dinner"
+  ],
+  "servings": 6,
+  "ingredients": [
+   [
+    "maida",
+    250
+   ],
+   [
+    "butter",
+    100
+   ],
+   [
+    "egg",
+    250
+   ],
+   [
+    "milk_whole",
+    250
+   ],
+   [
+    "spinach",
+    300
+   ],
+   [
+    "cheddar",
+    80
+   ],
+   [
+    "onion",
+    80
+   ]
+  ],
+  "tags": [
+   "meal-prep",
+   "budget"
+  ]
+ },
+ {
+  "id": "fr-poulet-roti",
+  "name": "Poulet Roti with Potatoes",
+  "meal": [
+   "dinner"
+  ],
+  "servings": 4,
+  "ingredients": [
+   [
+    "chicken_whole",
+    800
+   ],
+   [
+    "potato",
+    600
+   ],
+   [
+    "lemon",
+    50
+   ],
+   [
+    "garlic",
+    20
+   ],
+   [
+    "butter",
+    30
+   ],
+   [
+    "thyme",
+    2
+   ],
+   [
+    "oil_olive",
+    15
+   ]
+  ],
+  "tags": [
+   "high-protein"
+  ]
+ },
+ {
+  "id": "fr-soupe-oignon",
+  "name": "French Onion Soup",
+  "meal": [
+   "lunch",
+   "dinner"
+  ],
+  "servings": 4,
+  "ingredients": [
+   [
+    "onion",
+    800
+   ],
+   [
+    "butter",
+    30
+   ],
+   [
+    "baguette",
+    120
+   ],
+   [
+    "cheddar",
+    100
+   ],
+   [
+    "stock",
+    1000
+   ],
+   [
+    "wine_red",
+    100
+   ],
+   [
+    "thyme",
+    2
+   ],
+   [
+    "maida",
+    15
+   ]
+  ],
+  "tags": [
+   "budget"
+  ]
+ },
+ {
+  "id": "fr-yaourt-fruits",
+  "name": "Yogurt with Fruit",
+  "meal": [
+   "breakfast",
+   "snack"
+  ],
+  "servings": 1,
+  "ingredients": [
+   [
+    "curd",
+    200
+   ],
+   [
+    "apple",
+    100
+   ],
+   [
+    "honey",
+    10
+   ]
+  ],
+  "tags": [
+   "quick",
+   "budget"
+  ]
+ },
+ {
+  "id": "fr-crepes-sucrees",
+  "name": "Sweet Crepes with Jam",
+  "meal": [
+   "breakfast",
+   "snack"
+  ],
+  "servings": 3,
+  "ingredients": [
+   [
+    "maida",
+    150
+   ],
+   [
+    "egg",
+    100
+   ],
+   [
+    "milk_whole",
+    300
+   ],
+   [
+    "butter",
+    20
+   ],
+   [
+    "sugar",
+    20
+   ],
+   [
+    "jam",
+    60
+   ]
+  ],
+  "tags": [
+   "sweet",
+   "budget"
+  ]
+ },
+ {
+  "id": "fr-crepe-jambon-fromage",
+  "name": "Ham and Cheese Galette",
+  "meal": [
+   "lunch",
+   "dinner"
+  ],
+  "servings": 2,
+  "ingredients": [
+   [
+    "maida",
+    100
+   ],
+   [
+    "egg",
+    50
+   ],
+   [
+    "milk_whole",
+    200
+   ],
+   [
+    "ham",
+    100
+   ],
+   [
+    "cheddar",
+    60
+   ],
+   [
+    "butter",
+    10
+   ]
+  ],
+  "tags": [
+   "high-protein"
+  ]
+ },
+ {
+  "id": "fr-tartine-beurre-confiture",
+  "name": "Tartine Beurre Confiture",
+  "meal": [
+   "breakfast"
+  ],
+  "servings": 1,
+  "ingredients": [
+   [
+    "baguette",
+    80
+   ],
+   [
+    "butter",
+    15
+   ],
+   [
+    "jam",
+    25
+   ]
+  ],
+  "tags": [
+   "quick",
+   "sweet"
+  ]
+ },
+ {
+  "id": "fr-pain-perdu",
+  "name": "Pain Perdu",
+  "meal": [
+   "breakfast"
+  ],
+  "servings": 2,
+  "ingredients": [
+   [
+    "bread_white",
+    200
+   ],
+   [
+    "egg",
+    100
+   ],
+   [
+    "milk_whole",
+    150
+   ],
+   [
+    "sugar",
+    15
+   ],
+   [
+    "butter",
+    15
+   ],
+   [
+    "cinnamon",
+    1
+   ]
+  ],
+  "tags": [
+   "sweet",
+   "budget"
+  ]
+ },
+ {
+  "id": "fr-oeufs-brouilles",
+  "name": "Scrambled Eggs on Toast",
+  "meal": [
+   "breakfast"
+  ],
+  "servings": 1,
+  "ingredients": [
+   [
+    "egg",
+    150
+   ],
+   [
+    "butter",
+    8
+   ],
+   [
+    "baguette",
+    60
+   ],
+   [
+    "spring_onion",
+    10
+   ]
+  ],
+  "tags": [
+   "quick",
+   "high-protein",
+   "budget"
+  ]
+ },
+ {
+  "id": "fr-bircher",
+  "name": "Apple Bircher Muesli",
+  "meal": [
+   "breakfast",
+   "snack"
+  ],
+  "servings": 1,
+  "ingredients": [
+   [
+    "oats",
+    50
+   ],
+   [
+    "curd",
+    150
+   ],
+   [
+    "apple",
+    100
+   ],
+   [
+    "almonds",
+    10
+   ]
+  ],
+  "tags": [
+   "quick"
+  ]
+ },
+ {
+  "id": "fr-gratin-dauphinois",
+  "name": "Gratin Dauphinois",
+  "meal": [
+   "dinner"
+  ],
+  "servings": 4,
+  "ingredients": [
+   [
+    "potato",
+    800
+   ],
+   [
+    "cream",
+    200
+   ],
+   [
+    "milk_whole",
+    250
+   ],
+   [
+    "cheddar",
+    60
+   ],
+   [
+    "garlic",
+    10
+   ],
+   [
+    "butter",
+    10
+   ]
+  ],
+  "tags": [
+   "budget"
+  ]
+ },
+ {
+  "id": "fr-boeuf-bourguignon",
+  "name": "Boeuf Bourguignon (lighter)",
+  "meal": [
+   "dinner"
+  ],
+  "servings": 4,
+  "ingredients": [
+   [
+    "beef_stew",
+    700
+   ],
+   [
+    "carrot",
+    200
+   ],
+   [
+    "onion",
+    150
+   ],
+   [
+    "mushroom",
+    200
+   ],
+   [
+    "bacon",
+    60
+   ],
+   [
+    "wine_red",
+    300
+   ],
+   [
+    "tomato_paste",
+    20
+   ],
+   [
+    "potato",
+    500
+   ]
+  ],
+  "tags": [
+   "meal-prep",
+   "high-protein"
+  ]
+ },
+ {
+  "id": "fr-moules-marinieres",
+  "name": "Moules Marinieres",
+  "meal": [
+   "dinner"
+  ],
+  "servings": 2,
+  "ingredients": [
+   [
+    "mussels",
+    800
+   ],
+   [
+    "shallot",
+    60
+   ],
+   [
+    "garlic",
+    10
+   ],
+   [
+    "cream",
+    50
+   ],
+   [
+    "butter",
+    15
+   ],
+   [
+    "parsley",
+    10
+   ],
+   [
+    "baguette",
+    100
+   ]
+  ],
+  "tags": [
+   "high-protein"
+  ]
+ },
+ {
+  "id": "fr-saumon-papillote",
+  "name": "Salmon en Papillote",
+  "meal": [
+   "dinner"
+  ],
+  "servings": 2,
+  "ingredients": [
+   [
+    "salmon",
+    360
+   ],
+   [
+    "zucchini",
+    200
+   ],
+   [
+    "carrot",
+    100
+   ],
+   [
+    "lemon",
+    30
+   ],
+   [
+    "butter",
+    15
+   ],
+   [
+    "oil_olive",
+    10
+   ],
+   [
+    "potato",
+    300
+   ]
+  ],
+  "tags": [
+   "high-protein"
+  ]
+ },
+ {
+  "id": "fr-soupe-poireaux",
+  "name": "Potage Parmentier",
+  "meal": [
+   "lunch",
+   "dinner"
+  ],
+  "servings": 4,
+  "ingredients": [
+   [
+    "leek",
+    400
+   ],
+   [
+    "potato",
+    500
+   ],
+   [
+    "butter",
+    25
+   ],
+   [
+    "stock",
+    900
+   ],
+   [
+    "cream",
+    50
+   ],
+   [
+    "onion",
+    50
+   ]
+  ]
+ },
+ {
+  "id": "fr-salade-lyonnaise",
+  "name": "Salade Lyonnaise",
+  "meal": [
+   "lunch"
+  ],
+  "servings": 2,
+  "ingredients": [
+   [
+    "lettuce",
+    150
+   ],
+   [
+    "egg",
+    100
+   ],
+   [
+    "bacon",
+    80
+   ],
+   [
+    "baguette",
+    60
+   ],
+   [
+    "oil_olive",
+    15
+   ],
+   [
+    "mustard",
+    10
+   ],
+   [
+    "vinegar",
+    15
+   ]
+  ]
+ },
+ {
+  "id": "fr-pissaladiere",
+  "name": "Pissaladiere",
+  "meal": [
+   "lunch",
+   "dinner"
+  ],
+  "servings": 4,
+  "ingredients": [
+   [
+    "maida",
+    300
+   ],
+   [
+    "yeast",
+    4
+   ],
+   [
+    "onion",
+    800
+   ],
+   [
+    "anchovy",
+    40
+   ],
+   [
+    "olives",
+    60
+   ],
+   [
+    "oil_olive",
+    40
+   ]
+  ]
+ },
+ {
+  "id": "fr-pot-au-feu",
+  "name": "Pot-au-Feu",
+  "meal": [
+   "dinner"
+  ],
+  "servings": 4,
+  "ingredients": [
+   [
+    "beef_stew",
+    600
+   ],
+   [
+    "carrot",
+    300
+   ],
+   [
+    "potato",
+    400
+   ],
+   [
+    "leek",
+    200
+   ],
+   [
+    "onion",
+    100
+   ],
+   [
+    "celery",
+    100
+   ],
+   [
+    "cabbage",
+    200
+   ],
+   [
+    "mustard",
+    20
+   ]
+  ],
+  "tags": [
+   "meal-prep",
+   "high-protein"
+  ]
+ },
+ {
+  "id": "fr-blanquette-poulet",
+  "name": "Chicken Blanquette with Rice",
+  "meal": [
+   "dinner"
+  ],
+  "servings": 4,
+  "ingredients": [
+   [
+    "chicken_breast",
+    600
+   ],
+   [
+    "mushroom",
+    250
+   ],
+   [
+    "carrot",
+    200
+   ],
+   [
+    "onion",
+    100
+   ],
+   [
+    "cream",
+    100
+   ],
+   [
+    "maida",
+    25
+   ],
+   [
+    "butter",
+    25
+   ],
+   [
+    "rice_white",
+    280
+   ]
+  ],
+  "tags": [
+   "high-protein"
+  ]
+ },
+ {
+  "id": "fr-gratin-chou-fleur",
+  "name": "Cauliflower Gratin",
+  "meal": [
+   "lunch",
+   "dinner"
+  ],
+  "servings": 3,
+  "ingredients": [
+   [
+    "cauliflower",
+    700
+   ],
+   [
+    "milk_whole",
+    300
+   ],
+   [
+    "cheddar",
+    100
+   ],
+   [
+    "butter",
+    20
+   ],
+   [
+    "maida",
+    25
+   ]
+  ],
+  "tags": [
+   "budget"
+  ]
+ },
+ {
+  "id": "fr-soupe-legumes",
+  "name": "Soupe de Legumes",
+  "meal": [
+   "lunch",
+   "dinner"
+  ],
+  "servings": 4,
+  "ingredients": [
+   [
+    "carrot",
+    200
+   ],
+   [
+    "potato",
+    300
+   ],
+   [
+    "leek",
+    150
+   ],
+   [
+    "cabbage",
+    200
+   ],
+   [
+    "onion",
+    100
+   ],
+   [
+    "oil_olive",
+    20
+   ],
+   [
+    "stock",
+    1000
+   ]
+  ],
+  "tags": [
+   "meal-prep",
+   "budget"
+  ]
+ },
+ {
+  "id": "fr-cassoulet-light",
+  "name": "Cassoulet (lighter)",
+  "meal": [
+   "dinner"
+  ],
+  "servings": 4,
+  "ingredients": [
+   [
+    "white_beans",
+    600
+   ],
+   [
+    "sausage",
+    200
+   ],
+   [
+    "chicken_leg",
+    400
+   ],
+   [
+    "tomato_canned",
+    200
+   ],
+   [
+    "onion",
+    100
+   ],
+   [
+    "carrot",
+    100
+   ],
+   [
+    "stock",
+    300
+   ]
+  ],
+  "tags": [
+   "meal-prep",
+   "high-protein"
+  ]
+ },
+ {
+  "id": "fr-rillettes-thon",
+  "name": "Tuna Rillettes Toast",
+  "meal": [
+   "snack"
+  ],
+  "servings": 2,
+  "ingredients": [
+   [
+    "tuna_canned",
+    120
+   ],
+   [
+    "cream_cheese",
+    40
+   ],
+   [
+    "baguette",
+    80
+   ],
+   [
+    "lemon",
+    15
+   ],
+   [
+    "parsley",
+    3
+   ]
+  ],
+  "tags": [
+   "quick"
+  ]
+ },
+ {
+  "id": "fr-fromage-poire",
+  "name": "Cheese and Pear",
+  "meal": [
+   "snack"
+  ],
+  "servings": 1,
+  "ingredients": [
+   [
+    "cheddar",
+    30
+   ],
+   [
+    "pear",
+    150
+   ],
+   [
+    "walnuts",
+    15
+   ]
+  ],
+  "tags": [
+   "quick"
+  ]
+ },
+ {
+  "id": "fr-tapenade-crudites",
+  "name": "Tapenade with Crudites",
+  "meal": [
+   "snack"
+  ],
+  "servings": 2,
+  "ingredients": [
+   [
+    "olives",
+    100
+   ],
+   [
+    "oil_olive",
+    15
+   ],
+   [
+    "garlic",
+    3
+   ],
+   [
+    "carrot",
+    200
+   ],
+   [
+    "cucumber",
+    150
+   ]
+  ],
+  "tags": [
+   "quick",
+   "budget"
+  ]
+ },
+ {
+  "id": "fr-compote-pommes",
+  "name": "Compote de Pommes",
+  "meal": [
+   "snack"
+  ],
+  "servings": 2,
+  "ingredients": [
+   [
+    "apple",
+    400
+   ],
+   [
+    "sugar",
+    15
+   ],
+   [
+    "cinnamon",
+    1
+   ],
+   [
+    "almonds",
+    10
+   ]
+  ],
+  "tags": [
+   "sweet"
+  ]
+ },
+ {
+  "id": "fr-oeuf-mimosa",
+  "name": "Oeufs Mimosa",
+  "meal": [
+   "snack"
+  ],
+  "servings": 2,
+  "ingredients": [
+   [
+    "egg",
+    200
+   ],
+   [
+    "mayo",
+    20
+   ],
+   [
+    "mustard",
+    5
+   ],
+   [
+    "paprika",
+    1
+   ]
+  ],
+  "tags": [
+   "budget"
+  ]
+ },
+ {
+  "id": "fr-chocolat-chaud-pain",
+  "name": "Hot Chocolate with Bread",
+  "meal": [
+   "breakfast",
+   "snack"
+  ],
+  "servings": 1,
+  "ingredients": [
+   [
+    "milk_whole",
+    200
+   ],
+   [
+    "cocoa",
+    10
+   ],
+   [
+    "sugar",
+    10
+   ],
+   [
+    "baguette",
+    50
+   ]
+  ],
+  "tags": [
+   "sweet",
+   "budget"
+  ]
+ },
+ {
+  "id": "fr-gateau-yaourt",
+  "name": "Gateau au Yaourt",
+  "meal": [
+   "breakfast",
+   "snack"
+  ],
+  "servings": 8,
+  "ingredients": [
+   [
+    "maida",
+    250
+   ],
+   [
+    "curd",
+    125
+   ],
+   [
+    "egg",
+    150
+   ],
+   [
+    "sugar",
+    150
+   ],
+   [
+    "oil_veg",
+    100
+   ],
+   [
+    "baking_powder",
+    8
+   ]
+  ],
+  "tags": [
+   "sweet",
+   "budget"
+  ]
+ },
+ {
+  "id": "fr-clafoutis-pommes",
+  "name": "Apple Clafoutis",
+  "meal": [
+   "breakfast",
+   "snack"
+  ],
+  "servings": 4,
+  "ingredients": [
+   [
+    "maida",
+    60
+   ],
+   [
+    "egg",
+    100
+   ],
+   [
+    "milk_whole",
+    250
+   ],
+   [
+    "sugar",
+    40
+   ],
+   [
+    "apple",
+    400
+   ]
+  ],
+  "tags": [
+   "sweet",
+   "budget"
+  ]
+ },
+ {
+  "id": "fr-poulet-moutarde",
+  "name": "Mustard Chicken with Rice",
+  "meal": [
+   "dinner"
+  ],
+  "servings": 2,
+  "ingredients": [
+   [
+    "chicken_breast",
+    360
+   ],
+   [
+    "cream",
+    80
+   ],
+   [
+    "mustard",
+    25
+   ],
+   [
+    "onion",
+    50
+   ],
+   [
+    "rice_white",
+    140
+   ],
+   [
+    "oil_olive",
+    10
+   ]
+  ],
+  "tags": [
+   "high-protein"
+  ]
+ },
+ {
+  "id": "fr-hachis-parmentier",
+  "name": "Hachis Parmentier",
+  "meal": [
+   "dinner"
+  ],
+  "servings": 4,
+  "ingredients": [
+   [
+    "beef_mince",
+    500
+   ],
+   [
+    "potato",
+    800
+   ],
+   [
+    "milk_whole",
+    100
+   ],
+   [
+    "butter",
+    30
+   ],
+   [
+    "onion",
+    100
+   ],
+   [
+    "carrot",
+    100
+   ],
+   [
+    "tomato_paste",
+    20
+   ]
+  ],
+  "tags": [
+   "meal-prep",
+   "high-protein"
+  ]
+ },
+ {
+  "id": "fr-tomates-farcies",
+  "name": "Tomates Farcies",
+  "meal": [
+   "dinner"
+  ],
+  "servings": 4,
+  "ingredients": [
+   [
+    "tomato",
+    800
+   ],
+   [
+    "pork_mince",
+    450
+   ],
+   [
+    "rice_white",
+    100
+   ],
+   [
+    "onion",
+    80
+   ],
+   [
+    "garlic",
+    10
+   ],
+   [
+    "breadcrumbs",
+    30
+   ],
+   [
+    "oil_olive",
+    20
+   ],
+   [
+    "parsley",
+    10
+   ]
+  ],
+  "tags": [
+   "high-protein"
+  ]
+ },
+ {
+  "id": "fr-brandade-light",
+  "name": "Brandade de Morue (light)",
+  "meal": [
+   "dinner"
+  ],
+  "servings": 3,
+  "ingredients": [
+   [
+    "cod",
+    400
+   ],
+   [
+    "potato",
+    500
+   ],
+   [
+    "milk_whole",
+    150
+   ],
+   [
+    "garlic",
+    10
+   ],
+   [
+    "oil_olive",
+    30
+   ]
+  ],
+  "tags": [
+   "high-protein"
+  ]
+ },
+ {
+  "id": "fr-tartine-chevre-miel",
+  "name": "Cheese and Honey Tartine",
+  "meal": [
+   "breakfast",
+   "snack"
+  ],
+  "servings": 1,
+  "ingredients": [
+   [
+    "baguette",
+    70
+   ],
+   [
+    "cream_cheese",
+    40
+   ],
+   [
+    "honey",
+    10
+   ],
+   [
+    "walnuts",
+    10
+   ]
+  ],
+  "tags": [
+   "sweet"
+  ]
+ }
+]

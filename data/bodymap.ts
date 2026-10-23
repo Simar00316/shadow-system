@@ -1,10 +1,7 @@
 // Extracts MuscleMap (MIT, melihcolpan/MuscleMap) body paths into src/data/bodymap.json,
-// mapped to our canonical muscle ids. Usage: node data/bodymap.ts <path to MuscleMap repo>
-import { readFileSync, writeFileSync } from 'node:fs'
-import { join } from 'node:path'
-
-const repo = process.argv[2] ?? 'research/_repos/MuscleMap'
-const dir = join(repo, 'Sources/MuscleMap/Data')
+// mapped to our canonical muscle ids. Usage: node data/bodymap.ts
+import { writeFileSync } from 'node:fs'
+import { cached, raw } from './lib.ts'
 
 // MuscleMap slug -> canonical muscle id (research/data-sources.md muscle canon). null = body outline, not selectable.
 const MAP: Record<string, string | null> = {
@@ -21,8 +18,8 @@ const MAP: Record<string, string | null> = {
 
 type Part = { muscle: string | null; slug: string; side: 'common' | 'left' | 'right'; d: string }
 
-function parse(file: string): Part[] {
-  const src = readFileSync(join(dir, file), 'utf8')
+async function parse(file: string): Promise<Part[]> {
+  const src = (await cached(raw('musclemap', `Sources/MuscleMap/Data/${file}`), `data/.cache/musclemap/${file}`)).toString()
   const parts: Part[] = []
   for (const block of src.split('BodyPartPathData(').slice(1)) {
     const slug = block.match(/slug:\s*\.(\w+)/)![1]
@@ -56,7 +53,7 @@ const out: Record<string, Record<string, { viewBox: string; parts: Part[] }>> = 
 for (const [sex, faces] of Object.entries(views)) {
   out[sex] = {}
   for (const [face, v] of Object.entries(faces)) {
-    const parts = parse(v.file)
+    const parts = await parse(v.file)
     out[sex][face] = { viewBox: v.viewBox, parts: face === 'back' ? splitAbductors(parts) : parts }
   }
 }

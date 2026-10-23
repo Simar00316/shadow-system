@@ -1,0 +1,7 @@
+{
+  "hasan": { "repo": "hasaneyldrm/exercises-dataset", "sha": "7455efae41b330c265e7cd4b78dfa848e7ce5ebd", "license": "MIT (data/text); media (c) Gym visual, 180x180, attribution required" },
+  "fedb": { "repo": "yuhonas/free-exercise-db", "sha": "f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5", "license": "Unlicense" },
+  "ifct": { "repo": "nodef/ifct2017", "sha": "b65621ddcf07115e7adba50809d4977402a9fd29", "license": "numbers from IFCT 2017 (ICMR-NIN); repo code AGPL, not vendored" },
+  "musclemap": { "repo": "melihcolpan/MuscleMap", "sha": "5f576a5d3d697c3720abfada8e618d1cef08ea32", "license": "MIT" },
+  "usda_sr": { "url": "https://fdc.nal.usda.gov/fdc-datasets/FoodData_Central_sr_legacy_food_csv_2018-04.zip", "license": "CC0" }
+}
