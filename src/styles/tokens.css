@@ -54,6 +54,27 @@
   --glow-shadow: 0 0 22px rgb(123 47 247 / 0.5), inset 0 0 28px rgb(26 11 51 / 0.9);
   --glow-reward: 0 0 22px rgb(255 201 74 / 0.45), inset 0 0 24px rgb(40 30 5 / 0.8);
 
+  /* v2 depth: dark glass, light in the edges, no blur filters (research/design-v2.md §4.3). Light source: top centre. */
+  --text-faint: #55658a;
+  --surface-1: linear-gradient(180deg, rgb(20 34 62 / .74) 0%, rgb(9 16 32 / .82) 100%);
+  --surface-2: linear-gradient(180deg, rgb(28 48 88 / .84) 0%, rgb(13 23 46 / .9) 100%);
+  --surface-hero: linear-gradient(180deg, rgb(24 44 84 / .72) 0%, rgb(8 15 32 / .86) 100%);
+  --surface-flat: rgb(255 255 255 / .03);
+  --edge: rgb(120 170 255 / .14);
+  --edge-hi: rgb(140 205 255 / .42);
+  --hairline: rgb(255 255 255 / .06);
+  --rim-top: inset 0 1px 0 rgb(180 220 255 / .12);
+  --rim-bot: inset 0 -1px 0 rgb(0 0 0 / .45);
+  --elev-card: var(--rim-top), var(--rim-bot), 0 1px 0 rgb(0 0 0 / .6), 0 12px 24px -14px rgb(0 0 0 / .9);
+  --elev-hero: var(--rim-top), var(--rim-bot), 0 0 0 1px rgb(92 200 255 / .3), 0 0 36px -8px rgb(47 168 255 / .5), 0 18px 32px -16px rgb(0 0 0 / .9);
+  --elev-alert: var(--rim-top), 0 0 0 1px rgb(255 59 92 / .45), 0 0 32px -8px rgb(255 59 92 / .55);
+  --elev-reward: var(--rim-top), 0 0 0 1px rgb(255 201 74 / .45), 0 0 32px -8px rgb(255 201 74 / .5);
+  --elev-shadow: var(--rim-top), 0 0 0 1px rgb(167 123 255 / .45), 0 0 32px -8px rgb(123 47 247 / .6);
+  --glow-text: 0 0 12px rgb(92 200 255 / .55);
+  --glow-gold: 0 0 14px rgb(255 201 74 / .45);
+  /* shape rule: angular = the System speaking, rounded = app content */
+  --r-hero: 4px; --r-card: 12px; --r-ctl: 10px;
+
   /* motion */
   --ease-out: cubic-bezier(0.2, 0.8, 0.2, 1);
   --ease-in: cubic-bezier(0.4, 0, 1, 1);

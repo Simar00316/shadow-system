@@ -1,16 +1,22 @@
 import { MotionConfig } from 'motion/react'
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
 import { lazy, Suspense, type ComponentType } from 'react'
 import { Toaster } from './ui/feedback'
 import { usePrefs } from './app/prefs'
-import { Shell } from './screens/Shell'
-import { Status } from './screens/status/Status'
-import { SystemMenu } from './screens/system/SystemMenu'
-import { SystemLog } from './screens/system/SystemLog'
-import { Sealed } from './screens/Sealed'
+import { Boot } from './ui/Boot'
+
+/** Set once a profile exists on this device (Shell and the Awakening). Lets a new device skip the Shell round trip. */
+const awakenedHint = () => { try { return localStorage.getItem('shadow-awakened') === '1' } catch { return true } }
+/** New devices go straight to the Awakening (fast first paint); the gate double-checks the database and returns players. */
+const PlayerOnly = () => (awakenedHint() ? <Shell /> : <Navigate to="/awakening" replace />)
 
 const page = <T,>(load: () => Promise<T>, name: keyof T) => lazy(() => load().then((m) => ({ default: m[name] as ComponentType })))
-const Awakening = page(() => import('./screens/awakening/Awakening'), 'Awakening')
+const Shell = page(() => import('./screens/Shell'), 'Shell')
+const Status = page(() => import('./screens/status/Status'), 'Status')
+const SystemMenu = page(() => import('./screens/system/SystemMenu'), 'SystemMenu')
+const SystemLog = page(() => import('./screens/system/SystemLog'), 'SystemLog')
+const Sealed = page(() => import('./screens/Sealed'), 'Sealed')
+const Awakening = page(() => import('./screens/awakening/Gate'), 'AwakeningGate')
 const Settings = page(() => import('./screens/settings/Settings'), 'Settings')
 const ImportScreen = page(() => import('./screens/settings/DataScreens'), 'ImportScreen')
 const ReportScreen = page(() => import('./screens/settings/DataScreens'), 'ReportScreen')
@@ -43,13 +49,12 @@ export function App() {
   return (
     <MotionConfig reducedMotion={reduce ? 'always' : 'user'}>
       <BrowserRouter>
-        <div className="scanlines" aria-hidden="true" />
         <Toaster />
-        <Suspense fallback={null}>
+        <Suspense fallback={<Boot />}>
           <Routes>
             <Route path="/awakening" element={<Awakening />} />
             <Route path="/dev/gallery" element={<Gallery />} />
-            <Route element={<Shell />}>
+            <Route element={<PlayerOnly />}>
               <Route index element={<Status />} />
               <Route path="system" element={<SystemMenu />} />
               <Route path="log" element={<SystemLog />} />

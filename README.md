@@ -85,7 +85,7 @@ This needs internet the first time; downloads are cached in `data/.cache/`. Each
 | `node data/build-foods.ts` | `src/data/ingredients.json` (USDA SR Legacy + IFCT 2017) |
 | `node data/build-dishes.ts` | `src/data/dishes.json` from the recipes in `data/dishes/*.json` |
 | `node data/bodymap.ts` | `src/data/bodymap.json` (MuscleMap paths) |
-| `node data/sfx.ts` / `node data/icons.ts` | Synthesised sound effects / app icons |
+| `node data/sfx-import.ts` / `node data/icons.ts` | Sound effects from the sourced files in `data/sfx-sources.json` (needs ffmpeg) / app icons |
 
 `data/data.test.ts` validates the bundles; run `npm test` afterwards. Asset sources and licences: [docs/asset-sources.md](docs/asset-sources.md).
 

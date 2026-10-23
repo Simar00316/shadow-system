@@ -10,11 +10,12 @@ import { Emblem } from '@/ui/Emblem'
 import { RankBadge } from '@/ui/RankBadge'
 import { Icon } from '@/ui/icons'
 import { sfx } from '@/audio/sfx'
+import { isIosSafari, isStandalone } from './Gate'
 import { fromKg, toKg } from '@/engine/strength'
 import { prescribe } from '@/engine/prescription'
 import { BASE_CLASSES, EQUIPMENT, type BaseClass, type Equipment, type Experience, type Goal, type Muscle, type Sex } from '@/engine/types'
 import type { DietType, Units } from '@/engine/model'
-import { awaken, DEFAULT_NOTIFICATIONS, EQUIPMENT_PRESETS, revealPower, suggestedClass, type AwakeningAnswers, type EquipmentPreset } from '@/app/awakening'
+import { DEFAULT_NOTIFICATIONS, EQUIPMENT_PRESETS, revealPower, suggestedClass, type AwakeningAnswers, type EquipmentPreset } from '@/app/awakening-setup'
 
 export const CUISINE_LABEL: Record<string, string> = {
   india: 'India', pakistan: 'Pakistan', usa: 'United States', uk: 'United Kingdom', mexico: 'Mexico', brazil: 'Brazil', spain: 'Spain', italy: 'Italy', france: 'France',
@@ -33,15 +34,14 @@ const GOALS: { id: Goal; label: string }[] = [
 ]
 const DAYS = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
 
-export const isIosSafari = () => typeof navigator !== 'undefined' && /iP(hone|ad|od)/.test(navigator.userAgent) && !/CriOS|FxiOS/.test(navigator.userAgent)
-export const isStandalone = () => typeof window !== 'undefined' && ((navigator as Navigator & { standalone?: boolean }).standalone === true || window.matchMedia?.('(display-mode: standalone)').matches)
 
 function Choice<T extends string>({ value, options, onChange, label }: { value: T; options: { id: T; label: ReactNode }[]; onChange: (v: T) => void; label: string }) {
   return (
     <div role="radiogroup" aria-label={label} className="flex flex-col gap-2">
       {options.map((o) => (
-        <button key={o.id} type="button" role="radio" aria-checked={value === o.id} onClick={() => { sfx.play('tap'); onChange(o.id) }} className={`min-h-12 rounded-[var(--r-1)] border px-4 text-left transition ${value === o.id ? 'border-glow bg-[rgb(47_168_255/.14)] text-glow shadow-[var(--glow-1)]' : 'border-[color:var(--line)] text-text'}`}>
-          {o.label}
+        <button key={o.id} type="button" role="radio" aria-checked={value === o.id} onClick={() => { sfx.play('tap'); onChange(o.id) }} className={`press flex min-h-[52px] items-center justify-between gap-3 rounded-[var(--r-ctl)] border px-4 text-left ${value === o.id ? 'border-[color:var(--edge-hi)] bg-[rgb(47_168_255/.14)] text-text shadow-[var(--rim-top),0_0_18px_-6px_rgb(47_168_255/.6)]' : 'border-[color:var(--edge)] bg-[color:var(--surface-flat)] text-dim'}`}>
+          <span className="t-row">{o.label}</span>
+          <span className={`flex h-5 w-5 shrink-0 items-center justify-center rounded-full border ${value === o.id ? 'border-glow bg-glow text-ink' : 'border-[color:var(--edge-hi)]'}`}>{value === o.id ? <Icon name="check" size={12} /> : null}</span>
         </button>
       ))}
     </div>
@@ -50,7 +50,10 @@ function Choice<T extends string>({ value, options, onChange, label }: { value: 
 
 function Step({ index, total, title, children, onNext, onBack, nextLabel = 'Next', nextDisabled }: { index: number; total: number; title: string; children: ReactNode; onNext: () => void; onBack?: () => void; nextLabel?: string; nextDisabled?: boolean }) {
   return (
-    <SystemWindow tag={`QUESTION ${index}/${total}`} title={title} key={title}>
+    <SystemWindow tag={`QUESTION ${index}/${total}`} title={title} key={title} hero>
+      <div className="-mt-1 mb-4 flex gap-1" aria-hidden="true">
+        {Array.from({ length: total }, (_, i) => <span key={i} className={`h-1 flex-1 rounded-full ${i < index ? 'bg-glow shadow-[0_0_6px_var(--glow)]' : 'bg-[rgb(47_168_255/.15)]'}`} />)}
+      </div>
       <div className="flex flex-col gap-4">
         {children}
         <div className="flex gap-2 pt-2">
@@ -95,10 +98,13 @@ function Stopwatch({ onStop }: { onStop: (sec: number) => void }) {
   )
 }
 
-export function Awakening() {
+type Phase = 'install' | 'intro' | 'declined' | 'form' | 'test' | 'class' | 'reveal' | 'saving'
+
+/** The onboarding flow. Usually entered from AwakeningGate (./Gate) at the `form` step. */
+export function Awakening({ start }: { start?: Phase } = {}) {
   const nav = useNavigate()
   const lb = typeof navigator !== 'undefined' && /^en-US/.test(navigator.language)
-  const [phase, setPhase] = useState<'install' | 'intro' | 'declined' | 'form' | 'test' | 'class' | 'reveal' | 'saving'>(isIosSafari() && !isStandalone() ? 'install' : 'intro')
+  const [phase, setPhase] = useState<Phase>(start ?? (isIosSafari() && !isStandalone() ? 'install' : 'intro'))
   const [step, setStep] = useState(0)
   const [name, setName] = useState('')
   const [sex, setSex] = useState<Sex>('male')
@@ -217,14 +223,17 @@ export function Awakening() {
     return (
       <main className="mx-auto flex min-h-[100dvh] max-w-[480px] flex-col justify-center gap-4 px-4">
         <Backdrop variant="portal" />
-        <SystemWindow tag="SYSTEM" title="Install the System">
-          <ol className="t-system flex list-decimal flex-col gap-2 pl-5">
-            <li>Tap <Icon name="share" size={18} className="inline" /> Share in Safari.</li>
-            <li>Choose <b>Add to Home Screen</b>.</li>
-            <li>Open Shadow System from your home screen.</li>
+        <SystemWindow tag="SYSTEM" title="Install the System" hero>
+          <ol className="flex flex-col">
+            {[<>Tap <Icon name="share" size={18} className="inline align-text-bottom text-glow" /> Share in Safari.</>, <>Choose <b className="text-text">Add to Home Screen</b>.</>, <>Open Shadow System from your Home Screen.</>].map((step, i) => (
+              <li key={i} className="flex items-center gap-3 border-t border-[color:var(--hairline)] py-3 first:border-t-0">
+                <span className="well t-num h-8 w-8 text-[14px]">{i + 1}</span>
+                <span className="t-row text-dim">{step}</span>
+              </li>
+            ))}
           </ol>
-          <p className="t-small mt-3 text-dim">[Notifications, full offline play and storage protection require the installed app.]</p>
-          <Button className="mt-4 w-full" variant="secondary" onClick={() => setPhase('intro')}>Continue in the browser</Button>
+          <p className="t-small mt-2 text-faint">[Notifications, full offline play and storage protection require the installed app.]</p>
+          <Button className="mt-4 w-full" variant="ghost" onClick={() => setPhase('intro')}>Continue in the browser</Button>
         </SystemWindow>
       </main>
     )
@@ -234,12 +243,10 @@ export function Awakening() {
     <main className="mx-auto flex min-h-[100dvh] max-w-[480px] flex-col justify-center gap-4 px-4 py-8">
       <Backdrop variant={phase === 'reveal' ? 'shadow' : 'portal'} />
       {phase === 'intro' || phase === 'declined' ? (
-        <SystemWindow tag="NOTIFICATION" grid>
-          <TypedText key={phase} text={phase === 'intro' ? '[You have acquired the qualifications to be a Player. Will you accept?]' : '[Refusal noted. The offer remains open.]'} className="t-heading block text-text" />
-          <div className="mt-6 flex gap-2">
-            <Button className="flex-1" onClick={() => { sfx.play('quest-accept'); setPhase('form') }}>Accept</Button>
-            <Button variant="ghost" onClick={() => { sfx.play('error'); setPhase('declined') }}>Decline</Button>
-          </div>
+        <SystemWindow tag="NOTIFICATION" hero>
+          <TypedText key={phase} text={phase === 'intro' ? '[You have acquired the qualifications to be a Player. Will you accept?]' : '[Refusal noted. The offer remains open.]'} className="block text-[19px] leading-[28px] text-text glow-text" />
+          <Button className="mt-8 min-h-14 w-full" onClick={() => { sfx.play('quest-accept'); setPhase('form') }}>Accept</Button>
+          <Button variant="ghost" className="mt-1 w-full" onClick={() => { sfx.play('error'); setPhase('declined') }}>Decline</Button>
         </SystemWindow>
       ) : null}
 
@@ -301,7 +308,7 @@ export function Awakening() {
         </SystemWindow>
       ) : null}
 
-      {phase === 'reveal' || phase === 'saving' ? <Reveal answers={answers()} saving={phase === 'saving'} onEnter={async () => { setPhase('saving'); await awaken(answers()); nav('/', { replace: true }) }} /> : null}
+      {phase === 'reveal' || phase === 'saving' ? <Reveal answers={answers()} saving={phase === 'saving'} onEnter={async () => { setPhase('saving'); await (await import('@/app/awakening')).awaken(answers()); nav('/', { replace: true }) }} /> : null}
     </main>
   )
 }

@@ -22,6 +22,11 @@ async function logAllSets(page: Page) {
   return logged
 }
 
+// Run in a time zone where it is about midday now, so hour-based hidden quests (Night Owl after 22:00,
+// Dawn Hunter before 06:00) never add XP to the assertions below (#128). Etc/GMT+N means UTC-N.
+const n = ((new Date().getUTCHours() - 12 + 36) % 24) - 12
+test.use({ timezoneId: n === 0 ? 'Etc/GMT' : `Etc/GMT${n > 0 ? '+' : '-'}${Math.abs(n)}` })
+
 test('logs a full workout offline with correct XP, then detects a PR', async ({ page, context }) => {
   await awaken(page)
   await checkIn(page)

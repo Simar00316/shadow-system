@@ -10,6 +10,8 @@ Every third-party asset lives in `public/assets/third-party/` and is listed here
 | Exercise text (instructions, names, levels) | `src/data/exercises.json` | same two repos | MIT / Unlicense | |
 | Food composition (USDA SR Legacy) | `src/data/ingredients.json` | https://fdc.nal.usda.gov/fdc-datasets/FoodData_Central_sr_legacy_food_csv_2018-04.zip | CC0 | |
 | Food composition (IFCT 2017 numbers) | `src/data/ingredients.json` | https://github.com/nodef/ifct2017 (commit b65621ddcf), book by ICMR-NIN | numbers only; ask NIN before public release | |
+| Sound effects: tap, window-open/close, notify, quest-accept, rest-end, error | `public/sfx/*.wav` | https://kenney.nl/assets/interface-sounds, https://kenney.nl/assets/digital-audio, https://kenney.nl/assets/sci-fi-sounds (arise sub layer) | CC0 1.0 | rendered by `data/sfx-import.ts`; per-file record in `data/sfx-sources.json` |
+| Sound effects: quest-clear, set-logged, rest-warn, level-up, rank-up, pr, loot ×4, penalty, arise, boss, ambient | `public/sfx/*.wav` | https://mixkit.co/free-sound-effects/ (ids in `data/sfx-sources.json`) | Mixkit Sound Effects Free License (https://mixkit.co/license/#sfxFree): commercial use in apps allowed, no attribution; do not redistribute the raw files as a pack | owner to re-read the licence once in a browser (needs-owner §5) |
 | MediaPipe Pose Landmarker lite model | `public/models/pose_landmarker_lite.task` | https://storage.googleapis.com/mediapipe-models/pose_landmarker/pose_landmarker_lite/float16/1/pose_landmarker_lite.task | Apache-2.0 | downloaded by `data/copy-wasm.ts` |
 | MediaPipe Tasks Vision wasm | `public/wasm/mediapipe/*` | npm `@mediapipe/tasks-vision` | Apache-2.0 | copied from node_modules |
 | zxing-cpp reader wasm | `public/wasm/zxing_reader.wasm` | npm `zxing-wasm` (zxing-cpp) | MIT / Apache-2.0 | copied from node_modules |
@@ -25,5 +27,4 @@ Every third-party asset lives in `public/assets/third-party/` and is listed here
 | Shadow soldier art (8 archetypes, seeded variants) | `src/ui/ShadowArt.tsx` | procedural SVG silhouettes + turbulence smoke filter |
 | Backgrounds (portal, shadow, red gate, dungeon) | `src/ui/Backdrop.tsx` | CSS gradients + SVG rings + CSS particles |
 | Panel frame, corner brackets, scanlines | `src/styles/index.css` | CSS |
-| Sound effects (20) + ambient loop | `public/sfx/*.wav` | synthesised by `data/sfx.ts` |
 | App icons | `public/icons/*` | rendered by `data/icons.ts` with sharp |

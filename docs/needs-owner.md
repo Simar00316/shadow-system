@@ -46,6 +46,12 @@ The repo is private and the app is for personal use. Before making either public
 - **IFCT 2017 numbers** (Indian food composition, ICMR-NIN) are used for personal use. Ask NIN for permission, or switch those foods to USDA equivalents, before a public release.
 - Everything else is MIT, Apache-2.0, OFL, CC0 or public domain (`docs/asset-sources.md`).
 
-## 6. Optional: full CI on GitHub
+## 6. Listen to the sounds and check the effects on the iPhone
+
+- The new sound effects (`public/sfx/*.wav`) were chosen from measurements (duration, envelope, loudness), not by ear. Play each one (Settings → Sound on, then use the app, or open the files) and swap any you dislike: alternates are listed per sound in `data/sfx-sources.json` (`alt`), rendered previews are in `data/.cache/sfx-candidates/_preview/` after `node data/sfx-import.ts`. Least certain: `arise`, `boss`, `penalty`, `set-logged`, `pr`.
+- Read the Mixkit Sound Effects Free License once in a browser (https://mixkit.co/license/#sfxFree): it allows use inside the app but not redistributing the raw files as a pack.
+- In Safari Web Inspector → Timelines on the iPhone, open a few screens and tap buttons: the window materialise, tap glitch and route tear should stay at 60 fps. If one stutters, Settings → Reduce motion turns them into fades.
+
+## 7. Optional: full CI on GitHub
 
 CI runs only on demand. To run it: GitHub → Actions → CI → Run workflow (or add the `full-ci` label to a PR). It uses the free Windows runner minutes.

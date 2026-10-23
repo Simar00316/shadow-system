@@ -3,7 +3,8 @@ import { Navigate, Outlet, useLocation, useNavigate } from 'react-router-dom'
 import { useLiveQuery } from 'dexie-react-hooks'
 import { db } from '@/db/schema'
 import { BottomNav, NAV } from '@/ui/layout'
-import { Backdrop } from '@/ui/Backdrop'
+import { warmUp } from '@/ui/fx'
+import { Boot } from '@/ui/Boot'
 import { ensureToday } from '@/app/game'
 import { maintenance } from '@/app/progression'
 import { dayOf } from '@/engine/dates'
@@ -46,15 +47,25 @@ export function Shell() {
   }, [profile])
 
   if (locked) return <PinLock onUnlock={() => setLocked(false)} />
-  if (profile === undefined) return null
+  if (profile) { try { localStorage.setItem('shadow-awakened', '1') } catch { /* storage blocked */ } }
+  if (profile === undefined) return <Boot />
   if (profile === false) return <Navigate to="/awakening" replace />
   const tab = TAB_FOR(loc.pathname)
   return (
     <>
-      <Backdrop variant={loc.pathname.startsWith('/shadows') ? 'shadow' : 'dungeon'} />
+      <div className="ambient" data-tone={loc.pathname.startsWith('/shadows') ? 'shadow' : undefined} aria-hidden="true" />
+      <RouteFx path={loc.pathname} />
       <Outlet />
       <BottomNav active={tab} onNavigate={(id) => nav(ROUTE_FOR[id])} items={NAV.map((n) => (n.id === 'quests' ? { ...n, badge: pending > 0 } : n))} />
       <ReadinessModal open={readinessOpen} onClose={() => setDismissed(today)} />
     </>
   )
+}
+
+/** (c) Route transition: a tear band sweeps down on every navigation after the first screen (design-v2 §4.7c). */
+function RouteFx({ path }: { path: string }) {
+  const [first] = useState(path)
+  const moved = path !== first
+  useEffect(() => { if (moved) warmUp() }, [moved])
+  return moved ? <div key={path} className="tear" aria-hidden="true" /> : null
 }

@@ -70,31 +70,37 @@ export const NAV: NavItem[] = [
   { id: 'system', label: 'System', icon: 'system' },
 ]
 
-/** Bottom navigation in the thumb zone (DESIGN.md §7). */
+/** Bottom navigation in the thumb zone (DESIGN.md §7, design-v2 §5.6): opaque, sliding active pill, tap glitch. */
 export function BottomNav({ active, onNavigate, items = NAV, disabled, inline }: { active: string; onNavigate: (id: string) => void; items?: NavItem[]; disabled?: boolean; inline?: boolean }) {
+  const idx = Math.max(0, items.findIndex((i) => i.id === active))
+  const w = 100 / items.length
   return (
-    <nav aria-label="Main" className={`${inline ? 'relative' : 'fixed inset-x-0 bottom-0 z-30'} mx-auto max-w-[480px] border-t border-[color:var(--line)] bg-[rgb(11_20_38/.92)] backdrop-blur`} style={{ paddingBottom: 'env(safe-area-inset-bottom)' }}>
-      <ul className="flex h-16">
-        {items.map((it) => {
-          const on = it.id === active
-          return (
-            <li key={it.id} className="flex-1">
-              <button
-                type="button"
-                aria-current={on ? 'page' : undefined}
-                disabled={disabled}
-                onClick={() => { sfx.play('tap'); onNavigate(it.id) }}
-                className={`relative flex h-full w-full flex-col items-center justify-center gap-0.5 transition disabled:opacity-40 ${on ? 'text-glow' : 'text-dim'}`}
-              >
-                <span style={on ? { filter: 'drop-shadow(0 0 6px var(--glow))' } : undefined}><Icon name={it.icon} size={24} /></span>
-                <span className="t-label text-[11px]">{it.label}</span>
-                {it.badge ? <span className="absolute right-[30%] top-2 h-2 w-2 rounded-full bg-warning shadow-[0_0_6px_var(--warning)]" aria-label="Pending" /> : null}
-                {on ? <span className="absolute inset-x-6 top-0 h-0.5 bg-glow shadow-[0_0_10px_var(--glow)]" /> : null}
-              </button>
-            </li>
-          )
-        })}
-      </ul>
-    </nav>
+    <>
+      {inline ? null : <div className="nav-fade" aria-hidden="true" />}
+      <nav aria-label="Main" className={`nav-bar ${inline ? 'relative' : 'fixed inset-x-0 bottom-0 z-30'} mx-auto max-w-[480px]`} style={{ paddingBottom: 'env(safe-area-inset-bottom)' }}>
+        <ul className="relative flex h-16">
+          <span className="nav-pill" aria-hidden="true" style={{ left: `calc(${idx * w}% + ${w / 2}% - 28px)`, transition: 'left 260ms cubic-bezier(.2,.9,.3,1.15)' }} />
+          {items.map((it) => {
+            const on = it.id === active
+            return (
+              <li key={it.id} className="flex-1">
+                <button
+                  type="button"
+                  aria-current={on ? 'page' : undefined}
+                  disabled={disabled}
+                  data-glitch=""
+                  onClick={() => { sfx.play('tap'); onNavigate(it.id) }}
+                  className={`press relative flex h-full w-full flex-col items-center justify-center gap-1 pt-1 disabled:opacity-40 ${on ? 'text-glow' : 'text-dim'}`}
+                >
+                  <span className="relative z-[1] flex h-8 items-center"><Icon name={it.icon} size={22} /></span>
+                  <span className={`glitch-label text-[11px] font-bold uppercase leading-none tracking-[.08em] [font-family:var(--font-ui)] ${on ? 'text-text' : ''}`}>{it.label}</span>
+                  {it.badge ? <span className="absolute right-[calc(50%-18px)] top-2 z-[2] h-2 w-2 rounded-full bg-warning ring-2 ring-[color:var(--bg)]" aria-label="Pending" /> : null}
+                </button>
+              </li>
+            )
+          })}
+        </ul>
+      </nav>
+    </>
   )
 }

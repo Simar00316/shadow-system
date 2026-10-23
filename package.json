@@ -17,7 +17,7 @@
     "worker:dev": "npx wrangler dev -c worker/wrangler.toml",
     "worker:deploy": "npx wrangler deploy -c worker/wrangler.toml",
     "deploy": "npm run build && npx wrangler pages deploy dist --project-name shadow-system --branch main",
-    "data": "node data/copy-wasm.ts && node data/build-exercises.ts && node data/build-foods.ts && node data/build-dishes.ts && node data/bodymap.ts && node data/sfx.ts && node data/icons.ts"
+    "data": "node data/copy-wasm.ts && node data/build-exercises.ts && node data/build-foods.ts && node data/build-dishes.ts && node data/bodymap.ts && node data/sfx-import.ts && node data/icons.ts && node data/noise.ts"
   },
   "dependencies": {
     "@fontsource-variable/inter": "^5.3.0",

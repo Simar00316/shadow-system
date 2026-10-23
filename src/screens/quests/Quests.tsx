@@ -10,6 +10,7 @@ import { Sheet } from '@/ui/layout'
 import { RankBadge } from '@/ui/RankBadge'
 import { EmptyState } from '@/ui/feedback'
 import { Emblem } from '@/ui/Emblem'
+import { Icon } from '@/ui/icons'
 import { useToday } from '@/app/hooks'
 import { awardMany } from '@/app/game'
 import { say } from '@/app/notify'
@@ -51,7 +52,7 @@ export function Quests() {
   return (
     <Screen tag="QUESTS" title="Quest log">
       {penalty ? <QuestCard tag="PENALTY QUEST" variant="alert" title={penalty.title} until={penalty.expiresAt} goals={penalty.goals} reward={['Streak restored']} penalty={penalty.penalty} status={statusOf(penalty)} onOpen={() => nav('/cardio')} /> : null}
-      {daily ? <QuestCard tag="DAILY QUEST" title={daily.title} until={endOf(today)} goals={daily.goals} reward={[`${daily.reward.xp} XP`, `${daily.reward.gold} Gold`]} penalty={daily.penalty} status={statusOf(daily)} onOpen={() => nav('/train')} /> : <SystemWindow tag="DAILY QUEST"><EmptyState message="[The Daily Quest has not been issued.]" /></SystemWindow>}
+      {daily ? <QuestCard tag="DAILY QUEST" hero title={daily.title} until={endOf(today)} goals={daily.goals} reward={[`${daily.reward.xp} XP`, `${daily.reward.gold} Gold`]} penalty={daily.penalty} status={statusOf(daily)} onOpen={() => nav('/train')} /> : <SystemWindow tag="DAILY QUEST"><EmptyState message="[The Daily Quest has not been issued.]" /></SystemWindow>}
       {emergency ? (
         <>
           <QuestCard tag="EMERGENCY QUEST" variant="alert" title={emergency.title} until={emergency.expiresAt} goals={emergency.goals} reward={[`${emergency.reward.xp} XP`, `${emergency.reward.gold} Gold`, 'Optional']} status={statusOf(emergency)} />
@@ -89,20 +90,23 @@ export function Quests() {
           : <p className="t-small text-dim">[Unlocks at level 30. Current class: {job?.cls.replace('_', ' ')}.]</p>}
       </SystemWindow>
 
-      <SystemWindow tag="HIDDEN QUESTS" variant="shadow" animate={false}>
-        <ul className="flex flex-col gap-2">
+      <section aria-label="HIDDEN QUESTS">
+        <div className="section-head"><span className="t-label text-purple-text">Hidden quests</span><span className="t-micro text-faint">{hiddenDone.size}/{HIDDEN.length} found</span></div>
+        <ul className="group">
           {HIDDEN.map((h) => (
-            <li key={h.id} className="flex items-start justify-between gap-3">
-              <div><div className={hiddenDone.has(h.id) ? 'text-gold' : 'text-dim'}>{hiddenDone.has(h.id) ? h.title : '???'}</div><div className="t-small text-dim">{h.hint}</div></div>
-              <span className="t-num text-[12px] text-purple-text">{hiddenDone.has(h.id) ? 'CLEARED' : `${h.xp} XP`}</span>
+            <li key={h.id} className="flex items-center gap-3 px-3.5 py-3">
+              <span className={`well ${hiddenDone.has(h.id) ? 'text-gold' : 'text-purple-text'}`}><Icon name={hiddenDone.has(h.id) ? 'check' : 'hidden'} size={18} /></span>
+              <div className="min-w-0 flex-1"><div className={`t-row ${hiddenDone.has(h.id) ? 'text-gold' : 'text-dim'}`}>{hiddenDone.has(h.id) ? h.title : '???'}</div><div className="t-small text-faint">{h.hint}</div></div>
+              <span className="chip shrink-0" data-tone={hiddenDone.has(h.id) ? 'gold' : 'purple'}>{hiddenDone.has(h.id) ? 'Cleared' : `${h.xp} XP`}</span>
             </li>
           ))}
         </ul>
-      </SystemWindow>
+      </section>
 
-      <SystemWindow tag="HISTORY" animate={false}>
-        {log.length ? <ul className="flex flex-col">{log.map((q) => <li key={q.id} className="t-small flex justify-between border-b border-[rgb(47_168_255/.08)] py-2"><span>{q.day} · {q.title}</span><span className={q.status === 'cleared' ? 'text-success' : q.status === 'failed' ? 'text-warning' : 'text-dim'}>{q.status}</span></li>)}</ul> : <EmptyState message="[No completed quests yet.]" icon="quests" />}
-      </SystemWindow>
+      <section aria-label="HISTORY">
+        <div className="section-head"><span className="t-label text-dim">History</span></div>
+        {log.length ? <ul className="group">{log.map((q) => <li key={q.id} className="flex items-center justify-between gap-3 px-3.5 py-3"><span className="min-w-0 truncate"><span className="t-num text-[12px] text-dim">{q.day}</span> <span className="t-row">{q.title}</span></span><span className="chip shrink-0" data-tone={q.status === 'cleared' ? 'green' : q.status === 'failed' ? 'red' : 'dim'}>{q.status}</span></li>)}</ul> : <SystemWindow><EmptyState message="[No completed quests yet.]" icon="quests" /></SystemWindow>}
+      </section>
 
       <Sheet open={!!results} onClose={() => setResults(null)} title={results?.title ?? ''}>
         {results ? (

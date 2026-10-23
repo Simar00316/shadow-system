@@ -36,7 +36,7 @@ export default defineConfig({
       },
       injectManifest: {
         // App shell + sounds. Exercise media (58 MB) and the ambient loop are runtime-cached instead (R6 §1.6).
-        globPatterns: ['**/*.{js,css,html,svg,png,woff2}', 'sfx/*.wav', 'icons/*'],
+        globPatterns: ['**/*.{js,css,html,svg,png,woff2}', 'sfx/*.wav', 'icons/*', 'img/*.webp', 'assets/exercises-*.json'],
         globIgnores: ['assets/third-party/**', 'sfx/ambient.wav'],
         maximumFileSizeToCacheInBytes: 8 * 1024 * 1024,
       },
@@ -47,6 +47,8 @@ export default defineConfig({
     environment: 'jsdom',
     globals: true,
     setupFiles: ['tests/setup.ts'],
+    // Integration tests (awaken + workouts on fake IndexedDB) can exceed 5 s when the whole suite runs in parallel.
+    testTimeout: 20_000,
     include: ['src/**/*.test.{ts,tsx}', 'tests/unit/**/*.test.{ts,tsx}', 'data/**/*.test.ts', 'worker/**/*.test.ts'],
     exclude: ['**/node_modules/**', 'data/.cache/**', 'research/**'],
     coverage: { include: ['src/engine/**'], thresholds: { lines: 90 } },

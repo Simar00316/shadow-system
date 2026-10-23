@@ -43,7 +43,7 @@ test('progress and game screens work end to end (M8 gate)', async ({ page }) => 
 
   await test.step('Quests: daily quest, trial panel, hidden quests', async () => {
     await page.goto('/quests')
-    await expect(page.getByText('Preparation to Become Strong')).toBeVisible()
+    await expect(page.getByText('Preparation to Become Strong', { exact: true })).toBeVisible()
     await expect(page.getByText('RANK-UP TRIAL')).toBeVisible()
     await expect(page.getByText('HIDDEN QUESTS')).toBeVisible()
     await expect(page.getByText('???').first()).toBeVisible()
