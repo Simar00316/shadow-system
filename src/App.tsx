@@ -6,6 +6,8 @@ import { usePrefs } from './app/prefs'
 import { Shell } from './screens/Shell'
 import { Status } from './screens/status/Status'
 import { Awakening } from './screens/awakening/Awakening'
+import { Settings } from './screens/settings/Settings'
+import { ImportScreen, ReportScreen } from './screens/settings/DataScreens'
 import { SystemMenu } from './screens/system/SystemMenu'
 import { SystemLog } from './screens/system/SystemLog'
 import { Sealed } from './screens/Sealed'
@@ -72,6 +74,9 @@ export function App() {
               <Route path="diet" element={<Diet />} />
               <Route path="diet/plan" element={<MealPlan />} />
               <Route path="diet/grocery" element={<Grocery />} />
+              <Route path="settings" element={<Settings />} />
+              <Route path="settings/import" element={<ImportScreen />} />
+              <Route path="settings/report" element={<ReportScreen />} />
               <Route path="*" element={<Sealed />} />
             </Route>
           </Routes>

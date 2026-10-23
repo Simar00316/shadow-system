@@ -130,7 +130,7 @@ Saved in `C:\shadow-systen-project\tests\fixtures\`:
 | --- | --- | --- |
 | `strong-sample.csv` | Strong iOS variant, comma, 30 real set rows, 2 workouts, header unquoted, `1h 43m` durations | Real export committed in `radupana/openweight` (`strong-real.csv`) and `AlexandrosKyriakakis/StrongAppAnalytics` (same format) |
 | `strong-android-sample.csv` | Strong Android variant, semicolon, all quoted, `Workout #`, `Duration (sec)`, `Weight (kg)`; contains `W`, numbered, `Rest Timer`, `Note` rows | First 13 rows of a real 2,053-row backup in `LordRaydenMK/Bybon` (`strong-backup-sample.csv`) |
-| `hevy-sample.csv` | Hevy export, 22 real set rows, 3 workouts, all `normal` sets, `weight_kg`, `D Mon YYYY, HH:mm` | Real export in `mouadja02/Hevy-Coach` (`workout_data.csv`), also the `radupana/openweight` `hevy-real.csv` fixture |
+| `hevy-sample.csv` | Hevy export, 22 real set rows, 2 workouts, all `normal` sets, `weight_kg`, `D Mon YYYY, HH:mm` | Real export in `mouadja02/Hevy-Coach` (`workout_data.csv`), also the `radupana/openweight` `hevy-real.csv` fixture |
 | `hevy-settypes-sample.csv` | Same header; shows `warmup`, `dropset`, `failure`, escaped quotes, timed and cardio rows | `Dotims/GripLog` fixture. **Treated as hand-written (3rd-party)**, header and quoting match the real exports, row content is synthetic |
 
 Source URLs are in the Sources section. Nothing here is constructed by us; the only caveat is the last file's synthetic content. No real Strong export containing `D`/`F` set types or `lb` units was found, so those are covered by the cross-checked parser behaviour above, and the importer test suite should add synthetic rows for them.

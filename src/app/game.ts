@@ -226,6 +226,9 @@ export async function ensureToday(today: Day = dayOf()) {
   const daily = await issueDaily(today, profile)
   if (fresh) await say('daily_issued')
   if (fresh) await maybeIssueEmergency(today, profile)
+  // Self-heal quest progress for protein and water: a reload can kill a sync that was still in flight.
+  const { syncNutrition } = await import('./diet')
+  await syncNutrition(today)
   await refreshPlayer()
   return daily
 }
