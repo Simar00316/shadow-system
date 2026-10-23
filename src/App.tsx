@@ -30,6 +30,7 @@ const Shadows = page(() => import('./screens/shadows/Shadows'), 'Shadows')
 const Inventory = page(() => import('./screens/shadows/Items'), 'Inventory')
 const Titles = page(() => import('./screens/shadows/Items'), 'Titles')
 const Store = page(() => import('./screens/shadows/Items'), 'Store')
+const FormCheck = page(() => import('./screens/form/FormCheck'), 'FormCheck')
 const Diet = page(() => import('./screens/diet/Diet'), 'Diet')
 const MealPlan = page(() => import('./screens/diet/MealPlan'), 'MealPlan')
 const Grocery = page(() => import('./screens/diet/MealPlan'), 'Grocery')
@@ -67,6 +68,7 @@ export function App() {
               <Route path="inventory" element={<Inventory />} />
               <Route path="titles" element={<Titles />} />
               <Route path="store" element={<Store />} />
+              <Route path="form" element={<FormCheck />} />
               <Route path="diet" element={<Diet />} />
               <Route path="diet/plan" element={<MealPlan />} />
               <Route path="diet/grocery" element={<Grocery />} />
