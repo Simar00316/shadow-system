@@ -97,4 +97,6 @@ export async function scheduleReminders(n: NotificationPrefs) {
   const [th, tm] = n.water.to.split(':').map(Number)
   for (let m = fh * 60 + fm; m <= th * 60 + tm; m += n.water.everyMin) rows.push({ id: `water-${m}`, kind: 'water', time: `${String(Math.floor(m / 60)).padStart(2, '0')}:${String(m % 60).padStart(2, '0')}` })
   await db.notificationSchedule.bulkPut(rows.map((r) => ({ ...r, enabled: n.enabled })))
+  const { syncSchedule } = await import('./push')
+  await syncSchedule().catch(() => false)
 }
