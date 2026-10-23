@@ -129,7 +129,7 @@ export function XPBar({ level, xp, xpToNext, gain }: { level: number; xp: number
         </span>
         <span className="text-right">
           <span className="t-num block text-[13px] text-dim">{xp.toLocaleString()} / {xpToNext.toLocaleString()} XP</span>
-          <span className="t-micro text-faint">{(xpToNext - xp).toLocaleString()} to LV {level + 1}</span>
+          <span className="t-micro text-dim">{(xpToNext - xp).toLocaleString()} to LV {level + 1}</span>
         </span>
       </div>
       <div className="relative h-2.5 overflow-visible rounded-full bg-[rgb(47_168_255/.12)]" role="progressbar" aria-label="Experience" aria-valuemin={0} aria-valuemax={xpToNext} aria-valuenow={xp}>

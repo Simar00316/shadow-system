@@ -55,12 +55,18 @@ function startAmbient() {
   if (!ambient.playing()) ambient.play()
 }
 
-// The first tap anywhere loads the engine so the first real sound is not delayed.
-if (canPlay) addEventListener('pointerdown', () => void load().catch(() => {}), { once: true, capture: true })
+// Nothing loads or plays before the first tap or key press: browsers (iOS especially) block audio until then, and
+// loading Howler + decoding WAVs without a gesture only costs main-thread time (Lighthouse TBT).
+let gestured = false
+if (canPlay) {
+  const unlock = () => { gestured = true; void load().catch(() => {}) }
+  addEventListener('pointerdown', unlock, { once: true, capture: true })
+  addEventListener('keydown', unlock, { once: true, capture: true })
+}
 
 export const sfx = {
   play(name: SoundName) {
-    if (!enabled || !canPlay) return
+    if (!enabled || !canPlay || !gestured) return
     const go = () => { try { howl(name)?.play() } catch { /* audio is never critical */ } }
     if (mod) go()
     else void load().then(go).catch(() => {})
