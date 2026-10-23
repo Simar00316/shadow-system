@@ -46,7 +46,7 @@ export function BodyMap({ sex, face: faceProp, mode = 'target', selected = [], r
         key={`${sex}-${face}`}
         viewBox={view.viewBox}
         height={height}
-        style={{ maxWidth: '100%', filter: 'drop-shadow(0 0 8px rgb(47 168 255 / .35))' }}
+        style={{ maxWidth: '100%' }}
         initial={{ rotateY: 90, opacity: 0 }}
         animate={{ rotateY: 0, opacity: 1 }}
         transition={{ duration: 0.21, ease: 'easeOut' }}

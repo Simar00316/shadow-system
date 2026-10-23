@@ -30,7 +30,7 @@ Data flow: screen → engine (pure function on plain objects) → repository wri
 | Motion | `motion` (Framer Motion's current package) | — |
 | State | Zustand (UI), Dexie + `dexie-react-hooks` (data) | — |
 | Charts | Recharts themed to the System look | — |
-| Audio | Original sounds synthesised in Node at build time (`data/sfx.ts` → WAV), played with Howler; Web Audio unlock on first tap; optional `audioSession.type = 'playback'` | [platform §5](../research/platform.md) |
+| Audio | Sourced sounds (Kenney CC0, Mixkit Free License) rendered by `data/sfx-import.ts` → WAV, played with Howler; Web Audio unlock on first tap; optional `audioSession.type = 'playback'` | [platform §5](../research/platform.md) |
 | Pose | `@mediapipe/tasks-vision` PoseLandmarker lite, GPU → CPU fallback, model + wasm self-hosted, lazy-loaded | [platform §7](../research/platform.md), [repos](../research/repos.md) |
 | Barcode | **`barcode-detector` ponyfill over self-hosted `zxing-wasm`** instead of `@zxing/browser` (Safari has no BarcodeDetector; ponyfill is smaller and maintained) + manual entry | [platform §8](../research/platform.md) |
 | Fuzzy search | Fuse.js over name + aliases | — |

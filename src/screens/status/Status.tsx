@@ -1,9 +1,9 @@
 import { Link, useNavigate } from 'react-router-dom'
 import { useLiveQuery } from 'dexie-react-hooks'
 import { db } from '@/db/schema'
-import { Screen, Row } from '@/ui/Screen'
+import { Screen } from '@/ui/Screen'
 import { SystemWindow } from '@/ui/SystemWindow'
-import { QuestCard, StatBar, XPBar } from '@/ui/game'
+import { MiniBar, QuestCard, StatBar, XPBar } from '@/ui/game'
 import { RankBadge } from '@/ui/RankBadge'
 import { BodyMap } from '@/ui/BodyMap'
 import { Icon } from '@/ui/icons'
@@ -18,14 +18,15 @@ import { sfx } from '@/audio/sfx'
 
 const CLASS_NAME = (c: string) => c.replace('_', ' ').replace(/\b\w/g, (m) => m.toUpperCase())
 
-function Gauge({ label, value, color }: { label: string; value: number; color: string }) {
+/** One vital (HP / MP / fatigue): value over a segmented bar. */
+function Vital({ label, value, color }: { label: string; value: number; color: string }) {
   return (
-    <div className="flex items-center gap-3">
-      <span className="t-label w-16 text-dim">{label}</span>
-      <div className="h-2 flex-1 overflow-hidden rounded-full bg-[rgb(47_168_255/.12)]" role="meter" aria-label={label} aria-valuenow={value} aria-valuemin={0} aria-valuemax={100}>
-        <div className="h-full rounded-full" style={{ width: `${value}%`, background: color, boxShadow: `0 0 8px ${color}` }} />
+    <div className="min-w-0 flex-1" role="meter" aria-label={label} aria-valuenow={value} aria-valuemin={0} aria-valuemax={100}>
+      <div className="flex items-baseline justify-between">
+        <span className="t-micro text-dim">{label}</span>
+        <span className="t-num text-[15px]" style={{ color }}>{value}%</span>
       </div>
-      <span className="t-num w-12 text-right">{value}%</span>
+      <MiniBar className="mt-2" pct={value} color={color} />
     </div>
   )
 }
@@ -44,45 +45,38 @@ export function Status() {
   const mp = readiness ? Math.round(((readiness.score - 1) / 4) * 100) : 0
   const title = player.title ? titleById.get(player.title)?.name : undefined
   return (
-    <Screen tag="STATUS">
-      <SystemWindow tag="STATUS" grid>
-        <div className="flex items-start gap-4">
-          <div className="min-w-0 flex-1">
-            <Row label="Name"><span className="t-heading">{profile.name}</span></Row>
-            <Row label="Job"><span className="capitalize">{CLASS_NAME(profile.cls)}</span></Row>
-            <Row label="Title"><Link to="/titles" className="text-glow">{title ?? '[None]'}</Link></Row>
-            <Row label="Power"><span className="t-num text-gold">{player.powerLevel}</span></Row>
-          </div>
-          <Link to="/quests" aria-label={`Rank ${player.rank}`}><RankBadge rank={player.rank} size="md" /></Link>
-        </div>
-        <div className="mt-3"><XPBar level={player.level} xp={player.xp} xpToNext={xpToNext(player.level)} /></div>
-        <div className="mt-4 flex flex-col gap-2">
-          <Gauge label="HP" value={hp} color="var(--success)" />
-          <Gauge label="MP" value={mp} color="var(--glow)" />
-          <Gauge label="Fatigue" value={100 - hp} color="var(--warning)" />
-        </div>
-      </SystemWindow>
-
-      <SystemWindow tag="STATS" animate={false}>
-        <div className="flex flex-col gap-1">
-          {STATS.map((s) => <StatBar key={s} stat={s} value={player.stats[s] + player.allocated[s]} allocated={player.allocated[s]} max={Math.max(100, player.stats[s] + player.allocated[s])} canAllocate={player.unspent > 0} onAllocate={() => { sfx.play('set-logged'); void allocatePoint(s) }} />)}
-        </div>
-        <div className="mt-2 flex justify-between">
-          <span className="t-label text-dim">Available points</span>
-          <span className={`t-num ${player.unspent ? 'text-gold' : 'text-dim'}`}>{player.unspent}</span>
-        </div>
-      </SystemWindow>
-
-      <div className="grid grid-cols-2 gap-3">
-        <SystemWindow tag="STREAK" animate={false}>
-          <div className="flex items-center gap-2"><Icon name="flame" className="text-gold" /><span className="t-num-lg">{player.streak}</span><span className="t-small text-dim">days</span></div>
-          <div className="t-small text-dim">Best {player.bestStreak}</div>
-        </SystemWindow>
-        <SystemWindow tag="GOLD" animate={false}>
-          <Link to="/store" className="flex items-center gap-2"><Icon name="gold" className="text-gold" /><span className="t-num-lg text-gold">{player.gold.toLocaleString()}</span></Link>
-          <div className="t-small text-dim">Visit the Store</div>
-        </SystemWindow>
+    <Screen tag="Hunter status" plain actions={
+      <div className="flex items-center gap-2">
+        <Link to="/store" className="chip press" data-tone="gold" aria-label={`${player.gold} gold`}><Icon name="gold" size={14} /><span className="t-num text-[13px] tracking-normal">{player.gold.toLocaleString()}</span></Link>
+        <Link to="/settings" className="press well h-9 w-9" aria-label="Settings"><Icon name="settings" size={18} /></Link>
       </div>
+    }>
+      <SystemWindow tag="STATUS" hero>
+        <div className="flex items-center gap-4">
+          <Link to="/quests" aria-label={`Rank ${player.rank}`} className="press shrink-0" data-glitch=""><RankBadge rank={player.rank} size="lg" /></Link>
+          <div className="min-w-0 flex-1">
+            <div className="t-micro text-dim">Player</div>
+            <div className="t-screen truncate text-text glow-text">{profile.name}</div>
+            <div className="mt-2 flex flex-wrap gap-1.5">
+              <span className="chip">{CLASS_NAME(profile.cls)}</span>
+              <Link to="/titles" className="chip press" data-tone={title ? 'gold' : 'dim'}>{title ?? 'No title'}</Link>
+            </div>
+          </div>
+        </div>
+        <div className="mt-5"><XPBar level={player.level} xp={player.xp} xpToNext={xpToNext(player.level)} /></div>
+        <div className="mt-4 flex items-end justify-between border-t border-[color:var(--hairline)] pt-3">
+          <span className="flex items-center gap-2 text-dim"><Icon name="flame" size={16} className="text-gold" /><span className="t-num text-[15px] text-text">{player.streak}</span><span className="t-micro">day streak · best {player.bestStreak}</span></span>
+          <span className="text-right"><span className="t-micro block text-dim">Power</span><span className="t-num-lg text-[24px] leading-none text-gold">{player.powerLevel.toLocaleString()}</span></span>
+        </div>
+      </SystemWindow>
+
+      <SystemWindow tag="VITALS" index={1}>
+        <div className="flex gap-4">
+          <Vital label="HP" value={hp} color="var(--success)" />
+          <Vital label="MP" value={mp} color="var(--glow)" />
+          <Vital label="Fatigue" value={100 - hp} color="var(--warning)" />
+        </div>
+      </SystemWindow>
 
       {penalty && penalty.status === 'issued' ? (
         <QuestCard tag="PENALTY QUEST" variant="alert" title={penalty.title} until={penalty.expiresAt} goals={penalty.goals} reward={['Streak restored']} penalty={penalty.penalty} onOpen={() => nav('/quests')} />
@@ -91,8 +85,18 @@ export function Status() {
         <QuestCard tag="DAILY QUEST" title={daily.title} until={endOf(today)} goals={daily.goals} status={daily.status === 'issued' ? (daily.meta?.waived ? 'waived' : 'active') : daily.status === 'cleared' ? 'cleared' : 'failed'} reward={[`${daily.reward.xp} XP`, `${daily.reward.gold} Gold`]} penalty={daily.penalty} onOpen={() => nav('/quests')} />
       ) : null}
 
-      <SystemWindow tag="RECOVERY" animate={false}>
-        <button type="button" className="flex w-full items-center justify-around" onClick={() => nav('/bodymap?mode=recovery')} aria-label="Open recovery map">
+      <section aria-label="STATS">
+        <div className="section-head">
+          <span className="t-label text-dim">Stats</span>
+          {player.unspent ? <span className="chip" data-tone="gold">{player.unspent} points</span> : <span className="t-micro text-faint">Available points <span className="t-num text-dim">0</span></span>}
+        </div>
+        <div className="flex flex-col gap-2">
+          {STATS.map((s) => <StatBar key={s} stat={s} value={player.stats[s] + player.allocated[s]} allocated={player.allocated[s]} max={Math.max(100, player.stats[s] + player.allocated[s])} canAllocate={player.unspent > 0} onAllocate={() => { sfx.play('set-logged'); void allocatePoint(s) }} />)}
+        </div>
+      </section>
+
+      <SystemWindow tag="RECOVERY" index={2}>
+        <button type="button" className="press flex w-full items-center justify-around" onClick={() => nav('/bodymap?mode=recovery')} aria-label="Open recovery map">
           <BodyMap sex={profile.sex} face="front" mode="recovery" recovery={recovery?.rec} height={180} showFlip={false} />
           <BodyMap sex={profile.sex} face="back" mode="recovery" recovery={recovery?.rec} height={180} showFlip={false} />
         </button>

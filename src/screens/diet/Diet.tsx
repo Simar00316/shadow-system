@@ -6,7 +6,7 @@ import { db } from '@/db/schema'
 import { Screen } from '@/ui/Screen'
 import { SystemWindow } from '@/ui/SystemWindow'
 import { Button, IconButton, NumberStepper, Tabs } from '@/ui/controls'
-import { Ring } from '@/ui/game'
+import { MiniBar, Ring } from '@/ui/game'
 import { Sheet } from '@/ui/layout'
 import { EmptyState } from '@/ui/feedback'
 import { Icon } from '@/ui/icons'
@@ -28,47 +28,61 @@ export function Diet() {
   const [slot, setSlot] = useState<MealSlot | null>(null)
   if (!profile || !targets) return null
   const t = totals(logs)
+  const cups = 8, per = targets.waterMl / cups
   return (
     <Screen tag="NUTRITION" title="Diet" actions={<IconButton icon="log" label="Meal plan" onClick={() => nav('/diet/plan')} />}>
-      <SystemWindow tag="TODAY" grid>
-        <div className="grid grid-cols-2 gap-2">
-          <Ring label="Calories" value={t.k} target={targets.kcal} unit="" />
-          <Ring label="Protein" value={t.p} target={targets.protein} color="var(--success)" unit="g" />
-          <Ring label="Carbs" value={t.c} target={targets.carbs} color="var(--glow)" unit="g" />
-          <Ring label="Fat" value={t.f} target={targets.fat} color="var(--gold)" unit="g" />
+      <SystemWindow tag="TODAY" hero>
+        <div className="flex justify-center">
+          <Ring label="Calories" value={t.k} target={targets.kcal} unit="" size={200} remaining caption={false} />
         </div>
-        {targets.warnings.length ? <p className="t-small mt-2 text-amber">{targets.warnings.join(' ')}</p> : null}
-        <p className="t-small mt-2 text-dim">[Target {targets.kcal} kcal ({targets.phase}). Safe minimum {targets.floor} kcal.]</p>
+        <div className="mt-4 grid grid-cols-3 gap-3">
+          <Macro label="Protein" value={t.p} target={targets.protein} color="var(--success)" />
+          <Macro label="Carbs" value={t.c} target={targets.carbs} color="var(--glow)" />
+          <Macro label="Fat" value={t.f} target={targets.fat} color="var(--gold)" />
+        </div>
+        {targets.warnings.length ? <p className="t-small mt-3 text-amber">{targets.warnings.join(' ')}</p> : null}
+        <p className="t-small mt-3 text-dim">[Target {targets.kcal.toLocaleString()} kcal ({targets.phase}). Safe minimum {targets.floor.toLocaleString()} kcal.]</p>
       </SystemWindow>
-      <SystemWindow tag="WATER" animate={false}>
-        <div className="flex items-center gap-4">
-          <Ring label="Water" value={water} target={targets.waterMl} color="var(--system-blue)" unit="ml" size={96} />
-          <div className="grid flex-1 grid-cols-2 gap-2">
-            {[250, 500].map((ml) => <Button key={ml} variant="secondary" icon="water" onClick={() => void addWater(ml)}>+{ml}</Button>)}
+
+      <SystemWindow tag="WATER" index={1}>
+        <figure aria-label={`Water: ${Math.round(water)} of ${Math.round(targets.waterMl)} ml`} className="flex items-center gap-3">
+          <div className="flex flex-1 gap-1" aria-hidden="true">
+            {Array.from({ length: cups }, (_, i) => {
+              const fill = Math.max(0, Math.min(1, (water - i * per) / per))
+              return <span key={i} className="relative h-9 flex-1 overflow-hidden rounded-[5px] border border-[color:var(--edge)] bg-[rgb(47_168_255/.08)]"><span className="absolute inset-x-0 bottom-0 bg-[linear-gradient(180deg,#5cc8ff,#2090e8)] transition-[height] duration-500" style={{ height: `${fill * 100}%`, boxShadow: fill ? '0 0 10px rgb(47 168 255 / .5)' : undefined }} /></span>
+            })}
           </div>
+          <figcaption className="t-num shrink-0 text-right text-[13px]"><span className="text-text">{water.toLocaleString()}</span><span className="text-dim"> / {targets.waterMl.toLocaleString()} ml</span></figcaption>
+        </figure>
+        <div className="mt-3 grid grid-cols-2 gap-2">
+          {[250, 500].map((ml) => <Button key={ml} variant="secondary" icon="water" onClick={() => void addWater(ml)}>+{ml}</Button>)}
         </div>
       </SystemWindow>
+
       {(['breakfast', 'lunch', 'dinner', 'snack'] as MealSlot[]).map((s) => {
         const mine = logs.filter((l) => l.meal === s)
         const k = totals(mine).k
         return (
-          <SystemWindow key={s} tag={SLOT_LABEL[s].toUpperCase()} animate={false}>
-            {mine.length ? (
-              <ul className="mb-2 flex flex-col gap-1">
-                {mine.flatMap((l) => l.items.map((i, j) => (
-                  <li key={`${l.id}-${j}`} className="flex items-center justify-between gap-2">
-                    <span className="min-w-0 flex-1 truncate">{i.name} <span className="t-small text-dim">{i.grams} g</span></span>
-                    <span className="t-num text-[13px]">{i.k} kcal · {i.p}p</span>
-                    {j === 0 ? <IconButton icon="trash" label={`Delete ${i.name}`} onClick={() => void deleteMealLog(l.id)} /> : <span className="w-12" />}
-                  </li>
-                )))}
-              </ul>
-            ) : null}
-            <div className="flex items-center justify-between">
-              <span className="t-num text-dim">{k} kcal</span>
-              <Button variant="secondary" icon="plus" onClick={() => setSlot(s)}>Add food</Button>
+          <section key={s} aria-label={SLOT_LABEL[s].toUpperCase()}>
+            <div className="section-head">
+              <span className="t-label text-dim">{SLOT_LABEL[s]}</span>
+              <span className="t-num text-[13px] text-dim">{k.toLocaleString()} kcal</span>
             </div>
-          </SystemWindow>
+            <div className="group">
+              {mine.flatMap((l) => l.items.map((i, j) => (
+                <div key={`${l.id}-${j}`} className="flex items-center gap-2 px-3.5 py-2">
+                  <span className="min-w-0 flex-1 truncate t-row">{i.name} <span className="t-small text-dim">{i.grams} g</span></span>
+                  <span className="t-num shrink-0 text-[13px] text-dim">{i.k} kcal · {i.p}p</span>
+                  {j === 0 ? <IconButton icon="trash" label={`Delete ${i.name}`} onClick={() => void deleteMealLog(l.id)} /> : <span className="w-12" />}
+                </div>
+              )))}
+              <button type="button" className="group-row press text-glow" data-glitch="" onClick={() => setSlot(s)}>
+                <span className="well h-8 w-8"><Icon name="plus" size={16} /></span>
+                <span className="t-label">Add food</span>
+                {!mine.length ? <span className="t-small ml-auto text-faint">Nothing logged</span> : null}
+              </button>
+            </div>
+          </section>
         )
       })}
       <div className="grid grid-cols-2 gap-2">
@@ -79,6 +93,19 @@ export function Diet() {
         {slot ? <AddFood slot={slot} onDone={() => setSlot(null)} /> : null}
       </Sheet>
     </Screen>
+  )
+}
+
+/** Macro as a slim bar with value / target (rings only for the hero, design-v2 §5.4). */
+function Macro({ label, value, target, color }: { label: string; value: number; target: number; color: string }) {
+  return (
+    <figure aria-label={`${label}: ${Math.round(value)} of ${Math.round(target)} g`} className="min-w-0">
+      <figcaption className="flex items-baseline justify-between gap-1">
+        <span className="t-micro text-dim">{label}</span>
+      </figcaption>
+      <div className="t-num mt-1 text-[14px]"><span className="text-text">{Math.round(value)}</span><span className="text-dim">/{Math.round(target)}g</span></div>
+      <MiniBar className="mt-1.5" pct={target ? (value / target) * 100 : 0} color={color} />
+    </figure>
   )
 }
 

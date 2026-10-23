@@ -2,14 +2,14 @@
 
 The look and sound of the System from Solo Leveling, tuned for one-thumb use between sets. Source of truth for every screen. Live tokens: [`src/styles/tokens.css`](../src/styles/tokens.css). Live components: `/dev/gallery`.
 
-Research: [R1 visual language §12](../research/solo-leveling.md), [references catalogue](references/README.md), [R7 platform](../research/platform.md).
+Research: [R1 visual language §12](../research/solo-leveling.md), [references catalogue](references/README.md), [R7 platform](../research/platform.md), **[R8 design v2](../research/design-v2.md)** (premium pass: panel grades, type scale, glitch recipes, performance rules), [sound sourcing](../research/sfx.md).
 
 ---
 
 ## 1. Principles
 
 1. **The System speaks, the Player acts.** Every surface is a System window; every message is in brackets in the System voice.
-2. **Holographic, not flat.** Translucent navy panels with a blue hairline, corner brackets, outer and inner glow, a faint grid and scanlines — composited like an AR layer.
+2. **Dark glass, bright edges, glowing type.** Fills are dark and quiet; light lives in 1 px rims, a top highlight and the text. **One hero per screen** carries the full System frame (brackets, glow, inner scanlines + grid); everything else is a quiet card, borderless section or inset group. *Angular = the System speaking, rounded = app content.*
 3. **Gym-first.** 390 px wide, thumb zone at the bottom, ≥ 48 px tap targets, high contrast, numbers big and monospaced. A set is logged in ≤ 2 taps.
 4. **Colour has meaning.** Blue = System; purple = shadows/Monarch; red = warning/penalty; gold = reward/PR/legendary. Never decorative.
 5. **Every sound has a visual twin**, every animation has a reduced-motion fallback.
@@ -93,16 +93,11 @@ Ratios on `--bg` / on `--panel` (composited): text 17.6 / 16.5 · text-dim 6.1 /
 ## 4. Space, radius, elevation, effects
 
 - **Spacing** (4 px base): `--s-1` 4 · `--s-2` 8 · `--s-3` 12 · `--s-4` 16 · `--s-5` 20 · `--s-6` 24 · `--s-8` 32 · `--s-10` 40 · `--s-12` 48. Screen gutter 16; window padding 16; between windows 12.
-- **Radius**: System windows are almost square — `--r-1` 2 px (windows, inputs), `--r-2` 6 px (buttons, chips), `--r-pill` 999 px (badges, steppers' round buttons).
-- **Elevation** (glow, not drop shadow):
-  - `--glow-1`: `0 0 8px rgb(47 168 255 / .25)` — rows, chips
-  - `--glow-2`: `0 0 18px rgb(47 168 255 / .35), inset 0 0 24px rgb(10 23 51 / .9)` — windows
-  - `--glow-3`: `0 0 32px rgb(92 200 255 / .5), inset 0 0 32px rgb(10 23 51 / .9)` — focused/active window, level-up
-  - purple / red / gold variants swap the colour.
-- **Blur**: windows `backdrop-filter: blur(12px) saturate(120%)` (fallback: solid `--panel-solid`).
-- **Window frame recipe**: 1 px `--line` border · 2 px top highlight `linear-gradient(90deg, transparent, var(--system-blue), transparent)` · four L-shaped **corner brackets** 14 px × 2 px in `--glow` with `drop-shadow(0 0 4px var(--glow))` · optional 28 px grid `linear-gradient(rgb(47 168 255 / .04) 1px, transparent 1px)` both axes · header tag (`--type-tag`, glow text-shadow) like `[ STATUS ]`, `QUEST INFO`, `NOTIFICATION`, `ALERT`.
-- **Scanline overlay** (fixed, whole app, pointer-events none): `repeating-linear-gradient(0deg, transparent 0 3px, rgb(0 0 0 / .05) 3px 4px)` + noise SVG at 3% opacity. Disabled under reduced transparency.
-- **Variants**: `system` (blue), `alert` (red border + pulsing glow, tag `WARNING`), `shadow` (purple, smoke backdrop), `reward` (gold border, tag `REWARD`).
+- **Radius** (shape rule): `--r-hero` 4 px (System windows: hero, alert, reward, shadow) · `--r-card` 12 px (cards, groups) · `--r-ctl` 10 px (buttons, inputs, icon wells) · 999 px (chips, nav pill).
+- **Depth** (v2 tokens in `tokens.css`): surfaces `--surface-1/2/hero` (translucent gradients over the ambient light), edges `--edge` / `--edge-hi`, rims `--rim-top/bot`, elevation `--elev-card` / `--elev-hero` / `--elev-alert|reward|shadow`, text glow `--glow-text` / `--glow-gold`. **No `backdrop-filter` and no `filter` on panels**: glass is faked by translucent fills over one fixed `.ambient` light layer (key light top centre, purple bounce bottom right, 96 px noise tile against banding).
+- **Panel grades** (`SystemWindow`): **card** (default; rounded, hairline, dim micro-label header with a fading rule) · **hero** (`hero` prop or any non-system variant; angular, bright rim, two gradient corner brackets TL/BR drawn with backgrounds, top highlight, inner scanlines + 28 px grid, bloom). Lists use `.group` (inset rows with 36 px icon wells) and `.section-head`.
+- **Variants**: `system` (blue), `alert` (red rim + pulsing bloom via an opacity-animated layer, tag `⚠ …`), `shadow` (purple), `reward` (gold).
+- **Controls**: primary/gold buttons are gradient fills with a white top rim, a one-time sheen, press scale .975; chips (28 px pills, colour = meaning); bottom nav is opaque with a hairline and a sliding active pill.
 
 ---
 
@@ -112,8 +107,8 @@ Library: `motion`. Global easings: `--ease-out: cubic-bezier(.2,.8,.2,1)`, `--ea
 
 | Effect | Spec | Reduced-motion fallback |
 | --- | --- | --- |
-| Window open | 260 ms: opacity 0→1, scale .96→1, blur 6→0 px (ease-out); border **line trace** (SVG `stroke-dashoffset` 100%→0) 220 ms; 2-frame **flicker** (opacity 1→.4→1 at 60–100 ms) | fade 120 ms |
-| Window close | 140 ms: scale 1→.98, opacity →0; scanline collapse (scaleY 1→.02) | fade 80 ms |
+| Window open (**materialise**) | 380 ms, stagger 45 ms × ≤ 5: top-to-bottom `clip-path` wipe, stepped flicker (0 → .9 → .35 → 1), 6 px rise, a bright **scan beam** sweeping down, RGB split on the tag/title (`.sys-in`, R8 §4.7a). Skipped on the cold-start screen to protect LCP | fade 120 ms |
+| **Tap glitch** | 170 ms on `[data-glitch]` (primary buttons, nav, rows that navigate): red/cyan border ghosts, skew jolt, a bright slice band; ≤ 1 per 700 ms; never on steppers or set logging (`src/ui/fx.ts`) | none |
 | System message typing | 45 chars/s (min 250 ms, max 1200 ms per message), brackets appear first, block cursor `▌` blinking 500 ms; tap to complete instantly | full text, fade 120 ms |
 | Glitch reveal (rank-up, ARISE title, warnings) | 3 frames over 180 ms: `text-shadow: 3px 0 var(--warning), -3px 0 var(--glow)`, `skewX(2deg)`, translateX ±2 px | none |
 | Toast in / out | slide from top 16 px + fade, 200 ms; auto-dismiss 3.5 s (7 s for warnings) | fade |
@@ -125,15 +120,15 @@ Library: `motion`. Global easings: `--ease-out: cubic-bezier(.2,.8,.2,1)`, `--ea
 | Penalty warning | red vignette pulse 2 × 600 ms, window shakes 2 px | red border only |
 | Body map flip | 3D rotateY 0→180°, 420 ms, ease-in-out, backface hidden | crossfade 150 ms |
 | Rest timer | ring depletes linearly; last 10 s pulse 1 Hz | ring only |
-| Page transitions | 160 ms fade + 8 px slide | none |
+| Page transitions (**route glitch**) | enter-only: a 72 px tear band sweeps down in 260 ms; the screen title splits red/cyan once; panels materialise behind it | none |
 
-Performance rules: animate only `transform`, `opacity`, `filter` on small layers; no layout animation in the workout player; ≤ 30 particles; 60 fps target on iPhone.
+Performance rules (R8 §4.6): animate only `transform`/`translate`/`scale` and `opacity`; `clip-path` only on revealing surfaces (≤ 5 at once); **never animate `filter` or `backdrop-filter`**; no layout animation in the workout player; ≤ 30 particles; 60 fps target on iPhone. Budget: Lighthouse mobile ≥ 90 (`node scripts/lighthouse.mjs`).
 
 ---
 
 ## 6. Sound
 
-Original sounds synthesised in Node (`data/sfx.ts`) to 22.05 kHz mono WAV, played with Howler. Audio **unlocks on the first tap** (iOS requirement) — a silent buffer is played inside the first `pointerdown`. Master volume and mute are remembered; ambient music has its own toggle. Ring-switch behaviour: optional "Play sounds in silent mode" sets `navigator.audioSession.type = 'playback'` (R7 §5).
+Sourced sounds (Kenney CC0 + Mixkit Free License, `research/sfx.md`), rendered by `data/sfx-import.ts` to 44.1 kHz WAV (mono for UI, stereo for cinematic stings) at about -16 LUFS, played with Howler (loaded on first tap). Audio **unlocks on the first tap** (iOS requirement) — a silent buffer is played inside the first `pointerdown`. Master volume and mute are remembered; ambient music has its own toggle. Ring-switch behaviour: optional "Play sounds in silent mode" sets `navigator.audioSession.type = 'playback'` (R7 §5).
 
 | Event | File | Character | Volume |
 | --- | --- | --- | --- |
@@ -210,5 +205,5 @@ Every component renders every applicable state in `/dev/gallery`: **default, act
 | Backgrounds | `src/ui/Backdrop.tsx` | gate-portal radial gradients + SVG swirl, dungeon grid, CSS particles |
 | Body figures | `src/data/bodymap.json` | MuscleMap (MIT) paths, restyled; abductors drawn by us |
 | Exercise animations | `public/assets/third-party/exercises/` | dataset GIFs → animated WebP (third-party, logged) |
-| Sounds | `public/sfx/*.wav` | synthesised by `data/sfx.ts` |
+| Sounds | `public/sfx/*.wav` | Kenney (CC0) + Mixkit (Free License), rendered by `data/sfx-import.ts` |
 | App icons | `public/icons/` | generated from the emblem SVG by `data/icons.ts` |

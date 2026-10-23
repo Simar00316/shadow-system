@@ -73,8 +73,11 @@ export function Gallery() {
       </Section>
 
       <Section id="system-window" title="SystemWindow">
+        <SystemWindow tag="HERO" title="Hero grade" hero>
+          <p className="t-system">[The System is speaking. One hero per screen.]</p>
+        </SystemWindow>
         {VARIANTS.map((v) => (
-          <SystemWindow key={v} tag={v === 'alert' ? 'WARNING' : v.toUpperCase()} title={`${v} variant`} variant={v} grid={v === 'system'}>
+          <SystemWindow key={v} tag={v === 'alert' ? 'WARNING' : v.toUpperCase()} title={v === 'system' ? 'Card grade' : `${v} variant`} variant={v}>
             <p className="t-system">[You have been chosen as a Player.]</p>
           </SystemWindow>
         ))}

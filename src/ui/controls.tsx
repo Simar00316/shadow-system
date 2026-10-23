@@ -5,19 +5,17 @@ import { sfx } from '@/audio/sfx'
 type BtnVariant = 'primary' | 'secondary' | 'ghost' | 'danger' | 'gold' | 'shadow'
 
 const BTN: Record<BtnVariant, string> = {
-  primary: 'bg-blue text-ink border-blue shadow-[0_0_14px_rgb(47_168_255/.45)]',
-  secondary: 'bg-transparent text-glow border-[color:var(--line)] hover:bg-[rgb(47_168_255/.08)]',
-  ghost: 'bg-transparent text-dim border-transparent hover:text-text',
-  danger: 'bg-transparent text-warning border-warning',
-  gold: 'bg-gold text-ink border-gold shadow-[0_0_14px_rgb(255_201_74/.4)]',
-  shadow: 'bg-[rgb(123_47_247/.18)] text-purple-text border-purple shadow-[0_0_14px_rgb(123_47_247/.4)]',
+  primary: 'btn-primary', secondary: 'btn-secondary', ghost: 'btn-ghost', danger: 'btn-danger', gold: 'btn-gold', shadow: 'btn-shadow',
 }
+/** Primary actions get the tap glitch (design-v2 §4.7b); quiet buttons do not. */
+const GLITCH: Partial<Record<BtnVariant, true>> = { primary: true, gold: true, shadow: true, danger: true }
 
 export function Button({ variant = 'primary', icon, loading, children, className = '', onClick, ...rest }: ButtonHTMLAttributes<HTMLButtonElement> & { variant?: BtnVariant; icon?: IconName; loading?: boolean }) {
   return (
     <button
       type="button"
-      className={`t-button inline-flex min-h-12 items-center justify-center gap-2 rounded-[var(--r-2)] border px-5 transition active:scale-[.97] disabled:opacity-40 disabled:active:scale-100 ${BTN[variant]} ${className}`}
+      className={`btn press t-button inline-flex min-h-12 items-center justify-center gap-2 px-5 disabled:opacity-40 ${BTN[variant]} ${className}`}
+      data-glitch={GLITCH[variant] ? '' : undefined}
       aria-busy={loading || undefined}
       onClick={(e) => {
         sfx.play('tap')
@@ -27,7 +25,7 @@ export function Button({ variant = 'primary', icon, loading, children, className
       disabled={rest.disabled || loading}
     >
       {loading ? <span className="h-4 w-4 animate-spin rounded-full border-2 border-current border-t-transparent" aria-hidden /> : icon ? <Icon name={icon} size={20} /> : null}
-      {children}
+      <span className="glitch-label inline-flex items-center gap-2">{children}</span>
     </button>
   )
 }

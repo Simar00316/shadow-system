@@ -1,0 +1,910 @@
+{
+  "_meta": {
+    "candidates_root": "data/.cache/sfx-candidates",
+    "how_to_apply": "ffmpeg -ss start_s -to end_s -i <file> -af afade=t=in:d=0.002,afade=t=out:st=(end-start-fade_out_s):d=fade_out_s,volume=<gain_db>dB -ar 22050 -ac 1 out.wav. Gains measured on 44.1 kHz stereo/mono source; short (<0.6 s) sounds target peak -3 dBFS capped at -12 LUFS, longer ones -16 LUFS integrated capped at -1.5 dBFS peak (ambient -20 LUFS). Pre-rendered previews of every primary (<name>.wav) and alternate (<name>__alt.wav) are in data/.cache/sfx-candidates/_preview/.",
+    "listening_note": "Selections were made from names, descriptions, durations, envelopes and spectral centroids only - nobody has listened. Audition the _preview files before shipping."
+  },
+  "tap": {
+    "file": "kenney-interface-sounds/Audio/select_001.ogg",
+    "source_url": "https://kenney.nl/assets/interface-sounds",
+    "pack": "Kenney Interface Sounds",
+    "author": "Kenney (www.kenney.nl)",
+    "licence": "CC0 1.0 Universal (public domain dedication)",
+    "licence_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "duration_s": 0.05,
+    "trim": {
+      "start_s": 0,
+      "end_s": 0.05
+    },
+    "gain_db": -1.9,
+    "fade_out_s": 0.01,
+    "measured_after": {
+      "peak_dbfs": -3,
+      "lufs_integrated": null
+    },
+    "notes": "Soft digital tick, 50 ms.",
+    "alt": {
+      "file": "kenney-ui-audio/Audio/click4.ogg",
+      "source_url": "https://kenney.nl/assets/ui-audio",
+      "pack": "Kenney UI Audio",
+      "author": "Kenney (www.kenney.nl)",
+      "licence": "CC0 1.0 Universal (public domain dedication)",
+      "licence_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "duration_s": 0.04,
+      "trim": {
+        "start_s": 0,
+        "end_s": 0.04
+      },
+      "gain_db": -2.7,
+      "fade_out_s": 0.01,
+      "measured_after": {
+        "peak_dbfs": -3,
+        "lufs_integrated": null
+      }
+    }
+  },
+  "window-open": {
+    "file": "kenney-interface-sounds/Audio/maximize_002.ogg",
+    "source_url": "https://kenney.nl/assets/interface-sounds",
+    "pack": "Kenney Interface Sounds",
+    "author": "Kenney (www.kenney.nl)",
+    "licence": "CC0 1.0 Universal (public domain dedication)",
+    "licence_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "duration_s": 0.26,
+    "trim": {
+      "start_s": 0,
+      "end_s": 0.26
+    },
+    "gain_db": 0.6,
+    "fade_out_s": 0.03,
+    "measured_after": {
+      "peak_dbfs": -3,
+      "lufs_integrated": null
+    },
+    "notes": "Rising digital swell, matches window-close pair. Alt is a Mixkit sci-fi software-open sound (trim to 0.36 s).",
+    "alt": {
+      "file": "mixkit/2578.wav",
+      "source_url": "https://mixkit.co/free-sound-effects/interface/",
+      "download_url": "https://assets.mixkit.co/active_storage/sfx/2578/2578.wav",
+      "pack": "Mixkit Sound Effects: \"Opening software interface\" (id 2578)",
+      "author": "Mixkit (Envato)",
+      "licence": "Mixkit Sound Effects Free License (royalty-free, commercial use incl. apps/games, no attribution required; no resale of the raw file)",
+      "licence_url": "https://mixkit.co/license/#sfxFree",
+      "duration_s": 0.36,
+      "trim": {
+        "start_s": 0,
+        "end_s": 0.36
+      },
+      "gain_db": -2.7,
+      "fade_out_s": 0.06,
+      "measured_after": {
+        "peak_dbfs": -3,
+        "lufs_integrated": null
+      }
+    }
+  },
+  "window-close": {
+    "file": "kenney-interface-sounds/Audio/minimize_002.ogg",
+    "source_url": "https://kenney.nl/assets/interface-sounds",
+    "pack": "Kenney Interface Sounds",
+    "author": "Kenney (www.kenney.nl)",
+    "licence": "CC0 1.0 Universal (public domain dedication)",
+    "licence_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "duration_s": 0.26,
+    "trim": {
+      "start_s": 0,
+      "end_s": 0.26
+    },
+    "gain_db": -2,
+    "fade_out_s": 0.03,
+    "measured_after": {
+      "peak_dbfs": -3,
+      "lufs_integrated": null
+    },
+    "notes": "Falling counterpart to window-open (same pack, same length). Alt is a softer low thump.",
+    "alt": {
+      "file": "kenney-interface-sounds/Audio/drop_003.ogg",
+      "source_url": "https://kenney.nl/assets/interface-sounds",
+      "pack": "Kenney Interface Sounds",
+      "author": "Kenney (www.kenney.nl)",
+      "licence": "CC0 1.0 Universal (public domain dedication)",
+      "licence_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "duration_s": 0.12,
+      "trim": {
+        "start_s": 0,
+        "end_s": 0.12
+      },
+      "gain_db": -1.9,
+      "fade_out_s": 0.03,
+      "measured_after": {
+        "peak_dbfs": -3,
+        "lufs_integrated": null
+      }
+    }
+  },
+  "notify": {
+    "file": "kenney-interface-sounds/Audio/glass_004.ogg",
+    "source_url": "https://kenney.nl/assets/interface-sounds",
+    "pack": "Kenney Interface Sounds",
+    "author": "Kenney (www.kenney.nl)",
+    "licence": "CC0 1.0 Universal (public domain dedication)",
+    "licence_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "duration_s": 0.55,
+    "trim": {
+      "start_s": 0,
+      "end_s": 0.55
+    },
+    "gain_db": -1.7,
+    "fade_out_s": 0.12,
+    "measured_after": {
+      "peak_dbfs": -3,
+      "lufs_integrated": -16.4
+    },
+    "notes": "Single glassy ping with shimmer; trimmed to 0.55 s.",
+    "alt": {
+      "file": "kenney-interface-sounds/Audio/confirmation_002.ogg",
+      "source_url": "https://kenney.nl/assets/interface-sounds",
+      "pack": "Kenney Interface Sounds",
+      "author": "Kenney (www.kenney.nl)",
+      "licence": "CC0 1.0 Universal (public domain dedication)",
+      "licence_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "duration_s": 0.5,
+      "trim": {
+        "start_s": 0,
+        "end_s": 0.5
+      },
+      "gain_db": -1.8,
+      "fade_out_s": 0.1,
+      "measured_after": {
+        "peak_dbfs": -3,
+        "lufs_integrated": -15.1
+      }
+    }
+  },
+  "quest-accept": {
+    "file": "kenney-interface-sounds/Audio/confirmation_004.ogg",
+    "source_url": "https://kenney.nl/assets/interface-sounds",
+    "pack": "Kenney Interface Sounds",
+    "author": "Kenney (www.kenney.nl)",
+    "licence": "CC0 1.0 Universal (public domain dedication)",
+    "licence_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "duration_s": 0.5,
+    "trim": {
+      "start_s": 0,
+      "end_s": 0.5
+    },
+    "gain_db": -2.1,
+    "fade_out_s": 0.08,
+    "measured_after": {
+      "peak_dbfs": -3,
+      "lufs_integrated": -12.4
+    },
+    "notes": "Three-onset rising confirmation. Alt is a rising Mixkit unlock chime (0-0.9 s).",
+    "alt": {
+      "file": "mixkit/253.wav",
+      "source_url": "https://mixkit.co/free-sound-effects/game/",
+      "download_url": "https://assets.mixkit.co/active_storage/sfx/253/253.wav",
+      "pack": "Mixkit Sound Effects: \"Unlock game notification\" (id 253)",
+      "author": "Mixkit (Envato)",
+      "licence": "Mixkit Sound Effects Free License (royalty-free, commercial use incl. apps/games, no attribution required; no resale of the raw file)",
+      "licence_url": "https://mixkit.co/license/#sfxFree",
+      "duration_s": 0.9,
+      "trim": {
+        "start_s": 0,
+        "end_s": 0.9
+      },
+      "gain_db": -2.7,
+      "fade_out_s": 0.2,
+      "measured_after": {
+        "peak_dbfs": -3,
+        "lufs_integrated": -16.6
+      }
+    }
+  },
+  "quest-clear": {
+    "file": "mixkit/2021.wav",
+    "source_url": "https://mixkit.co/free-sound-effects/win/",
+    "download_url": "https://assets.mixkit.co/active_storage/sfx/2021/2021.wav",
+    "pack": "Mixkit Sound Effects: \"Instant win\" (id 2021)",
+    "author": "Mixkit (Envato)",
+    "licence": "Mixkit Sound Effects Free License (royalty-free, commercial use incl. apps/games, no attribution required; no resale of the raw file)",
+    "licence_url": "https://mixkit.co/license/#sfxFree",
+    "duration_s": 0.86,
+    "trim": {
+      "start_s": 0.04,
+      "end_s": 0.9
+    },
+    "gain_db": -0.5,
+    "fade_out_s": 0.15,
+    "measured_after": {
+      "peak_dbfs": -3.8,
+      "lufs_integrated": -16
+    },
+    "notes": "Quick rising sparkle arpeggio (\"Instant win\"), 0.86 s. Alt is a longer Level-completed arpeggio.",
+    "alt": {
+      "file": "mixkit/2063.wav",
+      "source_url": "https://mixkit.co/free-sound-effects/game/",
+      "download_url": "https://assets.mixkit.co/active_storage/sfx/2063/2063.wav",
+      "pack": "Mixkit Sound Effects: \"Completion of a level\" (id 2063)",
+      "author": "Mixkit (Envato)",
+      "licence": "Mixkit Sound Effects Free License (royalty-free, commercial use incl. apps/games, no attribution required; no resale of the raw file)",
+      "licence_url": "https://mixkit.co/license/#sfxFree",
+      "duration_s": 1.6,
+      "trim": {
+        "start_s": 0,
+        "end_s": 1.6
+      },
+      "gain_db": -0.5,
+      "fade_out_s": 0.4,
+      "measured_after": {
+        "peak_dbfs": -1.5,
+        "lufs_integrated": -17
+      }
+    }
+  },
+  "set-logged": {
+    "file": "mixkit/2868.wav",
+    "source_url": "https://mixkit.co/free-sound-effects/notification/",
+    "download_url": "https://assets.mixkit.co/active_storage/sfx/2868/2868.wav",
+    "pack": "Mixkit Sound Effects: \"Double beep tone alert\" (id 2868)",
+    "author": "Mixkit (Envato)",
+    "licence": "Mixkit Sound Effects Free License (royalty-free, commercial use incl. apps/games, no attribution required; no resale of the raw file)",
+    "licence_url": "https://mixkit.co/license/#sfxFree",
+    "duration_s": 0.45,
+    "trim": {
+      "start_s": 0,
+      "end_s": 0.45
+    },
+    "gain_db": -6.9,
+    "fade_out_s": 0.06,
+    "measured_after": {
+      "peak_dbfs": -7.9,
+      "lufs_integrated": -12
+    },
+    "notes": "Double beep tone; gain cut so it sits near -12 LUFS (tonal beeps are loud per peak).",
+    "alt": {
+      "file": "mixkit/2520.wav",
+      "source_url": "https://mixkit.co/free-sound-effects/technology/",
+      "download_url": "https://assets.mixkit.co/active_storage/sfx/2520/2520.wav",
+      "pack": "Mixkit Sound Effects: \"High tech bleep confirmation\" (id 2520)",
+      "author": "Mixkit (Envato)",
+      "licence": "Mixkit Sound Effects Free License (royalty-free, commercial use incl. apps/games, no attribution required; no resale of the raw file)",
+      "licence_url": "https://mixkit.co/license/#sfxFree",
+      "duration_s": 0.42,
+      "trim": {
+        "start_s": 0.08,
+        "end_s": 0.5
+      },
+      "gain_db": -0.4,
+      "fade_out_s": 0.06,
+      "measured_after": {
+        "peak_dbfs": -8.7,
+        "lufs_integrated": -12
+      }
+    }
+  },
+  "rest-warn": {
+    "file": "mixkit/221.wav",
+    "source_url": "https://mixkit.co/free-sound-effects/beep/",
+    "download_url": "https://assets.mixkit.co/active_storage/sfx/221/221.wav",
+    "pack": "Mixkit Sound Effects: \"Positive interface beep\" (id 221)",
+    "author": "Mixkit (Envato)",
+    "licence": "Mixkit Sound Effects Free License (royalty-free, commercial use incl. apps/games, no attribution required; no resale of the raw file)",
+    "licence_url": "https://mixkit.co/license/#sfxFree",
+    "duration_s": 0.47,
+    "trim": {
+      "start_s": 0.08,
+      "end_s": 0.55
+    },
+    "gain_db": -2.3,
+    "fade_out_s": 0.08,
+    "measured_after": {
+      "peak_dbfs": -3,
+      "lufs_integrated": -13.4
+    },
+    "notes": "Two soft low pips (peak at 0.13 s, low centroid ~1.1 kHz).",
+    "alt": {
+      "file": "mixkit/2519.wav",
+      "source_url": "https://mixkit.co/free-sound-effects/technology/",
+      "download_url": "https://assets.mixkit.co/active_storage/sfx/2519/2519.wav",
+      "pack": "Mixkit Sound Effects: \"High tech notification bleep\" (id 2519)",
+      "author": "Mixkit (Envato)",
+      "licence": "Mixkit Sound Effects Free License (royalty-free, commercial use incl. apps/games, no attribution required; no resale of the raw file)",
+      "licence_url": "https://mixkit.co/license/#sfxFree",
+      "duration_s": 0.42,
+      "trim": {
+        "start_s": 0.08,
+        "end_s": 0.5
+      },
+      "gain_db": -3.3,
+      "fade_out_s": 0.06,
+      "measured_after": {
+        "peak_dbfs": -5,
+        "lufs_integrated": -12
+      }
+    }
+  },
+  "rest-end": {
+    "file": "kenney-digital-audio/Audio/threeTone2.ogg",
+    "source_url": "https://kenney.nl/assets/digital-audio",
+    "pack": "Kenney Digital Audio",
+    "author": "Kenney (www.kenney.nl)",
+    "licence": "CC0 1.0 Universal (public domain dedication)",
+    "licence_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "duration_s": 0.62,
+    "trim": {
+      "start_s": 0.08,
+      "end_s": 0.7
+    },
+    "gain_db": -3,
+    "fade_out_s": 0.06,
+    "measured_after": {
+      "peak_dbfs": -4.4,
+      "lufs_integrated": -16
+    },
+    "notes": "Bright triple beep from Kenney Digital Audio (sfxr-like timbre; intentionally attention-grabbing). Alt is a Mixkit bleep (very bright).",
+    "alt": {
+      "file": "mixkit/2521.wav",
+      "source_url": "https://mixkit.co/free-sound-effects/technology/",
+      "download_url": "https://assets.mixkit.co/active_storage/sfx/2521/2521.wav",
+      "pack": "Mixkit Sound Effects: \"High tech bleep\" (id 2521)",
+      "author": "Mixkit (Envato)",
+      "licence": "Mixkit Sound Effects Free License (royalty-free, commercial use incl. apps/games, no attribution required; no resale of the raw file)",
+      "licence_url": "https://mixkit.co/license/#sfxFree",
+      "duration_s": 0.58,
+      "trim": {
+        "start_s": 0.08,
+        "end_s": 0.66
+      },
+      "gain_db": -2.8,
+      "fade_out_s": 0.06,
+      "measured_after": {
+        "peak_dbfs": -7.9,
+        "lufs_integrated": -12
+      }
+    }
+  },
+  "level-up": {
+    "file": "mixkit/2062.wav",
+    "source_url": "https://mixkit.co/free-sound-effects/game/",
+    "download_url": "https://assets.mixkit.co/active_storage/sfx/2062/2062.wav",
+    "pack": "Mixkit Sound Effects: \"Game experience level increased\" (id 2062)",
+    "author": "Mixkit (Envato)",
+    "licence": "Mixkit Sound Effects Free License (royalty-free, commercial use incl. apps/games, no attribution required; no resale of the raw file)",
+    "licence_url": "https://mixkit.co/license/#sfxFree",
+    "duration_s": 1.6,
+    "trim": {
+      "start_s": 0,
+      "end_s": 1.6
+    },
+    "gain_db": -4.8,
+    "fade_out_s": 0.4,
+    "measured_after": {
+      "peak_dbfs": -5.8,
+      "lufs_integrated": -16
+    },
+    "notes": "Rising sparkle arpeggio with swell; fade out over last 0.4 s. Alt is a shorter power-up.",
+    "alt": {
+      "file": "mixkit/3164.wav",
+      "source_url": "https://mixkit.co/free-sound-effects/game/",
+      "download_url": "https://assets.mixkit.co/active_storage/sfx/3164/3164.wav",
+      "pack": "Mixkit Sound Effects: \"Video game power up\" (id 3164)",
+      "author": "Mixkit (Envato)",
+      "licence": "Mixkit Sound Effects Free License (royalty-free, commercial use incl. apps/games, no attribution required; no resale of the raw file)",
+      "licence_url": "https://mixkit.co/license/#sfxFree",
+      "duration_s": 0.95,
+      "trim": {
+        "start_s": 0.05,
+        "end_s": 1
+      },
+      "gain_db": -4.2,
+      "fade_out_s": 0.25,
+      "measured_after": {
+        "peak_dbfs": -4.3,
+        "lufs_integrated": -16
+      }
+    }
+  },
+  "rank-up": {
+    "file": "mixkit/2290.wav",
+    "source_url": "https://mixkit.co/free-sound-effects/transition/",
+    "download_url": "https://assets.mixkit.co/active_storage/sfx/2290/2290.wav",
+    "pack": "Mixkit Sound Effects: \"Epic orchestra transition\" (id 2290)",
+    "author": "Mixkit (Envato)",
+    "licence": "Mixkit Sound Effects Free License (royalty-free, commercial use incl. apps/games, no attribution required; no resale of the raw file)",
+    "licence_url": "https://mixkit.co/license/#sfxFree",
+    "duration_s": 2.4,
+    "trim": {
+      "start_s": 0,
+      "end_s": 2.4
+    },
+    "gain_db": -4.3,
+    "fade_out_s": 0.6,
+    "measured_after": {
+      "peak_dbfs": -5.4,
+      "lufs_integrated": -16
+    },
+    "notes": "Impact at t=0 (peak at 0.1 s) with dark orchestral bed; fade out 0.6 s. Alt: Epic movie impact.",
+    "alt": {
+      "file": "mixkit/2901.wav",
+      "source_url": "https://mixkit.co/free-sound-effects/impact/",
+      "download_url": "https://assets.mixkit.co/active_storage/sfx/2901/2901.wav",
+      "pack": "Mixkit Sound Effects: \"Epic movie impact\" (id 2901)",
+      "author": "Mixkit (Envato)",
+      "licence": "Mixkit Sound Effects Free License (royalty-free, commercial use incl. apps/games, no attribution required; no resale of the raw file)",
+      "licence_url": "https://mixkit.co/license/#sfxFree",
+      "duration_s": 2.35,
+      "trim": {
+        "start_s": 0.05,
+        "end_s": 2.4
+      },
+      "gain_db": -6.3,
+      "fade_out_s": 0.6,
+      "measured_after": {
+        "peak_dbfs": -6.6,
+        "lufs_integrated": -16
+      }
+    }
+  },
+  "pr": {
+    "file": "mixkit/226.wav",
+    "source_url": "https://mixkit.co/free-sound-effects/game/",
+    "download_url": "https://assets.mixkit.co/active_storage/sfx/226/226.wav",
+    "pack": "Mixkit Sound Effects: \"Medieval show fanfare announcement\" (id 226)",
+    "author": "Mixkit (Envato)",
+    "licence": "Mixkit Sound Effects Free License (royalty-free, commercial use incl. apps/games, no attribution required; no resale of the raw file)",
+    "licence_url": "https://mixkit.co/license/#sfxFree",
+    "duration_s": 1.37,
+    "trim": {
+      "start_s": 0.13,
+      "end_s": 1.5
+    },
+    "gain_db": -5.8,
+    "fade_out_s": 0.18,
+    "measured_after": {
+      "peak_dbfs": -5.9,
+      "lufs_integrated": -16
+    },
+    "notes": "Brass fanfare first phrase; cut at 1.5 s with 180 ms fade (cut point is a guess - check by ear). Alt: Video game win.",
+    "alt": {
+      "file": "mixkit/2016.wav",
+      "source_url": "https://mixkit.co/free-sound-effects/win/",
+      "download_url": "https://assets.mixkit.co/active_storage/sfx/2016/2016.wav",
+      "pack": "Mixkit Sound Effects: \"Video game win\" (id 2016)",
+      "author": "Mixkit (Envato)",
+      "licence": "Mixkit Sound Effects Free License (royalty-free, commercial use incl. apps/games, no attribution required; no resale of the raw file)",
+      "licence_url": "https://mixkit.co/license/#sfxFree",
+      "duration_s": 1.36,
+      "trim": {
+        "start_s": 0.04,
+        "end_s": 1.4
+      },
+      "gain_db": -6.3,
+      "fade_out_s": 0.3,
+      "measured_after": {
+        "peak_dbfs": -6.7,
+        "lufs_integrated": -16
+      }
+    }
+  },
+  "loot-common": {
+    "file": "mixkit/3212.wav",
+    "source_url": "https://mixkit.co/free-sound-effects/technology/",
+    "download_url": "https://assets.mixkit.co/active_storage/sfx/3212/3212.wav",
+    "pack": "Mixkit Sound Effects: \"Item chirp\" (id 3212)",
+    "author": "Mixkit (Envato)",
+    "licence": "Mixkit Sound Effects Free License (royalty-free, commercial use incl. apps/games, no attribution required; no resale of the raw file)",
+    "licence_url": "https://mixkit.co/license/#sfxFree",
+    "duration_s": 0.33,
+    "trim": {
+      "start_s": 0.22,
+      "end_s": 0.55
+    },
+    "gain_db": 3.5,
+    "fade_out_s": 0.07,
+    "measured_after": {
+      "peak_dbfs": -3,
+      "lufs_integrated": null
+    },
+    "notes": "Single short pickup chirp, 0.33 s. Alt: Kenney powerUp2.",
+    "alt": {
+      "file": "kenney-digital-audio/Audio/powerUp2.ogg",
+      "source_url": "https://kenney.nl/assets/digital-audio",
+      "pack": "Kenney Digital Audio",
+      "author": "Kenney (www.kenney.nl)",
+      "licence": "CC0 1.0 Universal (public domain dedication)",
+      "licence_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "duration_s": 0.24,
+      "trim": {
+        "start_s": 0.1,
+        "end_s": 0.34
+      },
+      "gain_db": -2.2,
+      "fade_out_s": 0.05,
+      "measured_after": {
+        "peak_dbfs": -3,
+        "lufs_integrated": null
+      }
+    }
+  },
+  "loot-rare": {
+    "file": "mixkit/2013.wav",
+    "source_url": "https://mixkit.co/free-sound-effects/win/",
+    "download_url": "https://assets.mixkit.co/active_storage/sfx/2013/2013.wav",
+    "pack": "Mixkit Sound Effects: \"Game loot win\" (id 2013)",
+    "author": "Mixkit (Envato)",
+    "licence": "Mixkit Sound Effects Free License (royalty-free, commercial use incl. apps/games, no attribution required; no resale of the raw file)",
+    "licence_url": "https://mixkit.co/license/#sfxFree",
+    "duration_s": 0.85,
+    "trim": {
+      "start_s": 0.1,
+      "end_s": 0.95
+    },
+    "gain_db": -2,
+    "fade_out_s": 0.12,
+    "measured_after": {
+      "peak_dbfs": -3,
+      "lufs_integrated": -17.5
+    },
+    "notes": "Bright multi-note sparkle, 0.85 s. Alt: Robot positive item acquired.",
+    "alt": {
+      "file": "mixkit/3205.wav",
+      "source_url": "https://mixkit.co/free-sound-effects/technology/",
+      "download_url": "https://assets.mixkit.co/active_storage/sfx/3205/3205.wav",
+      "pack": "Mixkit Sound Effects: \"Robot positive item acquired\" (id 3205)",
+      "author": "Mixkit (Envato)",
+      "licence": "Mixkit Sound Effects Free License (royalty-free, commercial use incl. apps/games, no attribution required; no resale of the raw file)",
+      "licence_url": "https://mixkit.co/license/#sfxFree",
+      "duration_s": 0.5,
+      "trim": {
+        "start_s": 0.1,
+        "end_s": 0.6
+      },
+      "gain_db": -2.2,
+      "fade_out_s": 0.1,
+      "measured_after": {
+        "peak_dbfs": -3,
+        "lufs_integrated": -17
+      }
+    }
+  },
+  "loot-epic": {
+    "file": "mixkit/2349.wav",
+    "source_url": "https://mixkit.co/free-sound-effects/game/",
+    "download_url": "https://assets.mixkit.co/active_storage/sfx/2349/2349.wav",
+    "pack": "Mixkit Sound Effects: \"Video game magic item unlock\" (id 2349)",
+    "author": "Mixkit (Envato)",
+    "licence": "Mixkit Sound Effects Free License (royalty-free, commercial use incl. apps/games, no attribution required; no resale of the raw file)",
+    "licence_url": "https://mixkit.co/license/#sfxFree",
+    "duration_s": 1.1,
+    "trim": {
+      "start_s": 0,
+      "end_s": 1.1
+    },
+    "gain_db": -4.5,
+    "fade_out_s": 0.25,
+    "measured_after": {
+      "peak_dbfs": -6.7,
+      "lufs_integrated": -16
+    },
+    "notes": "Magical item unlock sparkle rise, 1.1 s. Alt: Video game treasure.",
+    "alt": {
+      "file": "mixkit/2066.wav",
+      "source_url": "https://mixkit.co/free-sound-effects/game/",
+      "download_url": "https://assets.mixkit.co/active_storage/sfx/2066/2066.wav",
+      "pack": "Mixkit Sound Effects: \"Video game treasure\" (id 2066)",
+      "author": "Mixkit (Envato)",
+      "licence": "Mixkit Sound Effects Free License (royalty-free, commercial use incl. apps/games, no attribution required; no resale of the raw file)",
+      "licence_url": "https://mixkit.co/license/#sfxFree",
+      "duration_s": 1.3,
+      "trim": {
+        "start_s": 0,
+        "end_s": 1.3
+      },
+      "gain_db": -4.1,
+      "fade_out_s": 0.3,
+      "measured_after": {
+        "peak_dbfs": -5.1,
+        "lufs_integrated": -16
+      }
+    }
+  },
+  "loot-legendary": {
+    "file": "mixkit/656.wav",
+    "source_url": "https://mixkit.co/free-sound-effects/choir/",
+    "download_url": "https://assets.mixkit.co/active_storage/sfx/656/656.wav",
+    "pack": "Mixkit Sound Effects: \"Choir bell bless\" (id 656)",
+    "author": "Mixkit (Envato)",
+    "licence": "Mixkit Sound Effects Free License (royalty-free, commercial use incl. apps/games, no attribution required; no resale of the raw file)",
+    "licence_url": "https://mixkit.co/license/#sfxFree",
+    "duration_s": 2.4,
+    "trim": {
+      "start_s": 0,
+      "end_s": 2.4
+    },
+    "gain_db": -3.4,
+    "fade_out_s": 0.6,
+    "measured_after": {
+      "peak_dbfs": -5.4,
+      "lufs_integrated": -16
+    },
+    "notes": "Choir + bell blessing, 2.4 s, the longest/richest of the set. Alt: Choir harp bless.",
+    "alt": {
+      "file": "mixkit/657.wav",
+      "source_url": "https://mixkit.co/free-sound-effects/choir/",
+      "download_url": "https://assets.mixkit.co/active_storage/sfx/657/657.wav",
+      "pack": "Mixkit Sound Effects: \"Choir harp bless\" (id 657)",
+      "author": "Mixkit (Envato)",
+      "licence": "Mixkit Sound Effects Free License (royalty-free, commercial use incl. apps/games, no attribution required; no resale of the raw file)",
+      "licence_url": "https://mixkit.co/license/#sfxFree",
+      "duration_s": 2.2,
+      "trim": {
+        "start_s": 0,
+        "end_s": 2.2
+      },
+      "gain_db": -1.6,
+      "fade_out_s": 0.5,
+      "measured_after": {
+        "peak_dbfs": -3.6,
+        "lufs_integrated": -16
+      }
+    }
+  },
+  "penalty": {
+    "file": "mixkit/908.wav",
+    "source_url": "https://mixkit.co/free-sound-effects/alarm/",
+    "download_url": "https://assets.mixkit.co/active_storage/sfx/908/908.wav",
+    "pack": "Mixkit Sound Effects: \"Facility alarm\" (id 908)",
+    "author": "Mixkit (Envato)",
+    "licence": "Mixkit Sound Effects Free License (royalty-free, commercial use incl. apps/games, no attribution required; no resale of the raw file)",
+    "licence_url": "https://mixkit.co/license/#sfxFree",
+    "duration_s": 1.6,
+    "trim": {
+      "start_s": 0.1,
+      "end_s": 1.7
+    },
+    "gain_db": 10.5,
+    "fade_out_s": 0.12,
+    "measured_after": {
+      "peak_dbfs": -5.9,
+      "lufs_integrated": -16
+    },
+    "notes": "Facility alarm pulses; trimmed to ~3 pulses (pulse count not verified by ear). Alt: Critical alarm. Gain raised to +10.5 dB after measuring -21 LUFS (target about -16).",
+    "alt": {
+      "file": "mixkit/1004.wav",
+      "source_url": "https://mixkit.co/free-sound-effects/alarm/",
+      "download_url": "https://assets.mixkit.co/active_storage/sfx/1004/1004.wav",
+      "pack": "Mixkit Sound Effects: \"Critical alarm\" (id 1004)",
+      "author": "Mixkit (Envato)",
+      "licence": "Mixkit Sound Effects Free License (royalty-free, commercial use incl. apps/games, no attribution required; no resale of the raw file)",
+      "licence_url": "https://mixkit.co/license/#sfxFree",
+      "duration_s": 1.5,
+      "trim": {
+        "start_s": 0.1,
+        "end_s": 1.6
+      },
+      "gain_db": -6.5,
+      "fade_out_s": 0.12,
+      "measured_after": {
+        "peak_dbfs": -7.5,
+        "lufs_integrated": -16
+      }
+    }
+  },
+  "arise": {
+    "file": "mixkit/2291.wav",
+    "source_url": "https://mixkit.co/free-sound-effects/transition/",
+    "download_url": "https://assets.mixkit.co/active_storage/sfx/2291/2291.wav",
+    "pack": "Mixkit Sound Effects: \"Eerie trailer horn transition\" (id 2291)",
+    "author": "Mixkit (Envato)",
+    "licence": "Mixkit Sound Effects Free License (royalty-free, commercial use incl. apps/games, no attribution required; no resale of the raw file)",
+    "licence_url": "https://mixkit.co/license/#sfxFree",
+    "duration_s": 2.8,
+    "trim": {
+      "start_s": 0,
+      "end_s": 2.8
+    },
+    "gain_db": -1.6,
+    "fade_out_s": 0.7,
+    "measured_after": {
+      "peak_dbfs": -2.6,
+      "lufs_integrated": -16
+    },
+    "notes": "Dark trailer-horn hit, peak at 0.04 s then pad-like decay; no separate whoosh. Alt: Cinematic whoosh deep impact (mp3-sourced). Other candidates: 2630 Terror sweep of darkness, 563 Drum deep impact, 660 Horror choir transition. Layered in data/sfx-import.ts: Kenney sub-bass drop + Mixkit 2630 dark sweep under the horn.",
+    "alt": {
+      "file": "mixkit/1143.mp3",
+      "source_url": "https://mixkit.co/free-sound-effects/impact/",
+      "download_url": "https://assets.mixkit.co/active_storage/sfx/1143/1143.mp3",
+      "pack": "Mixkit Sound Effects: \"Cinematic whoosh deep impact\" (id 1143)",
+      "author": "Mixkit (Envato)",
+      "licence": "Mixkit Sound Effects Free License (royalty-free, commercial use incl. apps/games, no attribution required; no resale of the raw file)",
+      "licence_url": "https://mixkit.co/license/#sfxFree",
+      "duration_s": 2.75,
+      "trim": {
+        "start_s": 0.15,
+        "end_s": 2.9
+      },
+      "gain_db": -3.1,
+      "fade_out_s": 0.7,
+      "measured_after": {
+        "peak_dbfs": -3.5,
+        "lufs_integrated": -16
+      }
+    },
+    "layers": [
+      {
+        "file": "kenney-sci-fi-sounds/Audio/lowFrequency_explosion_000.ogg",
+        "source_url": "https://kenney.nl/assets/sci-fi-sounds",
+        "pack": "Kenney Sci-fi Sounds",
+        "licence": "CC0 1.0",
+        "trim": {
+          "start_s": 0,
+          "end_s": 2
+        },
+        "gain_db": -2,
+        "fade_out_s": 0.6
+      },
+      {
+        "file": "mixkit/2630.wav",
+        "download_url": "https://assets.mixkit.co/active_storage/sfx/2630/2630.wav",
+        "source_url": "https://mixkit.co/free-sound-effects/",
+        "pack": "Mixkit Sound Effects: \"Terror sweep of darkness\" (id 2630)",
+        "licence": "Mixkit Sound Effects Free License",
+        "trim": {
+          "start_s": 0,
+          "end_s": 2.8
+        },
+        "gain_db": -10,
+        "fade_out_s": 0.8
+      }
+    ],
+    "peak_db": -2
+  },
+  "boss": {
+    "file": "mixkit/3111.wav",
+    "source_url": "https://mixkit.co/free-sound-effects/transition/",
+    "download_url": "https://assets.mixkit.co/active_storage/sfx/3111/3111.wav",
+    "pack": "Mixkit Sound Effects: \"Warfare horn trailer hit\" (id 3111)",
+    "author": "Mixkit (Envato)",
+    "licence": "Mixkit Sound Effects Free License (royalty-free, commercial use incl. apps/games, no attribution required; no resale of the raw file)",
+    "licence_url": "https://mixkit.co/license/#sfxFree",
+    "duration_s": 1.8,
+    "trim": {
+      "start_s": 0,
+      "end_s": 1.8
+    },
+    "gain_db": -5,
+    "fade_out_s": 0.4,
+    "measured_after": {
+      "peak_dbfs": -6,
+      "lufs_integrated": -16
+    },
+    "notes": "Warfare horn trailer hit (low brass), 1.8 s. Alt: Drums of war call (drums). Consider layering both. Layered in data/sfx-import.ts: Mixkit 2780 war drums under the horn.",
+    "alt": {
+      "file": "mixkit/2780.wav",
+      "source_url": "https://mixkit.co/free-sound-effects/warfare/",
+      "download_url": "https://assets.mixkit.co/active_storage/sfx/2780/2780.wav",
+      "pack": "Mixkit Sound Effects: \"Drums of war call\" (id 2780)",
+      "author": "Mixkit (Envato)",
+      "licence": "Mixkit Sound Effects Free License (royalty-free, commercial use incl. apps/games, no attribution required; no resale of the raw file)",
+      "licence_url": "https://mixkit.co/license/#sfxFree",
+      "duration_s": 1.76,
+      "trim": {
+        "start_s": 0.04,
+        "end_s": 1.8
+      },
+      "gain_db": -2.6,
+      "fade_out_s": 0.4,
+      "measured_after": {
+        "peak_dbfs": -3.6,
+        "lufs_integrated": -16
+      }
+    },
+    "layers": [
+      {
+        "file": "mixkit/2780.wav",
+        "download_url": "https://assets.mixkit.co/active_storage/sfx/2780/2780.wav",
+        "source_url": "https://mixkit.co/free-sound-effects/",
+        "pack": "Mixkit Sound Effects: \"Drums of war call\" (id 2780)",
+        "licence": "Mixkit Sound Effects Free License",
+        "trim": {
+          "start_s": 0,
+          "end_s": 1.8
+        },
+        "gain_db": -4,
+        "fade_out_s": 0.4
+      }
+    ],
+    "peak_db": -5.4
+  },
+  "error": {
+    "file": "kenney-interface-sounds/Audio/error_006.ogg",
+    "source_url": "https://kenney.nl/assets/interface-sounds",
+    "pack": "Kenney Interface Sounds",
+    "author": "Kenney (www.kenney.nl)",
+    "licence": "CC0 1.0 Universal (public domain dedication)",
+    "licence_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "duration_s": 0.26,
+    "trim": {
+      "start_s": 0.02,
+      "end_s": 0.28
+    },
+    "gain_db": -2.2,
+    "fade_out_s": 0.05,
+    "measured_after": {
+      "peak_dbfs": -3,
+      "lufs_integrated": null
+    },
+    "notes": "Descending low buzz (spectral centroid ~1.5 kHz falling to ~0.2 kHz in source), trimmed to 0.26 s. Alt: error_005.",
+    "alt": {
+      "file": "kenney-interface-sounds/Audio/error_005.ogg",
+      "source_url": "https://kenney.nl/assets/interface-sounds",
+      "pack": "Kenney Interface Sounds",
+      "author": "Kenney (www.kenney.nl)",
+      "licence": "CC0 1.0 Universal (public domain dedication)",
+      "licence_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "duration_s": 0.24,
+      "trim": {
+        "start_s": 0.02,
+        "end_s": 0.26
+      },
+      "gain_db": -2,
+      "fade_out_s": 0.05,
+      "measured_after": {
+        "peak_dbfs": -3,
+        "lufs_integrated": null
+      }
+    }
+  },
+  "ambient": {
+    "file": "mixkit/2744.wav",
+    "source_url": "https://mixkit.co/free-sound-effects/ambience/",
+    "download_url": "https://assets.mixkit.co/active_storage/sfx/2744/2744.wav",
+    "pack": "Mixkit Sound Effects: \"Tactical drone ambience\" (id 2744)",
+    "author": "Mixkit (Envato)",
+    "licence": "Mixkit Sound Effects Free License (royalty-free, commercial use incl. apps/games, no attribution required; no resale of the raw file)",
+    "licence_url": "https://mixkit.co/license/#sfxFree",
+    "duration_s": 24,
+    "trim": {
+      "start_s": 10,
+      "end_s": 35
+    },
+    "gain_db": -7.4,
+    "fade_out_s": 0,
+    "measured_after": {
+      "peak_dbfs": -7.6,
+      "lufs_integrated": -20
+    },
+    "notes": "Flat dark drone (centroid ~300 Hz). Take 25 s from 10 s, then crossfade last 1 s over first 1 s to give a 24 s seamless loop (recipe in research/sfx.md). Gain targets -20 LUFS. Alt: Cinematic suspense ambience (2510).",
+    "loop": {
+      "source_len_s": 25,
+      "crossfade_s": 1,
+      "result_len_s": 24
+    },
+    "alt": {
+      "file": "mixkit/2510.wav",
+      "source_url": "https://mixkit.co/free-sound-effects/ambience/",
+      "download_url": "https://assets.mixkit.co/active_storage/sfx/2510/2510.wav",
+      "pack": "Mixkit Sound Effects: \"Cinematic suspense ambience\" (id 2510)",
+      "author": "Mixkit (Envato)",
+      "licence": "Mixkit Sound Effects Free License (royalty-free, commercial use incl. apps/games, no attribution required; no resale of the raw file)",
+      "licence_url": "https://mixkit.co/license/#sfxFree",
+      "duration_s": 24,
+      "trim": {
+        "start_s": 12,
+        "end_s": 37
+      },
+      "gain_db": 1.5,
+      "fade_out_s": 0,
+      "measured_after": {
+        "peak_dbfs": -8.4,
+        "lufs_integrated": -20
+      },
+      "loop": {
+        "source_len_s": 25,
+        "crossfade_s": 1,
+        "result_len_s": 24
+      }
+    }
+  }
+}

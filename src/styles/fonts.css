@@ -1,0 +1,7 @@
+/* Latin-only faces actually used (research/design-v2.md §4.1): keeps the render-blocking stylesheet small. */
+@font-face { font-family: 'Orbitron'; font-style: normal; font-display: swap; font-weight: 700; src: url(../../node_modules/@fontsource/orbitron/files/orbitron-latin-700-normal.woff2) format('woff2'); }
+@font-face { font-family: 'Orbitron'; font-style: normal; font-display: swap; font-weight: 900; src: url(../../node_modules/@fontsource/orbitron/files/orbitron-latin-900-normal.woff2) format('woff2'); }
+@font-face { font-family: 'Rajdhani'; font-style: normal; font-display: swap; font-weight: 600; src: url(../../node_modules/@fontsource/rajdhani/files/rajdhani-latin-600-normal.woff2) format('woff2'); }
+@font-face { font-family: 'Rajdhani'; font-style: normal; font-display: swap; font-weight: 700; src: url(../../node_modules/@fontsource/rajdhani/files/rajdhani-latin-700-normal.woff2) format('woff2'); }
+@font-face { font-family: 'Inter Variable'; font-style: normal; font-display: swap; font-weight: 100 900; src: url(../../node_modules/@fontsource-variable/inter/files/inter-latin-wght-normal.woff2) format('woff2-variations'); }
+@font-face { font-family: 'JetBrains Mono Variable'; font-style: normal; font-display: swap; font-weight: 100 800; src: url(../../node_modules/@fontsource-variable/jetbrains-mono/files/jetbrains-mono-latin-wght-normal.woff2) format('woff2-variations'); }
