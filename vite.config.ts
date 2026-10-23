@@ -1,12 +1,35 @@
 import { defineConfig } from 'vitest/config'
+import type { Plugin } from 'vite'
 import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
 import { VitePWA } from 'vite-plugin-pwa'
 import { fileURLToPath } from 'node:url'
 
+/**
+ * Preload the Awakening entry chunk (and its imports) from index.html: on a new device it is the first screen, and
+ * without the hint the browser only discovers it after the main chunk runs (one extra network round trip).
+ */
+function preloadFirstScreen(): Plugin {
+  return {
+    name: 'preload-first-screen',
+    apply: 'build',
+    transformIndexHtml: {
+      order: 'post',
+      handler(html, ctx) {
+        const bundle = ctx.bundle ?? {}
+        const gate = Object.values(bundle).find((c) => c.type === 'chunk' && c.facadeModuleId?.endsWith('src/screens/awakening/Gate.tsx'))
+        if (!gate || gate.type !== 'chunk') return html
+        const files = [gate.fileName, ...gate.imports].filter((f) => !html.includes(f))
+        return { html, tags: files.map((f) => ({ tag: 'link', attrs: { rel: 'modulepreload', crossorigin: '', href: `/${f}` }, injectTo: 'head' as const })) }
+      },
+    },
+  }
+}
+
 export default defineConfig({
   resolve: { alias: { '@': fileURLToPath(new URL('./src', import.meta.url)) } },
   plugins: [
+    preloadFirstScreen(),
     react(),
     tailwindcss(),
     VitePWA({
