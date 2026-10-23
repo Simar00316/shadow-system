@@ -32,3 +32,4 @@ One line per decision: what, and why.
 - Dish authoring was split across four subagents writing data/dishes/*.json against the real ingredient ids, validated by `data/build-dishes.ts`.
 - Exercise media are committed (58 MB WebP). Why: offline-capable deterministic builds; private repo.
 - Gallery visual snapshot spec skips on CI (Linux WebKit crashes on the heavy gallery page, #94); snapshots are verified locally. Why: unblock CI for functional E2E.
+- CI runs on windows-latest (2× minutes, still free quota; full CI only on demand). Why: Linux WebKit crashes/never settles on our SVG-heavy pages (#94) while Windows WebKit matches local runs and the approved snapshots; the product target is iOS Safari, not Linux WebKit.
